@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Sarah's Art Portfolio</title>
+  <meta name="description"
+    content="Get in touch with Sarah for portrait study drawings, custom graphite illustrations, and pencil art commissions.">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="language.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #faf6ef;
+      color: #2b2420;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 40px;
+      background-color: #2b2420;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-img {
+      height: clamp(50px, 15vw, 90px);
+      max-width: 100%;
+    }
+
+    nav a {
+      color: #faf6ef;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #c1693c;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      overflow-x: hidden;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    h2 {
+      color: #c1693c;
+      border-bottom: 2px solid #c1693c;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      display: block;
+      width: fit-content;
+      transition: transform 0.3s ease, letter-spacing 0.3s ease;
+      cursor: default;
+    }
+
+    h2:hover {
+      transform: translateX(4px);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Titre avec ligne qui se dessine ── */
+    .contact-intro h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2.4rem;
+      color: #2b2420;
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .contact-intro h1::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      height: 4px;
+      width: 0;
+      background: #c1693c;
+      animation: drawLine 0.8s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes drawLine {
+      to {
+        width: 60px;
+      }
+    }
+
+    .contact-intro p.desc {
+      color: #5a5248;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+
+    .contact-intro p.reply-time {
+      color: #c1693c;
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    .contact-email {
+      padding-top: 16px;
+      border-top: 1px solid #e0d8c8;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-email:hover {
+      border-color: #c1693c;
+    }
+
+    .contact-email p.label {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #8a8278;
+      margin-bottom: 6px;
+    }
+
+    .contact-email p.value {
+      color: #2b2420;
+      font-size: 1rem;
+    }
+
+    /* ── Animations d'entrée ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-intro {
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.25s;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .field {
+      flex: 1;
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      color: #b0a895;
+      margin-bottom: 4px;
+      height: 16px;
+      transition: color 0.2s ease;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #d8d0c2;
+      background: transparent;
+      padding: 6px 0;
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem;
+      color: #2b2420;
+      transition: border-color 0.3s ease, padding-left 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-bottom-color: #c1693c;
+      padding-left: 6px;
+    }
+
+    .field:focus-within label {
+      color: #c1693c;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    button {
+      align-self: flex-start;
+      background-color: #2b2420;
+      color: #faf6ef;
+      border: none;
+      padding: 13px 32px;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      font-family: 'Arial', sans-serif;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #443a32;
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 700px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    footer {
+      background: #2b2420;
+      color: rgba(250, 246, 239, 0.7);
+      padding: 60px 40px 30px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #c1693c;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col p {
+      color: rgba(250, 246, 239, 0.6);
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col a {
+      color: rgba(250, 246, 239, 0.6);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: #c1693c;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(250, 246, 239, 0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       MOBILE NAV
+    ========================= */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .nav-right {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+      }
+
+      footer {
+        padding: 40px 20px 20px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <img src="Images/Logo.png" alt="Sarah's Art" class="logo-img">
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="art.html" data-i18n="nav.gallery">Gallery</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="lang-switcher" role="group" data-i18n-attr="aria-label:lang.label">
+        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="contact-grid">
+
+      <div class="contact-intro">
+        <h1 data-i18n="contact.title">Let's talk</h1>
+        <p class="desc" data-i18n="contact.desc">Whether you're interested in a piece, have a commission in mind, or just want to say hello - I'd
+          love to hear from you.</p>
+        <p class="reply-time" data-i18n="contact.replyTime">I usually reply within a couple of days.</p>
+
+        <h2 data-i18n="contact.section">Contact</h2>
+        <div class="contact-email">
+          <p class="label" data-i18n="contact.emailLabel">Email</p>
+          <p class="value">stephanie.andrieux.sa@gmail.com</p>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/mwvdlpgz" method="POST">
+        <div class="form-row">
+          <div class="field">
+            <label for="prenom" data-i18n="contact.firstName">First name</label>
+            <input type="text" id="prenom" name="prenom" required>
+          </div>
+          <div class="field">
+            <label for="nom" data-i18n="contact.lastName">Last name</label>
+            <input type="text" id="nom" name="nom" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email" data-i18n="contact.email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="field">
+          <label for="message" data-i18n="contact.message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" data-i18n="contact.submit">Send message</button>
+      </form>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.brand">Sarah's Art</h4>
+        <p data-i18n="footer.desc">
+          Traditional graphite and charcoal portrait artist.
+          Capturing depth, texture, and genuine human emotions
+          through realistic and custom-commissioned pencil drawings.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.explore">Explore</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="art.html" data-i18n="nav.gallery">Gallery</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.contact">Contact</h4>
+        <p><a href="contact.html">stephanie.andrieux.sa@gmail.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Sarah's Art Portfolio. All rights reserved.</span>
+      <span data-i18n="footer.tagline">Handcrafted with Passion</span>
+    </div>
+  </footer>
+
+  <script src="language.js"></script>
+
+</body>
+
+</html>

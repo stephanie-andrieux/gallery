@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah's Art Portfolio</title>
+    <meta name="description"
+        content="Explore Sarah's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="language.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+      font-family: 'Arial', sans-serif;
+      background:
+        radial-gradient(circle at top right,
+          rgba(193, 105, 60, 0.05),
+          transparent 35%),
+        #faf6ef;
+      color: #2b2420;
+      line-height: 1.8;
+      overflow-x: hidden; /* Empêche le défilement horizontal sur tous les écrans */
+    }
+
+        /* =========================
+   NAVIGATION
+========================= */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 40px;
+            background: #2b2420;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-img {
+        height: clamp(50px, 15vw, 90px); /* Taille responsive du logo */
+        max-width: 100%;
+    }
+
+        nav a {
+            color: #faf6ef;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: #c1693c;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* =========================
+   HERO
+========================= */
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 40px 80px;
+            animation: fadeUp 1s ease;
+        }
+
+        .intro {
+            color: #c1693c;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(1.35rem, 5.8vw, 6rem);
+            line-height: 1.2;
+            margin-bottom: 15px;
+            padding-bottom: 0.06em;
+            text-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            white-space: nowrap;
+            overflow: visible;
+            max-width: 100%;
+            opacity: 0;
+            animation: fadeUp 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        /* =========================
+   TRUE FOCUS — subtitle
+========================= */
+
+        .true-focus-wrapper {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease forwards;
+            animation-delay: 2.3s;
+        }
+
+        .focus-word {
+            position: relative;
+            font-size: 1.4rem;
+            font-family: 'Arial', sans-serif;
+            font-weight: normal;
+            color: #c1693c;
+            cursor: default;
+            transition: filter 0.5s ease, color 0.5s ease;
+        }
+
+        /* blurred words */
+        .focus-word.blurred {
+            filter: blur(5px);
+            color: #999;
+        }
+
+        /* focused word */
+        .focus-word.focused {
+            filter: blur(0px);
+            color: #c1693c;
+        }
+
+        /* corner brackets on focused word */
+        .focus-word.focused::before,
+        .focus-word.focused::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-color: #c1693c;
+            border-style: solid;
+            transition: all 0.3s ease;
+        }
+
+        .focus-word.focused::before {
+            top: -4px;
+            left: -6px;
+            border-width: 2px 0 0 2px;
+        }
+
+        .focus-word.focused::after {
+            bottom: -4px;
+            right: -6px;
+            border-width: 0 2px 2px 0;
+        }
+
+        /* =========================
+   HERO TEXT & BTN
+========================= */
+
+        .hero-text {
+            max-width: 700px;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            text-align: justify;
+
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease forwards;
+            animation-delay: 2.8s;
+        }
+
+        .btn-gallery {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #c1693c;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.4s;
+
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 3.2s;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gallery::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: skewX(-25deg);
+        }
+
+        .btn-gallery:hover::before {
+            left: 120%;
+            transition: .7s;
+        }
+
+        .btn-gallery:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(193, 105, 60, 0.35);
+        }
+
+        /* =========================
+   FEATURED WORKS
+========================= */
+
+        .featured {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+            animation: fadeUp 1.2s ease;
+        }
+
+        .section-title {
+            color: #c1693c;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 3px;
+            background: #c1693c;
+            transition: .5s;
+        }
+
+        .section-title:hover::after {
+            width: 120px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .art-card {
+            background: white;
+            padding: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition:
+                transform .5s ease,
+                box-shadow .5s ease;
+        }
+
+        .art-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .art-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(100%);
+            transition:
+                transform .8s ease,
+                filter .8s ease;
+        }
+
+        .art-card:hover img {
+            transform: scale(1.03);
+            filter: grayscale(0%) contrast(115%);
+        }
+
+        .art-card-content {
+            padding: 20px 10px 10px;
+        }
+
+        .art-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .art-card p {
+            color: #666;
+            text-align: justify;
+        }
+
+        /* =========================
+   ABOUT
+========================= */
+
+        .about-preview {
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 0 40px;
+            animation: fadeUp 1.4s ease;
+        }
+
+        .about-preview p {
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 2;
+        }
+
+        .about-preview h2 {
+            color: #c1693c;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+   QUOTE
+========================= */
+
+        .quote {
+            text-align: center;
+            padding: 80px 30px;
+            font-size: 1.7rem;
+            font-style: italic;
+            color: #666;
+            animation: fadeUp 1.6s ease;
+            transition: .4s;
+        }
+
+        .quote:hover {
+            transform: scale(1.03);
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+   BIG TAGLINE
+========================= */
+
+        .big-tagline {
+            padding: 20px 40px 40px;
+            overflow: hidden;
+        }
+
+
+        .big-tagline h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(3rem, 13vw, 12rem);
+            line-height: 0.85;
+            color: rgba(193, 105, 60, 0.35);
+            text-transform: uppercase;
+            animation: floatText 6s ease-in-out infinite;
+        }
+
+        .big-tagline:hover h2 {
+            letter-spacing: 10px;
+        }
+
+        .big-tagline:hover h2 {
+            letter-spacing: 10px;
+        }
+
+        /* =========================
+   FOOTER
+========================= */
+
+        /* =========================
+   FOOTER
+========================= */
+
+        footer {
+            background: #2b2420;
+            color: rgba(250, 246, 239, 0.7);
+            padding: 60px 40px 30px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #c1693c;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            color: rgba(250, 246, 239, 0.6);
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: rgba(250, 246, 239, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: #c1693c;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(250, 246, 239, 0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+   ANIMATIONS
+========================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatText {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* =========================
+   MOBILE
+========================= */
+
+        @media (max-width:768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .nav-right {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .nav-links a {
+                margin-left: 0;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.2rem, 5.2vw, 4rem);
+                white-space: nowrap;
+                overflow: visible;
+            }
+
+            .intro {
+                font-size: clamp(0.45rem, 3vw, 0.8rem);
+                letter-spacing: clamp(1px, 0.5vw, 3px);
+                white-space: nowrap;
+            }
+
+            .true-focus-wrapper {
+                gap: 0.4vw;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+            }
+
+            .true-focus-wrapper .focus-word {
+                font-size: clamp(0.5rem, 3.2vw, 0.95rem);
+            }
+
+            .big-tagline {
+                padding: 20px;
+                text-align: left;
+                overflow: visible;
+            }
+
+            .big-tagline h2 {
+                font-size: clamp(2.5rem, 11vw, 6rem);
+                line-height: 0.9;
+                text-align: left;
+            }
+
+            footer {
+                padding: 40px 20px 20px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width:480px) {
+
+            .hero h1 {
+                font-size: clamp(1.1rem, 4.8vw, 3rem);
+            }
+
+            .hero-text {
+                font-size: 0.9rem;
+            }
+
+            .btn-gallery {
+                padding: 12px 28px;
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <img src="Images/Logo.png" alt="Sarah's Art Portfolio" class="logo-img">
+
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="art.html" data-i18n="nav.gallery">Gallery</a>
+                <a href="about.html" data-i18n="nav.about">About</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="lang-switcher" role="group" data-i18n-attr="aria-label:lang.label">
+                <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+                <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+
+        <p class="intro" data-i18n="index.intro">Graphite Artist & Portrait Drawing</p>
+
+        <h1 data-i18n="index.title">Hello, I'm Sarah</h1>
+
+        <div class="true-focus-wrapper" id="trueFocus">
+            <span class="focus-word">Capturing</span>
+            <span class="focus-word">Emotion</span>
+            <span class="focus-word">Through</span>
+            <span class="focus-word">Pencil</span>
+            <span class="focus-word">Art</span>
+        </div>
+
+        <p class="hero-text" data-i18n="index.hero">
+            Welcome to my portfolio. Through graphite drawing, I aim to capture
+            expressions, emotions, and details that make every subject unique.
+            Each artwork is carefully created using traditional techniques and a passion for realism.
+        </p>
+
+        <a href="art.html" class="btn-gallery" data-i18n="index.cta">
+            Explore Gallery
+        </a>
+
+    </section>
+
+    <section class="featured">
+
+        <h2 class="section-title" data-i18n="index.featured">Featured Works</h2>
+
+        <div class="featured-grid">
+
+            <div class="art-card">
+                <img src="Images/dessin1.jpg" alt="Portrait Drawing">
+                <div class="art-card-content">
+                    <h3 data-i18n="index.card1Title">Portrait Study</h3>
+                    <p data-i18n="index.card1Desc">A graphite portrait focused on expression, character, and realistic detail.</p>
+                </div>
+            </div>
+
+            <div class="art-card">
+                <img src="Images/dessin2.jpg" alt="Child Portrait">
+                <div class="art-card-content">
+                    <h3 data-i18n="index.card2Title">Child Portrait</h3>
+                    <p data-i18n="index.card2Desc">A drawing that captures innocence, warmth, and natural emotion.</p>
+                </div>
+            </div>
+
+            <div class="art-card">
+                <img src="Images/dessin3.jpg" alt="Realism Study">
+                <div class="art-card-content">
+                    <h3 data-i18n="index.card3Title">Realism Study</h3>
+                    <p data-i18n="index.card3Desc">An exploration of texture, contrast, and light through detailed pencil work.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="about-preview">
+        <h2 data-i18n="index.aboutTitle">About My Work</h2>
+        <p data-i18n="index.aboutText">
+            All artworks presented here are hand-drawn using graphite and charcoal pencils on paper.
+            Special attention is given to texture, contrast, and expression in order
+            to create drawings that are both realistic and emotionally engaging.
+        </p>
+    </section>
+
+    <section class="quote" data-i18n="index.quote">
+        "Every pencil stroke tells a story."
+    </section>
+
+    <div class="big-tagline">
+        <h2>
+            Art<br>
+            Portfolio
+        </h2>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h4 data-i18n="footer.brand">Sarah's Art</h4>
+                <p data-i18n="footer.desc">
+                    Traditional graphite and charcoal portrait artist.
+                    Capturing depth, texture, and genuine human emotions
+                    through realistic and custom-commissioned pencil drawings.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer.explore">Explore</h4>
+                <ul>
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="art.html" data-i18n="nav.gallery">Gallery</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer.contact">Contact</h4>
+                <p><a href="contact.html">stephanie.andrieux.sa@gmail.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span data-i18n="footer.copyright">© 2026 Sarah's Art Portfolio. All rights reserved.</span>
+            <span data-i18n="footer.tagline">Handcrafted with Passion</span>
+        </div>
+    </footer>
+
+    <script src="language.js"></script>
+    <script>
+        (function () {
+            function fitHeroTitle() {
+                var h1 = document.querySelector('.hero h1');
+                if (!h1) return;
+                var hero = document.querySelector('.hero');
+                var maxPx = Math.min(window.innerWidth * 0.115, 96);
+                var minPx = 14;
+                var size = maxPx;
+                h1.style.fontSize = size + 'px';
+                var available = hero ? hero.clientWidth - 10 : window.innerWidth - 80;
+                while (h1.scrollWidth > available && size > minPx) {
+                    size -= 1;
+                    h1.style.fontSize = size + 'px';
+                }
+            }
+
+            window.addEventListener('resize', fitHeroTitle);
+            document.addEventListener('languageChanged', fitHeroTitle);
+            document.addEventListener('DOMContentLoaded', fitHeroTitle);
+
+            const INIT_DELAY = 2400;
+            const INTERVAL = 1200;
+            let focusInterval = null;
+
+            function startTrueFocus() {
+                if (focusInterval) clearInterval(focusInterval);
+                const words = document.querySelectorAll('#trueFocus .focus-word');
+                if (!words.length) return;
+                let current = 0;
+
+                function applyFocus(index) {
+                    words.forEach(function (w, i) {
+                        w.classList.remove('focused', 'blurred');
+                        w.classList.add(i === index ? 'focused' : 'blurred');
+                    });
+                }
+
+                function next() {
+                    applyFocus(current);
+                    current = (current + 1) % words.length;
+                }
+
+                setTimeout(function () {
+                    next();
+                    focusInterval = setInterval(next, INTERVAL);
+                }, INIT_DELAY);
+            }
+
+            document.addEventListener('languageChanged', startTrueFocus);
+        })();
+    </script>
+
+</body>
+
+</html>
