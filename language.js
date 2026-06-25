@@ -153,7 +153,7 @@
       contact: {
         title: 'Discutons',
         desc: 'Que vous soyez intéressé·e par une œuvre, ayez une commande en tête ou souhaitiez simplement dire bonjour — j\'aimerais beaucoup avoir de vos nouvelles.',
-        replyTime: 'Je réponds généralement sous quelques jours.',
+        replyTime: 'Je réponds généralement sous deux jours.',
         section: 'Contact',
         emailLabel: 'Courriel',
         firstName: 'Prénom',
