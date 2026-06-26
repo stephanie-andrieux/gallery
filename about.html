@@ -1,1 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Sarah's Art Portfolio</title>
+  <meta name="description"
+    content="Read about Sarah's artistic journey, her techniques combining graphite and charcoal, and her traditional drawing studio.">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="language.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #faf6ef; /* Un rose pastel doux */
+      color: #2b2b2b;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 40px;
+      background-color: #2b2420;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-img {
+      height: clamp(50px, 15vw, 90px);
+      max-width: 100%;
+    }
+
+    nav a {
+      color: #faf6ef;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #c1693c;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-family: 'Archivo Black', sans-serif;
+      color: #2b2420;
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      height: 4px;
+      width: 0;
+      background: #c1693c;
+      animation: drawLine 0.8s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes drawLine {
+      to {
+        width: 60px;
+      }
+    }
+
+    h2 {
+      color: #c1693c;
+      border-bottom: 2px solid #c1693c;
+      padding-bottom: 6px;
+      margin-top: 0px;
+      margin-bottom: 18px;
+      display: inline-block;
+      transition: transform 0.3s ease, letter-spacing 0.3s ease;
+      cursor: default;
+    }
+
+    h2:hover {
+      transform: translateX(4px);
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about-text {
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .about-photo {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .about-photo {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      transition: box-shadow 0.4s ease;
+      will-change: transform;
+    }
+
+    .about-photo:hover {
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.22);
+    }
+
+    .about-photo img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .about-photo:hover img {
+      transform: scale(1.08) rotate(0.5deg);
+      filter: contrast(1.05) saturate(1.05);
+    }
+
+    @media (max-width: 700px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    blockquote {
+      margin: 25px 0;
+      padding: 25px 30px;
+      border-left: 3px solid #c1693c;
+      font-style: italic;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: #2b2420;
+      transition: border-color 0.3s ease, padding-left 0.3s ease;
+    }
+
+    blockquote:hover {
+      border-left-color: #8a4423;
+      padding-left: 36px;
+    }
+
+    blockquote .word {
+      opacity: 0;
+      display: inline-block;
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 14px;
+      font-style: normal;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #8a8278;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+      animation-delay: 1.6s;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    footer {
+      background: #2b2420;
+      color: rgba(250, 246, 239, 0.7);
+      padding: 60px 40px 30px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #c1693c;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col p {
+      color: rgba(250, 246, 239, 0.6);
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col a {
+      color: rgba(250, 246, 239, 0.6);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: #c1693c;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(250, 246, 239, 0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+    /* =========================
+   DRAWING PROCESS
+========================= */
+
+    .drawing-process {
+      margin-top: 60px;
+    }
+
+    .process-intro {
+      margin-bottom: 25px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: end; /* Aligne toutes les cartes par le bas */
+    }
+
+    .process-step {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .process-step:hover {
+      transform: translateY(-5px);
+    }
+
+    .process-step .image-container {
+      overflow: hidden;
+    }
+
+    .process-step img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .process-step span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #2b2420;
+      height: 46px;
+      line-height: 1;
+      background-color: #fff;
+      white-space: nowrap; /* Force le texte sur une seule ligne */
+    }
+
+    @media (max-width: 768px) {
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .nav-right {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+      }
+
+      footer {
+        padding: 40px 20px 20px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <img src="Images/Logo.png" alt="Sarah's Art" class="logo-img">
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="art.html" data-i18n="nav.gallery">Gallery</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="lang-switcher" role="group" data-i18n-attr="aria-label:lang.label">
+        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="about-grid">
+      <div class="about-text">
+        <h1 data-i18n="about.title">About</h1>
+        <p data-i18n="about.p1">Drawing has been a passion of mine for many years. Through graphite and charcoal, I enjoy capturing emotions, textures, and the small details that make each subject unique. Every drawing is an opportunity to improve my technique while expressing my appreciation for traditional art.</p>
+        <p data-i18n="about.p2">This website is a collection of my work and my artistic journey. I hope you enjoy exploring my drawings as much as I enjoy creating them.</p>
+      </div>
+      <div class="about-photo">
+        <img src="Images/Atelier.jpg" alt="My drawing tools" data-i18n-attr="alt:about.photoAlt">
+      </div>
+    </div>
+
+    <blockquote id="quote"></blockquote>
+
+    <h2 data-i18n="about.section1">Graphite and Charcoal</h2>
+
+    <p data-i18n="about.section1p1">This quote from Odilon Redon, a true master of charcoal drawing, resonates deeply with my approach. In my
+      practice, I have naturally developed the habit of combining two simple yet highly complementary tools: graphite
+      pencil and charcoal pencil. It is a balance I really enjoy exploring on paper.</p>
+
+    <p class="reveal-on-scroll" data-i18n="about.section1p2">Graphite offers me the softness and precision needed to build my subject and work on the
+      delicacy of a line. Charcoal, on the other hand, allows me to reach for much deeper, velvety blacks. Playing with
+      these two materials helps me give depth to the atmosphere and accentuate the shadows. It is an almost tactile
+      process, where I simply try to highlight my subject through the rich, natural contrasts of these two tools, while
+      keeping the authentic joy of traditional drawing.</p>
+    <section class="drawing-process reveal-on-scroll">
+      <h2 data-i18n="about.processTitle">From Sketch to Finished Drawing</h2>
+
+      <p class="process-intro" data-i18n="about.processIntro">
+        Every portrait begins with a simple construction sketch and gradually
+        evolves through layers of shading, refinement, and detail until the
+        final artwork emerges.
+      </p>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="image-container">
+            <img src="Images/Cheval1.jpeg?v=2" alt="Initial sketch" data-i18n-attr="alt:about.stepAlt1">
+          </div>
+          <span data-i18n="about.step1">A light first line</span>
+        </div>
+
+        <div class="process-step">
+          <div class="image-container">
+            <img src="Images/Cheval2.jpeg" alt="Early shading" data-i18n-attr="alt:about.stepAlt2">
+          </div>
+          <span data-i18n="about.step2">Texture comes to life</span>
+        </div>
+
+        <div class="process-step">
+          <div class="image-container">
+            <img src="Images/Cheval3.jpeg" alt="Detail development" data-i18n-attr="alt:about.stepAlt3">
+          </div>
+          <span data-i18n="about.step3">The eye appears</span>
+        </div>
+
+        <div class="process-step">
+          <div class="image-container">
+            <img src="Images/Cheval4.jpeg" alt="Finished drawing" data-i18n-attr="alt:about.stepAlt4">
+          </div>
+          <span data-i18n="about.step4">Finished artwork</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="language.js"></script>
+  <script>
+    function animateQuote() {
+      const quote = document.getElementById('quote');
+      if (!quote || !window.SiteI18n) return;
+
+      const text = SiteI18n.t('about.quote');
+      const citeText = SiteI18n.t('about.quoteAuthor');
+      const words = text.split(' ');
+
+      quote.innerHTML = words
+        .map(function (w, i) {
+          return '<span class="word" style="animation-delay:' + (0.6 + i * 0.04) + 's">' + w + '</span>';
+        })
+        .join(' ') + ' <cite>' + citeText + '</cite>';
+    }
+
+    document.addEventListener('languageChanged', animateQuote);
+
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.3 });
+    revealElements.forEach(function (el) { observer.observe(el); });
+  </script>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 data-i18n="footer.brand">Sarah's Art</h4>
+        <p data-i18n="footer.desc">Traditional graphite and charcoal portrait artist. Capturing depth, texture, and genuine human emotions
+          through realistic and custom-commissioned pencil drawings.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.explore">Explore</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="art.html" data-i18n="nav.gallery">Gallery</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.contact">Contact</h4>
+        <p><a href="contact.html">stephanie.andrieux.sa@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Sarah's Art Portfolio. All rights reserved.</span>
+      <span data-i18n="footer.tagline">Handcrafted with Passion</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
