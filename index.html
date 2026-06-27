@@ -83,12 +83,22 @@
    HERO
 ========================= */
 
-        .hero {
-            max-width: 1200px;
-            margin: auto;
-            padding: 100px 40px 80px;
-            animation: fadeUp 1s ease;
-        }
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 40px 80px;
+    animation: fadeUp 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 55%;
+}
 
         .intro {
             color: #c1693c;
@@ -105,7 +115,7 @@
             margin-bottom: 15px;
             padding-bottom: 0.06em;
             text-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            white-space: nowrap;
+            white-space: normal;
             overflow: visible;
             max-width: 100%;
             opacity: 0;
@@ -231,6 +241,62 @@
             box-shadow: 0 15px 30px rgba(193, 105, 60, 0.35);
         }
 
+.btn-eyes-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.eyes-hero {
+    width: 40%;
+    max-width: 500px;
+    min-width: 150px;
+    opacity: 0.85;
+    mix-blend-mode: multiply;
+    flex-shrink: 0;
+}
+
+.eyes-hero {
+    display: block;
+    width: 70%;
+    max-width: 300px;
+}
+
+.hero-content {
+    max-width: 100%;
+}
+/* caché sur mobile pour ne pas écraser le texte */
+    }
+
+    .hero {
+        flex-direction: column !important;
+    }
+}
+/* =========================
+   EYES DIVIDER
+========================= */
+
+.eyes-divider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 40px;
+    overflow: hidden;
+}
+
+.eyes-img {
+    width: clamp(200px, 40%, 500px);
+    opacity: 0.75;
+    mix-blend-mode: multiply;
+    filter: contrast(1.2);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.eyes-img:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
         /* =========================
    FEATURED WORKS
 ========================= */
@@ -268,7 +334,7 @@
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 60px;
         }
 
         .art-card {
@@ -521,7 +587,9 @@
 ========================= */
 
         @media (max-width:768px) {
-
+            .eyes-hero {
+                display: none;
+            }
             nav {
                 flex-direction: column;
                 gap: 15px;
@@ -638,12 +706,13 @@
         <img src="Images/Logo.png" alt="Sarah's Art Portfolio" class="logo-img">
 
         <div class="nav-right">
-            <div class="nav-links">
-                <a href="index.html" data-i18n="nav.home">Home</a>
-                <a href="art.html" data-i18n="nav.gallery">Gallery</a>
-                <a href="about.html" data-i18n="nav.about">About</a>
-                <a href="contact.html" data-i18n="nav.contact">Contact</a>
-            </div>
+<div class="nav-links">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="art.html" data-i18n="nav.gallery">Gallery</a>
+    <a href="process.html" data-i18n="nav.process">Process</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+</div>
             <div class="lang-switcher" role="group" data-i18n-attr="aria-label:lang.label">
                 <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
                 <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
@@ -653,6 +722,7 @@
 
     <section class="hero">
 
+    <div class="hero-content">
         <p class="intro" data-i18n="index.intro">Traditional Graphite & Charcoal Art</p>
 
         <h1 data-i18n="index.title">Hello, I'm Sarah</h1>
@@ -671,13 +741,17 @@
             Each artwork is carefully created using traditional techniques, patience, and dedication.
         </p>
 
-        <a href="art.html" class="btn-gallery" data-i18n="index.cta">
-            Explore Gallery
-        </a>
+<div class="btn-eyes-row">
+            <a href="art.html" class="btn-gallery" data-i18n="index.cta">
+                Explore Gallery
+            </a>
+            <img src="Images/Eyes.png" alt="Eyes Study" class="eyes-hero">
+        </div>
+    </div>
 
     </section>
 
-    <section class="featured">
+      <section class="featured">
 
         <h2 class="section-title" data-i18n="index.featured">Featured Works</h2>
 
@@ -748,6 +822,7 @@
                 <ul>
                     <li><a href="index.html" data-i18n="nav.home">Home</a></li>
                     <li><a href="art.html" data-i18n="nav.gallery">Gallery</a></li>
+                    <li><a href="process.html" data-i18n="nav.process">Process</a></li>
                     <li><a href="about.html" data-i18n="nav.about">About</a></li>
                     <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
                 </ul>
