@@ -254,6 +254,7 @@
     opacity: 0.85;
     mix-blend-mode: multiply;
     flex-shrink: 0;
+    will-change: transform;
 }
 
 .eyes-hero {
@@ -587,9 +588,12 @@
 ========================= */
 
         @media (max-width:768px) {
-            .eyes-hero {
-                display: none;
-            }
+.eyes-hero {
+    display: block;
+    width: 70%;
+    max-width: 260px;
+    margin: 20px 0 0 0;
+}
             nav {
                 flex-direction: column;
                 gap: 15px;
@@ -862,6 +866,22 @@
             window.addEventListener('resize', fitHeroTitle);
             document.addEventListener('languageChanged', fitHeroTitle);
             document.addEventListener('DOMContentLoaded', fitHeroTitle);
+
+            // ✨ EFFET PARALLAXE SUR LES YEUX (desktop uniquement)
+            document.addEventListener('DOMContentLoaded', function () {
+                var eyesHero = document.querySelector('.eyes-hero');
+                if (eyesHero && window.innerWidth > 768) {
+                    document.addEventListener('mousemove', function (e) {
+                        var x = (e.clientX / window.innerWidth - 0.5) * 18;
+                        var y = (e.clientY / window.innerHeight - 0.5) * 8;
+                        eyesHero.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+                        eyesHero.style.transition = 'transform 0.4s ease-out';
+                    });
+                    document.addEventListener('mouseleave', function () {
+                        eyesHero.style.transform = 'translate(0px, 0px)';
+                    });
+                }
+            });
 
             const INIT_DELAY = 2400;
             const INTERVAL = 1200;
