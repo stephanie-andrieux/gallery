@@ -9,12 +9,8 @@
         index: { title: "Sarah's Art Portfolio", description: "Explore Sarah's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions." },
         art: { title: "Gallery — Sarah's Art Portfolio", description: "Explore Sarah's graphite art gallery, showcasing realistic portrait studies, animal art, and unique graphite drawings." },
         about: { title: "About — Sarah's Art Portfolio", description: "Read about Sarah's artistic journey, her techniques combining graphite and charcoal, and her traditional drawing studio." },
-        contact: { title: "Contact — Sarah's Art Portfolio", description: "Get in touch with Sarah for portrait study drawings, custom graphite illustrations, and pencil art commissions."
-      }
-      },
-       process: {
-        title: "Process — Sarah's Art Portfolio",
-        description: "Discover the different stages behind Sarah's graphite and charcoal drawings."
+        contact: { title: "Contact — Sarah's Art Portfolio", description: "Get in touch with Sarah for portrait study drawings, custom graphite illustrations, and pencil art commissions." },
+        process: { title: "Process — Sarah's Art Portfolio", description: "Discover the different stages behind Sarah's graphite and charcoal drawings." }
       },
       nav: { home: 'Home', gallery: 'Gallery', process: "Process", about: 'About', contact: 'Contact' },
       lang: { label: 'Choose language' },
@@ -101,7 +97,13 @@
       },
       process: {
         title: "Process",
-        desc: "Discover a selection of drawings accompanied by the different stages of their creation. From the first pencil strokes to the finished drawing, these images show the evolution of each artwork."
+        desc: "Discover a selection of drawings accompanied by the different stages of their creation. From the first pencil strokes to the finished drawing, these images show the evolution of each artwork.",
+        hint: "Click a drawing to see how it evolved",
+        overlayEyebrow: "Drawing evolution",
+        stepLabel: "Step",
+        finalLabel: "Final",
+        stepsLabel: "steps",
+        items: ["The ice cream break", "An unexpected refuge", "Brotherly bond", "Equine wisdom", "The Princess", "Under the foliage"]
     },
     },
     fr: {
@@ -199,10 +201,16 @@
       },
       process: {
         title: "Processus",
-        desc: "Découvrez une sélection de dessins accompagnés des différentes étapes de leur création. Des premiers traits de crayon au dessin terminé, ces images montrent l'évolution de chaque œuvre."
+        desc: "Découvrez une sélection de dessins accompagnés des différentes étapes de leur création. Des premiers traits de crayon au dessin terminé, ces images montrent l'évolution de chaque œuvre.",
+        hint: "↓ Cliquez sur un dessin pour voir son évolution",
+        overlayEyebrow: "Évolution du dessin",
+        stepLabel: "Étape",
+        finalLabel: "Final",
+        stepsLabel: "étapes",
+        items: ["La pause glace", "Un refuge inattendu", "Lien fraternel", "Sagesse équine", "La princesse", "Sous les feuillages"]
       },
     }
-    
+
   };
 
   function getNested(obj, path) {

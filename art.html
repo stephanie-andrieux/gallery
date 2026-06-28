@@ -7,12 +7,29 @@
   <title>Gallery — Sarah's Art Portfolio</title>
   <meta name="description"
     content="Explore Sarah's graphite art gallery, showcasing realistic portrait studies, animal art, and unique graphite drawings.">
+
+  <script>(function(){var l;try{l=localStorage.getItem('sarah-art-lang');}catch(e){}if(l!=='en'&&l!=='fr'){l=(navigator.language||'').slice(0,2)==='fr'?'fr':'en';}document.documentElement.lang=l;})();</script>
+
+  <link rel="icon" type="image/webp" href="Images/Logo.webp">
+  <link rel="canonical" href="https://stephanie-andrieux.github.io/gallery/art.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sarah's Art Portfolio">
+  <meta property="og:title" content="Gallery — Sarah's Art Portfolio">
+  <meta property="og:description" content="Explore Sarah's graphite art gallery, showcasing realistic portrait studies, animal art, and unique graphite drawings.">
+  <meta property="og:url" content="https://stephanie-andrieux.github.io/gallery/art.html">
+  <meta property="og:image" content="https://stephanie-andrieux.github.io/gallery/Images/Dessin1.webp">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gallery — Sarah's Art Portfolio">
+  <meta name="twitter:description" content="Explore Sarah's graphite art gallery, showcasing realistic portrait studies, animal art, and unique graphite drawings.">
+  <meta name="twitter:image" content="https://stephanie-andrieux.github.io/gallery/Images/Dessin1.webp">
+
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="language.css">
-  <script type="text/javascript"
-    src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=LJZEDqGn29CBbCPIT0er9BGqXNxtvaEfvvJLyzwi3Nur98HTTn3UD-HTo9RJpxFOqZ_cjWO5ucHw_XV5V39MglthSXF7_sCFHlQuqTOYZqZN5y3M0QdCH5vpf4c7UOxd"
-    charset="UTF-8"></script>
   <style>
     .typing-cursor {
       display: inline-block;
@@ -503,16 +520,49 @@
         <div class="carrousel-dots" id="carrousel-dots"></div>
       </div>
     </div>
+
+    <noscript>
+      <style>
+        .carrousel { display: none; }
+        .noscript-gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+          gap: 24px;
+          margin-top: 30px;
+        }
+        .noscript-gallery figure { margin: 0; }
+        .noscript-gallery img {
+          width: 100%;
+          height: auto;
+          border-radius: 6px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        .noscript-gallery figcaption {
+          margin-top: 8px;
+          font-size: 0.9rem;
+          color: #5a5248;
+        }
+      </style>
+      <div class="noscript-gallery">
+        <figure><img src="Images/Dessin1.webp" alt="Captured innocence — graphite child portrait"><figcaption>Captured innocence</figcaption></figure>
+        <figure><img src="Images/Dessin2.webp" alt="A face born from imagination — graphite portrait"><figcaption>A face born from imagination</figcaption></figure>
+        <figure><img src="Images/Dessin3.webp" alt="An unexpected refuge — kitten in a boot, graphite drawing"><figcaption>An unexpected refuge</figcaption></figure>
+        <figure><img src="Images/Dessin4.webp" alt="The elegance of the horse — graphite animal portrait"><figcaption>The elegance of the horse</figcaption></figure>
+        <figure><img src="Images/Dessin5.webp" alt="Face to face — close-up graphite portrait"><figcaption>Face to face</figcaption></figure>
+        <figure><img src="Images/Dessin6.webp" alt="Sweet melancholy — graphite child portrait"><figcaption>Sweet melancholy</figcaption></figure>
+        <figure><img src="Images/Dessin7.webp" alt="Equine wisdom — graphite horse portrait"><figcaption>Equine wisdom</figcaption></figure>
+        <figure><img src="Images/Dessin8.webp" alt="Delicate encounter — kitten and butterfly, graphite drawing"><figcaption>Delicate encounter</figcaption></figure>
+        <figure><img src="Images/Dessin9.webp" alt="The Princess — graphite child portrait"><figcaption>The Princess</figcaption></figure>
+        <figure><img src="Images/Dessin10.webp" alt="The depth of the eye — graphite eye study"><figcaption>The depth of the eye</figcaption></figure>
+        <figure><img src="Images/Dessin11.webp" alt="The ice cream break — graphite child portrait"><figcaption>The ice cream break</figcaption></figure>
+        <figure><img src="Images/Dessin12.webp" alt="Grace — minimalist horse line drawing"><figcaption>Grace</figcaption></figure>
+        <figure><img src="Images/Dessin13.webp" alt="Brotherly bond — double graphite portrait"><figcaption>Brotherly bond</figcaption></figure>
+        <figure><img src="Images/Dessin14.webp" alt="Spirit of adventure — sepia watercolour sailing ship"><figcaption>Spirit of adventure</figcaption></figure>
+      </div>
+    </noscript>
   </main>
 
   <script src="language.js"></script>
-window.onerror = function (message, source, line, column, error) {
-    alert(
-        "Erreur : " + message +
-        "\nLigne : " + line +
-        "\nColonne : " + column
-    );
-};
   <script>
     let dessins = [];
     let indexActuel = 0;
@@ -596,10 +646,7 @@ window.onerror = function (message, source, line, column, error) {
       afficherImage();
     }
 
-document.addEventListener('languageChanged', initGallery);
-
-// Initialisation de la galerie au chargement
-document.addEventListener('DOMContentLoaded', initGallery);
+    document.addEventListener('languageChanged', initGallery);
   </script>
 
   <footer>
