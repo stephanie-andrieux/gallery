@@ -30,6 +30,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="language.css">
+
   <style>
     .typing-cursor {
       display: inline-block;
@@ -40,9 +41,7 @@
     }
 
     @keyframes blink {
-      50% {
-        opacity: 0;
-      }
+      50% { opacity: 0; }
     }
 
     * {
@@ -57,6 +56,10 @@
       color: #2b2420;
       overflow-x: hidden;
     }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       display: flex;
@@ -74,7 +77,19 @@
       max-width: 100%;
     }
 
-    nav a {
+    /* Desktop : liens visibles, hamburger caché */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
       color: #faf6ef;
       text-decoration: none;
       margin-left: 25px;
@@ -84,7 +99,7 @@
       position: relative;
     }
 
-    nav a::after {
+    .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
@@ -95,9 +110,18 @@
       transition: 0.3s;
     }
 
-    nav a:hover::after {
+    .nav-links a:hover::after {
       width: 100%;
     }
+
+    /* Hamburger caché sur desktop */
+    .hamburger {
+      display: none;
+    }
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
 
     main {
       max-width: 1100px;
@@ -128,33 +152,17 @@
     }
 
     @keyframes drawLine {
-      to {
-        width: 60px;
-      }
+      to { width: 60px; }
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeUpSmall {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .carrousel {
@@ -232,13 +240,8 @@
       transform: translateY(-50%) scale(0.95);
     }
 
-    .carrousel-btn.prev {
-      left: 14px;
-    }
-
-    .carrousel-btn.next {
-      right: 14px;
-    }
+    .carrousel-btn.prev { left: 14px; }
+    .carrousel-btn.next { right: 14px; }
 
     .carrousel-text-side {
       flex: 1;
@@ -327,48 +330,19 @@
       transform: scale(1.2);
     }
 
-    @media (max-width: 700px) {
-      .carrousel {
-        flex-direction: column;
-        gap: 20px;
-        min-height: unset;
-      }
-
-      .carrousel-image-side {
-        padding: 16px;
-        border-radius: 6px;
-        min-height: 260px;
-      }
-
-      .carrousel-image-side img {
-        max-height: 50vw;
-      }
-
-      .carrousel-text-side {
-        padding: 10px 4px;
-      }
-
-      .carrousel-titre {
-        font-size: 1.3rem;
-      }
-
-      .carrousel-description {
-        font-size: 0.9rem;
-      }
+    .carrousel-price {
+      margin-top: 15px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #c1693c;
+      font-feature-settings: 'onum' 1, 'pnum' 1;
     }
-
-.carrousel-price {
-  margin-top: 15px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #c1693c;
-  font-feature-settings: 'onum' 1, 'pnum' 1;
-}
 
     /* =========================
        FOOTER
     ========================= */
+
     footer {
       background: #2b2420;
       color: rgba(250, 246, 239, 0.7);
@@ -435,35 +409,117 @@
       letter-spacing: 1px;
     }
 
-
-
     /* =========================
-       MOBILE NAV
+       MOBILE 768px
     ========================= */
+
     @media (max-width: 768px) {
+
+      /* Nav mobile : logo à gauche, FR|EN + hamburger à droite */
       nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
+        padding: 8px 20px;
+        align-items: center;
       }
 
       .nav-right {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        gap: 12px;
       }
 
+      /* Liens cachés par défaut — dropdown absolu */
       .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #2b2420;
+        border-top: 2px solid #c1693c;
+        padding: 8px 0 14px;
+        gap: 0;
+        z-index: 999;
+      }
+
+      .nav-links.open {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
       }
 
       .nav-links a {
         margin-left: 0;
+        padding: 11px 20px;
+        font-size: 0.8rem;
+        transition: color 0.3s, background 0.3s;
       }
 
+      .nav-links a:hover {
+        color: #c1693c;
+        background: rgba(193, 105, 60, 0.08);
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      /* Bouton hamburger visible sur mobile */
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #faf6ef;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* Carrousel */
+      .carrousel {
+        flex-direction: column;
+        gap: 20px;
+        min-height: unset;
+      }
+
+      .carrousel-image-side {
+        padding: 16px;
+        border-radius: 6px;
+        min-height: 260px;
+      }
+
+      .carrousel-image-side img {
+        max-height: 50vw;
+      }
+
+      .carrousel-text-side {
+        padding: 10px 4px;
+      }
+
+      .carrousel-titre {
+        font-size: 1.3rem;
+      }
+
+      .carrousel-description {
+        font-size: 0.9rem;
+      }
+
+      /* Footer */
       footer {
         padding: 40px 20px 20px;
       }
@@ -487,17 +543,22 @@
   <nav>
     <img src="Images/Logo.webp" alt="Sarah's Art" class="logo-img">
     <div class="nav-right">
-<div class="nav-links">
-    <a href="index.html" data-i18n="nav.home">Home</a>
-    <a href="art.html" data-i18n="nav.gallery">Gallery</a>
-    <a href="process.html" data-i18n="nav.process">Process</a>
-    <a href="about.html" data-i18n="nav.about">About</a>
-    <a href="contact.html" data-i18n="nav.contact">Contact</a>
-</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="art.html" data-i18n="nav.gallery">Gallery</a>
+        <a href="process.html" data-i18n="nav.process">Process</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </div>
       <div class="lang-switcher" role="group" data-i18n-attr="aria-label:lang.label">
         <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
         <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -563,28 +624,60 @@
   </main>
 
   <script src="language.js"></script>
+
+  <script>
+    /* ---- Hamburger mobile ---- */
+    (function () {
+      var hamburger = document.getElementById('hamburger');
+      var navLinks  = document.getElementById('navLinks');
+      if (!hamburger || !navLinks) return;
+
+      hamburger.addEventListener('click', function () {
+        var isOpen = navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+          navLinks.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      navLinks.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+
   <script>
     let dessins = [];
     let indexActuel = 0;
 
-    const imgEl = document.getElementById('carrousel-img');
-    const titreEl = document.getElementById('carrousel-titre');
-    const descEl = document.getElementById('carrousel-description');
+    const imgEl     = document.getElementById('carrousel-img');
+    const titreEl   = document.getElementById('carrousel-titre');
+    const descEl    = document.getElementById('carrousel-description');
     const detailsEl = document.getElementById('carrousel-details');
-    const priceEl = document.getElementById('carrousel-price');
-    const numeroEl = document.getElementById('carrousel-numero');
-    const dotsEl = document.getElementById('carrousel-dots');
+    const priceEl   = document.getElementById('carrousel-price');
+    const numeroEl  = document.getElementById('carrousel-numero');
+    const dotsEl    = document.getElementById('carrousel-dots');
 
     function loadDessins() {
       const sources = SiteI18n.getGallerySources();
-      const items = SiteI18n.getGalleryItems();
+      const items   = SiteI18n.getGalleryItems();
       dessins = items.map(function (item, i) {
         return {
-          src: sources[i],
-          nom: item.nom,
+          src:         sources[i],
+          nom:         item.nom,
           description: item.description,
-          details: item.details,
-          price: item.price
+          details:     item.details,
+          price:       item.price
         };
       });
     }
@@ -610,11 +703,11 @@
     function afficherImage() {
       if (!dessins.length) return;
 
-      imgEl.src = dessins[indexActuel].src;
-      imgEl.alt = dessins[indexActuel].nom;
-      titreEl.textContent = dessins[indexActuel].nom;
+      imgEl.src          = dessins[indexActuel].src;
+      imgEl.alt          = dessins[indexActuel].nom;
+      titreEl.textContent   = dessins[indexActuel].nom;
       detailsEl.textContent = dessins[indexActuel].details;
-      priceEl.textContent = dessins[indexActuel].price;
+      priceEl.textContent   = dessins[indexActuel].price;
 
       numeroEl.textContent =
         String(indexActuel + 1).padStart(2, '0') +
