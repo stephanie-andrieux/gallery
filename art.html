@@ -506,6 +506,13 @@
   </main>
 
   <script src="language.js"></script>
+window.onerror = function (message, source, line, column, error) {
+    alert(
+        "Erreur : " + message +
+        "\nLigne : " + line +
+        "\nColonne : " + column
+    );
+};
   <script>
     let dessins = [];
     let indexActuel = 0;
