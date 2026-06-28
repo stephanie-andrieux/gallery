@@ -589,7 +589,10 @@
       afficherImage();
     }
 
-    document.addEventListener('languageChanged', initGallery);
+document.addEventListener('languageChanged', initGallery);
+
+// Initialisation de la galerie au chargement
+document.addEventListener('DOMContentLoaded', initGallery);
   </script>
 
   <footer>
