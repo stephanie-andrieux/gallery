@@ -112,6 +112,9 @@
             width: 100%;
         }
 
+        
+        /* Lang switcher dans hamburger : caché sur desktop */
+        .lang-switcher-menu { display: none; }
         /* Hamburger caché sur desktop */
         .hamburger {
             display: none;
@@ -165,18 +168,17 @@
            TRUE FOCUS — subtitle
         ========================= */
 
-.true-focus-wrapper {
-    display: flex;
-    gap: 0.6rem;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
-
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUp 0.9s ease forwards;
-    animation-delay: 0.9s;
-}
+        .true-focus-wrapper {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s ease forwards;
+            animation-delay: 2.3s;
+        }
 
         .focus-word {
             position: relative;
@@ -233,7 +235,7 @@
             opacity: 0;
             transform: translateY(30px);
             animation: slideUp 1s ease forwards;
-            animation-delay: 1.5s;
+            animation-delay: 2.8s;
         }
 
         .btn-gallery {
@@ -247,7 +249,7 @@
             transition: 0.4s;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
-            animation-delay: 2s;
+            animation-delay: 3.2s;
             position: relative;
             overflow: hidden;
         }
@@ -717,7 +719,40 @@
                 flex-direction: column;
                 text-align: center;
             }
-        }
+        
+      /* Lang switcher caché dans la barre sur mobile */
+      .lang-switcher {
+        display: none;
+      }
+
+      /* Lang switcher dans le menu dropdown */
+      .lang-switcher-menu {
+        display: flex;
+        gap: 8px;
+        padding: 12px 20px 6px;
+        border-top: 1px solid rgba(250,246,239,0.1);
+        margin-top: 4px;
+      }
+
+      .lang-switcher-menu .lang-btn {
+        background: none;
+        border: 1px solid rgba(250,246,239,0.3);
+        color: rgba(250,246,239,0.7);
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        padding: 5px 12px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: color 0.3s, border-color 0.3s;
+      }
+
+      .lang-switcher-menu .lang-btn:hover,
+      .lang-switcher-menu .lang-btn[aria-pressed="true"] {
+        color: #c1693c;
+        border-color: #c1693c;
+      }
+
+    }
 
         /* =========================
            MOBILE 480px
@@ -767,6 +802,10 @@
                 <a href="process.html" data-i18n="nav.process">Process</a>
                 <a href="about.html" data-i18n="nav.about">About</a>
                 <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      <div class="lang-switcher-menu" role="group" data-i18n-attr="aria-label:lang.label">
+        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
             </div>
             <div class="lang-switcher" role="group" data-i18n-attr="aria-label:lang.label">
                 <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
@@ -971,7 +1010,7 @@
                 }
             });
 
-            const INIT_DELAY = 900;
+            const INIT_DELAY = 2400;
             const INTERVAL   = 1200;
             let focusInterval = null;
 
