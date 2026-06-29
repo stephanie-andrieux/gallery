@@ -1,11 +1,4 @@
 /* Language switcher — visible on all pages */
-.lang-switcher {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: 20px;
-}
-
 .lang-btn {
   background: transparent;
   border: 1px solid rgba(250, 246, 239, 0.35);
@@ -33,25 +26,4 @@
 
 .lang-sep {
   display: none;
-}
-
-@media (max-width: 768px) {
-  .nav-right {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .lang-switcher {
-    margin-left: 0;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .nav-links a {
-    margin-left: 0;
-  }
 }
