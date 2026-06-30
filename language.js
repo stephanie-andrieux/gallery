@@ -157,7 +157,7 @@
         processIntro: 'Chaque portrait commence par une simple esquisse de construction et évolue progressivement par des couches d\'ombrage, de raffinement et de détails jusqu\'à l\'émergence de l\'œuvre finale.',
         step1: 'Un premier trait léger',
         step2: 'La texture prend vie',
-        step3: 'L\'œil apparaît',
+        step3: 'L\'œil prend forme',
         step4: 'Œuvre terminée',
         stepAlt1: 'Esquisse initiale',
         stepAlt2: 'Premiers ombrages',

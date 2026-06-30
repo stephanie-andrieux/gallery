@@ -1,3 +1,9 @@
+/* Fix saut de mise en page lié à l'apparition/disparition de la scrollbar */
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
 /* Language switcher — visible on all pages */
 .lang-btn {
   background: transparent;
