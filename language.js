@@ -16,7 +16,7 @@
       lang: { label: 'Choose language' },
       footer: {
         brand: "Stephanie's Art",
-        desc: 'Traditional graphite and charcoal portrait artist. Capturing depth, texture, and genuine human emotions through realistic and custom-commissioned pencil drawings.',
+        desc: 'Passionate about graphite and charcoal portraiture. I strive to capture depth, texture, and genuine emotions through realistic drawings and custom creations.',
         explore: 'Explore',
         contact: 'Contact',
         copyright: "© 2026 Stephanie's Art Portfolio. All rights reserved.",
@@ -120,7 +120,7 @@
       lang: { label: 'Choisir la langue' },
       footer: {
         brand: "L'art de Stéphanie",
-        desc: 'Artiste portraitiste traditionnelle au graphite et au fusain. Capturer la profondeur, la texture et les émotions humaines authentiques à travers des dessins réalistes et des commandes sur mesure.',
+        desc: 'Passionnée par le portrait au graphite et au fusain. Je cherche à capturer la profondeur, la texture et les émotions authentiques à travers des dessins réalistes et des créations sur mesure.',
         explore: 'Explorer',
         contact: 'Contact',
         copyright: "© 2026 Portfolio d'art de Stéphanie. Tous droits réservés.",
