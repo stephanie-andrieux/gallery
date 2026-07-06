@@ -1,30 +1,30 @@
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'sarah-art-lang';
+  const STORAGE_KEY = 'stephanie-art-lang';
 
   const translations = {
     en: {
       meta: {
-        index: { title: "Sarah's Art Portfolio", description: "Explore Sarah's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions." },
-        art: { title: "Gallery — Sarah's Art Portfolio", description: "Explore Sarah's graphite art gallery, showcasing realistic portrait studies, animal art, and unique graphite drawings." },
-        about: { title: "About — Sarah's Art Portfolio", description: "Read about Sarah's artistic journey, her techniques combining graphite and charcoal, and her traditional drawing studio." },
-        contact: { title: "Contact — Sarah's Art Portfolio", description: "Get in touch with Sarah for portrait study drawings, custom graphite illustrations, and pencil art commissions." },
-        process: { title: "Process — Sarah's Art Portfolio", description: "Discover the different stages behind Sarah's graphite and charcoal drawings." }
+        index: { title: "Stephanie's Art Portfolio", description: "Explore Stephanie's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions." },
+        art: { title: "Gallery — Stephanie's Art Portfolio", description: "Explore Stephanie's graphite art gallery, showcasing realistic portrait studies, animal art, and unique graphite drawings." },
+        about: { title: "About — Stephanie's Art Portfolio", description: "Read about Stephanie's artistic journey, her techniques combining graphite and charcoal, and her traditional drawing studio." },
+        contact: { title: "Contact — Stephanie's Art Portfolio", description: "Get in touch with Stephanie for portrait study drawings, custom graphite illustrations, and pencil art commissions." },
+        process: { title: "Process — Stephanie's Art Portfolio", description: "Discover the different stages behind Stephanie's graphite and charcoal drawings." }
       },
       nav: { home: 'Home', gallery: 'Gallery', process: "Process", about: 'About', contact: 'Contact' },
       lang: { label: 'Choose language' },
       footer: {
-        brand: "Sarah's Art",
+        brand: "Stephanie's Art",
         desc: 'Traditional graphite and charcoal portrait artist. Capturing depth, texture, and genuine human emotions through realistic and custom-commissioned pencil drawings.',
         explore: 'Explore',
         contact: 'Contact',
-        copyright: "© 2026 Sarah's Art Portfolio. All rights reserved.",
+        copyright: "© 2026 Stephanie's Art Portfolio. All rights reserved.",
         tagline: 'Handcrafted with Passion'
       },
       index: {
         intro: 'Traditional Graphite & Charcoal Art',
-        title: "Hello, I'm Sarah",
+        title: "Hello, I'm Stephanie",
         focus: ['Capturing', 'Emotion', 'Through', 'Pencil', 'Art'],
         hero: 'Welcome to my portfolio. Through graphite and charcoal drawing, I aim to capture expressions, emotions, and details that make every subject unique. Each artwork is carefully created using traditional techniques, patience, and dedication.',
         cta: 'Explore Gallery',
@@ -108,27 +108,27 @@
     },
     fr: {
       meta: {
-        index: { title: "Portfolio d'art — Sarah", description: "Découvrez le portfolio de Sarah : dessins au graphite, portraits réalistes, portraits d'enfants et commandes sur mesure." },
-        art: { title: "Galerie — Portfolio d'art de Sarah", description: "Explorez la galerie de Sarah : études de portraits, art animalier et dessins uniques au graphite." },
-        about: { title: "À propos — Portfolio d'art de Sarah", description: "Découvrez le parcours artistique de Sarah, ses techniques mêlant graphite et fusain, et son atelier de dessin traditionnel." },
-        contact: { title: "Contact — Portfolio d'art de Sarah", description: "Contactez Sarah pour des portraits, illustrations au graphite sur mesure et commandes de dessins au crayon et au fusain." },
+        index: { title: "Portfolio d'art — Stéphanie", description: "Découvrez le portfolio de Stéphanie : dessins au graphite, portraits réalistes, portraits d'enfants et commandes sur mesure." },
+        art: { title: "Galerie — Portfolio d'art de Stéphanie", description: "Explorez la galerie de Stéphanie : études de portraits, art animalier et dessins uniques au graphite." },
+        about: { title: "À propos — Portfolio d'art de Stéphanie", description: "Découvrez le parcours artistique de Stéphanie, ses techniques mêlant graphite et fusain, et son atelier de dessin traditionnel." },
+        contact: { title: "Contact — Portfolio d'art de Stéphanie", description: "Contactez Stéphanie pour des portraits, illustrations au graphite sur mesure et commandes de dessins au crayon et au fusain." },
         process: {
-          title: "Coulisses — Portfolio d'art de Sarah", description: "Découvrez les différentes étapes de création des dessins de Sarah."
+          title: "Coulisses — Portfolio d'art de Stéphanie", description: "Découvrez les différentes étapes de création des dessins de Stéphanie."
     }
     },
       nav: { home: 'Accueil', gallery: 'Galerie', process: "Coulisses", about: 'À propos', contact: 'Contact' },
       lang: { label: 'Choisir la langue' },
       footer: {
-        brand: "L'art de Sarah",
+        brand: "L'art de Stéphanie",
         desc: 'Artiste portraitiste traditionnelle au graphite et au fusain. Capturer la profondeur, la texture et les émotions humaines authentiques à travers des dessins réalistes et des commandes sur mesure.',
         explore: 'Explorer',
         contact: 'Contact',
-        copyright: "© 2026 Portfolio d'art de Sarah. Tous droits réservés.",
+        copyright: "© 2026 Portfolio d'art de Stéphanie. Tous droits réservés.",
         tagline: 'Créé avec passion'
       },
       index: {
         intro: 'Dessin traditionnel au graphite et au fusain',
-        title: 'Bienvenue, je suis Sarah',
+        title: 'Bienvenue, je suis Stéphanie',
         focus: ['Capturer', "l'émotion", 'par le', 'dessin', 'au crayon'],
         hero: 'Bienvenue dans mon portfolio. À travers le dessin au graphite, je cherche à capturer les expressions, les émotions et les détails qui rendent chaque sujet unique. Chaque œuvre est créée avec soin, en utilisant des techniques traditionnelles, avec patience et passion.',
         cta: 'Explorer la galerie',
