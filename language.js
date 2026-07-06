@@ -128,7 +128,7 @@
       },
       index: {
         intro: 'Dessin traditionnel au graphite et au fusain',
-        title: 'Bienvenue, je suis Stéphanie',
+        title: 'Bienvenue,<br>je suis Stéphanie',
         focus: ['Capturer', "l'émotion", 'par le', 'dessin', 'au crayon'],
         hero: 'Bienvenue dans mon portfolio. À travers le dessin au graphite, je cherche à capturer les expressions, les émotions et les détails qui rendent chaque sujet unique. Chaque œuvre est créée avec soin, en utilisant des techniques traditionnelles, avec patience et passion.',
         cta: 'Explorer la galerie',
