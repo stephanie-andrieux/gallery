@@ -887,17 +887,38 @@
     <script src="language.js"></script>
 
     <script>
-        // Splash screen
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                var splash = document.getElementById('splash');
-                if (splash) {
-                    splash.classList.add('hidden');
-                }
-            }, 3000); // 3 secondes
-        });
-    </script>
 
+    </script>
+// Splash screen : affiché une seule fois par session
+window.addEventListener('load', function () {
+
+    const splash = document.getElementById('splash');
+
+    if (!splash) return;
+
+    // Le splash a déjà été affiché ?
+    if (sessionStorage.getItem('splashShown')) {
+
+        // On le masque immédiatement
+        splash.style.display = 'none';
+        return;
+    }
+
+    // Première visite : on mémorise
+    sessionStorage.setItem('splashShown', 'true');
+
+    // On laisse le splash 3 secondes
+    setTimeout(function () {
+        splash.classList.add('hidden');
+
+        // On le retire complètement du DOM
+        setTimeout(function () {
+            splash.style.display = 'none';
+        }, 800);
+
+    }, 3000);
+
+});
     <script>
         (function () {
             var hamburger = document.getElementById('hamburger');
