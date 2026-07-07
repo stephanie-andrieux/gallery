@@ -338,6 +338,8 @@ function detectPage() {
   function initializeI18n() {
     initSwitcher();
     setLanguage(currentLang);
+    document.documentElement.classList.remove('i18n-loading');
+    document.documentElement.classList.add('i18n-ready');
   }
 
   if (document.readyState === 'loading') {

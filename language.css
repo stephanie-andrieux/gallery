@@ -4,6 +4,15 @@ html {
   overflow-y: scroll;
 }
 
+/* Fix saut de page lié au changement de texte EN -> FR après chargement */
+html.i18n-loading body {
+  visibility: hidden;
+}
+
+html.i18n-ready body {
+  visibility: visible;
+}
+
 /* Language switcher — visible on all pages */
 .lang-btn {
   background: transparent;
