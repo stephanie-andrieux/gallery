@@ -8,6 +8,7 @@
     <meta name="description"
         content="Explore Stephanie's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions.">
 
+    <style>html{background:#000;}</style>
     <script>(function(){var l;try{l=localStorage.getItem('stephanie-art-lang');}catch(e){}if(l!=='en'&&l!=='fr'){l=(navigator.language||'').slice(0,2)==='fr'?'fr':'en';}document.documentElement.lang=l;document.documentElement.classList.add('i18n-loading');})();</script>
 
     <link rel="icon" type="image/webp" href="Images/Logo.webp">
@@ -27,7 +28,10 @@
     <meta name="twitter:description" content="Explore Stephanie's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions.">
     <meta name="twitter:image" content="https://stephanie-andrieux.github.io/gallery/Images/Dessin1.webp">
 
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="language.css">
 
     <style>
@@ -209,8 +213,20 @@
             overflow: visible;
             max-width: 100%;
             opacity: 0;
-            animation: fadeIn 0.8s ease forwards;
-            animation-delay: 4.2s;
+        }
+
+        .hero h1.typing-active {
+            opacity: 1;
+        }
+
+        .typed-cursor {
+            animation: blinkCursor 0.8s step-end infinite;
+            font-weight: 400;
+        }
+
+        @keyframes blinkCursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
         .true-focus-wrapper {
@@ -221,7 +237,7 @@
             margin-bottom: 25px;
             opacity: 0;
             animation: fadeIn 0.8s ease forwards;
-            animation-delay: 4.9s;
+            animation-delay: 6.1s;
         }
 
         .focus-word {
@@ -274,7 +290,7 @@
             text-align: justify;
             opacity: 0;
             animation: fadeIn 0.8s ease forwards;
-            animation-delay: 5.6s;
+            animation-delay: 7.4s;
         }
 
         .btn-gallery {
@@ -288,7 +304,7 @@
             transition: 0.4s;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
-            animation-delay: 6.3s;
+            animation-delay: 8.7s;
             position: relative;
             overflow: hidden;
         }
@@ -329,7 +345,7 @@
             flex-shrink: 0;
             will-change: transform;
             animation: fadeInEyes 1s ease forwards;
-            animation-delay: 7s;
+            animation-delay: 10s;
         }
 
         @keyframes fadeInEyes {
@@ -570,27 +586,23 @@
         ========================= */
 
         .splash-skipped .intro {
-            animation-delay: 0.3s;
-        }
-
-        .splash-skipped .hero h1 {
-            animation-delay: 0.7s;
+            animation-delay: 0.2s;
         }
 
         .splash-skipped .true-focus-wrapper {
-            animation-delay: 1.1s;
+            animation-delay: 1.4s;
         }
 
         .splash-skipped .hero-text {
-            animation-delay: 1.5s;
+            animation-delay: 2s;
         }
 
         .splash-skipped .btn-gallery {
-            animation-delay: 1.9s;
+            animation-delay: 2.6s;
         }
 
         .splash-skipped .eyes-hero {
-            animation-delay: 2.3s;
+            animation-delay: 3.2s;
         }
 
         /* =========================
@@ -1043,6 +1055,65 @@
                 }, INIT_DELAY);
             }
             document.addEventListener('languageChanged', startTrueFocus);
+        })();
+    </script>
+
+    <script>
+        // Effet machine à écrire pour le titre "Hello, I'm Stephanie"
+        (function () {
+            var h1 = document.querySelector('.hero h1');
+            if (!h1) return;
+
+            var firstRun = true;
+            var TYPE_SPEED = 220; // ms par caractère
+
+            function getInitialDelay() {
+                // Respecte le même timing que les autres éléments du hero
+                var skipped = document.documentElement.classList.contains('splash-skipped');
+                return skipped ? 800 : 4800;
+            }
+
+            function typeWriterEffect(el, html, speed) {
+                // Découpe le HTML en tokens : balises entières + caractères individuels
+                var tokens = html.match(/<[^>]+>|[^<]/g) || [];
+                el.innerHTML = '';
+                var cursor = document.createElement('span');
+                cursor.className = 'typed-cursor';
+                cursor.textContent = '|';
+                el.appendChild(cursor);
+                el.classList.add('typing-active');
+
+                var i = 0;
+                function step() {
+                    if (i < tokens.length) {
+                        var tok = tokens[i];
+                        if (tok.charAt(0) === '<') {
+                            cursor.insertAdjacentHTML('beforebegin', tok);
+                        } else {
+                            cursor.insertAdjacentText('beforebegin', tok);
+                        }
+                        i++;
+                        setTimeout(step, speed);
+                    } else {
+                        setTimeout(function () {
+                            if (cursor.parentNode) cursor.remove();
+                        }, 900);
+                    }
+                }
+                step();
+            }
+
+            document.addEventListener('languageChanged', function () {
+                // language.js a déjà rempli le h1 -> on récupère le texte final,
+                // puis on le vide pour le retaper progressivement
+                var fullHtml = h1.innerHTML;
+                var delay = firstRun ? getInitialDelay() : 0;
+                firstRun = false;
+                h1.innerHTML = '';
+                setTimeout(function () {
+                    typeWriterEffect(h1, fullHtml, TYPE_SPEED);
+                }, delay);
+            });
         })();
     </script>
 
