@@ -566,6 +566,34 @@
         }
 
         /* =========================
+           DELAIS REDUITS SI SPLASH DEJA VU
+        ========================= */
+
+        .splash-skipped .intro {
+            animation-delay: 0.3s;
+        }
+
+        .splash-skipped .hero h1 {
+            animation-delay: 0.7s;
+        }
+
+        .splash-skipped .true-focus-wrapper {
+            animation-delay: 1.1s;
+        }
+
+        .splash-skipped .hero-text {
+            animation-delay: 1.5s;
+        }
+
+        .splash-skipped .btn-gallery {
+            animation-delay: 1.9s;
+        }
+
+        .splash-skipped .eyes-hero {
+            animation-delay: 2.3s;
+        }
+
+        /* =========================
            MOBILE 768px
         ========================= */
 
@@ -913,6 +941,7 @@
             if (alreadyShown) {
                 // Déjà affiché pendant cette session -> on le cache tout de suite, sans animation
                 splash.style.display = 'none';
+                document.documentElement.classList.add('splash-skipped');
             } else {
                 // Première visite de la session -> on l'affiche puis on le cache après 3s
                 window.addEventListener('load', function () {
