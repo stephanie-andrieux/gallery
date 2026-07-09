@@ -324,10 +324,21 @@
             width: 60%;
             max-width: 800px;
             min-width: 150px;
-            opacity: 0.85;
+            opacity: 0;
             mix-blend-mode: multiply;
             flex-shrink: 0;
             will-change: transform;
+            animation: fadeInEyes 1s ease forwards;
+            animation-delay: 7s;
+        }
+
+        @keyframes fadeInEyes {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.85;
+            }
         }
 
         /* =========================
@@ -887,15 +898,33 @@
     <script src="language.js"></script>
 
     <script>
-        // Splash screen
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                var splash = document.getElementById('splash');
-                if (splash) {
-                    splash.classList.add('hidden');
-                }
-            }, 3000); // 3 secondes
-        });
+        // Splash screen — uniquement à la première ouverture du site (une fois par session)
+        (function () {
+            var splash = document.getElementById('splash');
+            if (!splash) return;
+
+            var alreadyShown;
+            try {
+                alreadyShown = sessionStorage.getItem('splashShown');
+            } catch (e) {
+                alreadyShown = null; // ex: navigation privée où sessionStorage est bloqué
+            }
+
+            if (alreadyShown) {
+                // Déjà affiché pendant cette session -> on le cache tout de suite, sans animation
+                splash.style.display = 'none';
+            } else {
+                // Première visite de la session -> on l'affiche puis on le cache après 3s
+                window.addEventListener('load', function () {
+                    setTimeout(function () {
+                        splash.classList.add('hidden');
+                    }, 3000); // 3 secondes
+                });
+                try {
+                    sessionStorage.setItem('splashShown', 'true');
+                } catch (e) {}
+            }
+        })();
     </script>
 
     <script>
