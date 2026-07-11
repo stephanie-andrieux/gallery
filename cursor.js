@@ -3,6 +3,10 @@
    À inclure sur toutes les pages via :
    <script src="cursor.js"></script>
    (juste avant la fermeture de </body>)
+
+   Le point devient blanc quand il survole une zone déjà
+   orange (bouton "Explore Gallery", boutons de langue FR/EN),
+   pour rester visible par contraste.
    ========================================================== */
 (function () {
     // Désactivé sur mobile/tablette (pas de vraie souris)
@@ -19,13 +23,16 @@
         '  pointer-events: none; z-index: 99999;' +
         '  transform: translate(-50%, -50%);' +
         '  opacity: 0;' +
-        '  transition: opacity 0.15s ease, width 0.2s ease, height 0.2s ease;' +
+        '  transition: opacity 0.15s ease, background-color 0.15s ease;' +
         '}';
     document.head.appendChild(style);
 
     var dotEl = document.createElement('div');
     dotEl.className = 'dot-cursor';
     document.body.appendChild(dotEl);
+
+    // Sélecteurs des zones déjà orange, où le point doit passer en blanc
+    var ORANGE_ZONES = '.btn-gallery, .lang-btn';
 
     document.addEventListener('mousemove', function (e) {
         dotEl.style.left = e.clientX + 'px';
@@ -38,8 +45,7 @@
     });
 
     document.addEventListener('mouseover', function (e) {
-        var hovering = !!e.target.closest('a, button, .art-card, .btn-gallery');
-        dotEl.style.width = hovering ? '28px' : '18px';
-        dotEl.style.height = hovering ? '28px' : '18px';
+        var onOrange = !!e.target.closest(ORANGE_ZONES);
+        dotEl.style.backgroundColor = onOrange ? '#faf6ef' : '#c1693c';
     });
 })();
