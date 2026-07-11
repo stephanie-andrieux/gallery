@@ -1,24 +1,29 @@
 /* ==========================================================
-   CURSEUR "LOGO EN ORANGE"
+   CURSEUR "LOGO EN ORANGE" avec bascule automatique
+   - Sur fond / zones neutres : le logo, en orange
+   - Sur une image (dessin) ou du texte : un point orange
    À inclure sur toutes les pages via :
    <script src="cursor.js"></script>
    (juste avant la fermeture de </body>)
-
-   Utilise Images/Logo.webp (blanc, fond transparent) comme
-   masque : la couleur orange est peinte à travers la forme
-   exacte du logo.
    ========================================================== */
 (function () {
     // Désactivé sur mobile/tablette (pas de vraie souris)
     if (!window.matchMedia('(pointer: fine)').matches) return;
 
+    var TEXT_TAGS = ['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'SPAN', 'A', 'LI', 'LABEL', 'TEXTAREA', 'INPUT', 'BUTTON'];
+
     var style = document.createElement('style');
     style.textContent =
         '* { cursor: none !important; }' +
-        '.logo-cursor {' +
+        '.logo-cursor, .dot-cursor {' +
         '  position: fixed; top:0; left:0;' +
-        '  width: 60px; height: 40px;' +
         '  pointer-events: none; z-index: 99999;' +
+        '  transform: translate(-50%, -50%);' +
+        '  opacity: 0;' +
+        '  transition: opacity 0.15s ease;' +
+        '}' +
+        '.logo-cursor {' +
+        '  width: 60px; height: 40px;' +
         '  background-color: #c1693c;' +
         '  -webkit-mask-image: url("Images/Logo.webp");' +
         '  mask-image: url("Images/Logo.webp");' +
@@ -28,44 +33,61 @@
         '  mask-repeat: no-repeat;' +
         '  -webkit-mask-position: center;' +
         '  mask-position: center;' +
-        '  transform: translate(-50%, -50%);' +
-        '  opacity: 0;' +
-        '  transition: opacity 0.2s ease;' +
+        '}' +
+        '.dot-cursor {' +
+        '  width: 16px; height: 16px;' +
+        '  border-radius: 50%;' +
+        '  background-color: #c1693c;' +
         '}';
     document.head.appendChild(style);
 
-    var cursorEl = document.createElement('div');
-    cursorEl.className = 'logo-cursor';
-    document.body.appendChild(cursorEl);
+    var logoEl = document.createElement('div');
+    logoEl.className = 'logo-cursor';
+    document.body.appendChild(logoEl);
+
+    var dotEl = document.createElement('div');
+    dotEl.className = 'dot-cursor';
+    document.body.appendChild(dotEl);
 
     var mouseX = -100, mouseY = -100;
     var displayX = -100, displayY = -100; // position amortie pour un mouvement fluide
-    var hovering = false;
+    var mode = 'logo'; // 'logo' ou 'dot'
+    var visible = false;
+
+    function computeMode(x, y) {
+        var el = document.elementFromPoint(x, y);
+        if (!el) return 'logo';
+        // Point/texte si c'est une image, ou un élément qui porte du texte
+        if (el.tagName === 'IMG') return 'dot';
+        if (TEXT_TAGS.indexOf(el.tagName) !== -1) return 'dot';
+        return 'logo';
+    }
 
     document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        cursorEl.style.opacity = '1';
+        visible = true;
+        mode = computeMode(mouseX, mouseY);
     });
 
     document.addEventListener('mouseleave', function () {
-        cursorEl.style.opacity = '0';
-    });
-
-    document.addEventListener('mouseover', function (e) {
-        hovering = !!e.target.closest('a, button, .art-card, .btn-gallery');
+        visible = false;
     });
 
     function draw() {
-        // Amortissement : le logo "rattrape" la souris avec un léger délai fluide
         displayX += (mouseX - displayX) * 0.25;
         displayY += (mouseY - displayY) * 0.25;
 
-        cursorEl.style.left = displayX + 'px';
-        cursorEl.style.top = displayY + 'px';
+        logoEl.style.left = displayX + 'px';
+        logoEl.style.top = displayY + 'px';
+        dotEl.style.left = displayX + 'px';
+        dotEl.style.top = displayY + 'px';
 
-        var scale = hovering ? 1.25 : 1;
-        cursorEl.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
+        var showLogo = visible && mode === 'logo';
+        var showDot = visible && mode === 'dot';
+
+        logoEl.style.opacity = showLogo ? '1' : '0';
+        dotEl.style.opacity = showDot ? '1' : '0';
 
         requestAnimationFrame(draw);
     }
