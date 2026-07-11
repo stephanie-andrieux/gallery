@@ -17,7 +17,7 @@
         '* { cursor: none !important; }' +
         '.dot-cursor {' +
         '  position: fixed; top:0; left:0;' +
-        '  width: 18px; height: 18px;' +
+        '  width: 13px; height: 13px;' +
         '  border-radius: 50%;' +
         '  background-color: #c1693c;' +
         '  pointer-events: none; z-index: 99999;' +
