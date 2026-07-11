@@ -1,5 +1,5 @@
 /* ==========================================================
-   CURSEUR "POUSSIÈRE DE GRAPHITE"
+   CURSEUR "RÉVÉLATION LUMINEUSE"
    À inclure sur toutes les pages via :
    <script src="cursor.js"></script>
    (juste avant la fermeture de </body>)
@@ -26,25 +26,13 @@
     resize();
     window.addEventListener('resize', resize);
 
-    var mouseX = -100, mouseY = -100;
+    var mouseX = -200, mouseY = -200;
+    var displayX = -200, displayY = -200; // position "amortie" pour un mouvement plus doux
     var hovering = false;
-    var particles = []; // {x, y, vx, vy, life, r}
 
     document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
-
-        // Génère quelques grains de poussière à chaque mouvement
-        for (var i = 0; i < 2; i++) {
-            particles.push({
-                x: mouseX,
-                y: mouseY,
-                vx: (Math.random() - 0.5) * 0.6,
-                vy: Math.random() * 0.3,
-                life: 1,
-                r: 0.8 + Math.random() * 1.6
-            });
-        }
     });
 
     document.addEventListener('mouseover', function (e) {
@@ -54,26 +42,24 @@
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Fait vivre puis mourir les grains de poussière (gravité légère)
-        particles.forEach(function (p) {
-            p.x += p.vx;
-            p.y += p.vy;
-            p.vy += 0.015;
-            p.life -= 0.012;
-        });
-        particles = particles.filter(function (p) { return p.life > 0; });
+        // Amortissement léger : la lueur suit avec un tout petit délai, plus doux qu'un point figé
+        displayX += (mouseX - displayX) * 0.18;
+        displayY += (mouseY - displayY) * 0.18;
 
-        particles.forEach(function (p) {
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(193, 105, 60, ' + (p.life * 0.75) + ')'; // #c1693c
-            ctx.fill();
-        });
+        var radius = hovering ? 70 : 45;
+        var grad = ctx.createRadialGradient(displayX, displayY, 0, displayX, displayY, radius);
+        grad.addColorStop(0, 'rgba(193, 105, 60, ' + (hovering ? 0.5 : 0.32) + ')'); // #c1693c
+        grad.addColorStop(1, 'rgba(193, 105, 60, 0)');
 
-        // Point principal, en orange, qui grossit légèrement au survol
+        ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.arc(mouseX, mouseY, hovering ? 7 : 4.5, 0, Math.PI * 2);
-        ctx.fillStyle = '#c1693c';
+        ctx.arc(displayX, displayY, radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Petit point net au centre pour garder un repère précis du pointeur
+        ctx.beginPath();
+        ctx.arc(mouseX, mouseY, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#2b2420';
         ctx.fill();
 
         requestAnimationFrame(draw);
