@@ -1,8 +1,12 @@
 /* ==========================================================
-   CURSEUR "RÉVÉLATION LUMINEUSE"
+   CURSEUR "LOGO EN ORANGE"
    À inclure sur toutes les pages via :
    <script src="cursor.js"></script>
    (juste avant la fermeture de </body>)
+
+   Utilise Images/Logo.webp (blanc, fond transparent) comme
+   masque : la couleur orange est peinte à travers la forme
+   exacte du logo.
    ========================================================== */
 (function () {
     // Désactivé sur mobile/tablette (pas de vraie souris)
@@ -11,28 +15,41 @@
     var style = document.createElement('style');
     style.textContent =
         '* { cursor: none !important; }' +
-        '.pencil-cursor-canvas { position: fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:99999; }';
+        '.logo-cursor {' +
+        '  position: fixed; top:0; left:0;' +
+        '  width: 60px; height: 40px;' +
+        '  pointer-events: none; z-index: 99999;' +
+        '  background-color: #c1693c;' +
+        '  -webkit-mask-image: url("Images/Logo.webp");' +
+        '  mask-image: url("Images/Logo.webp");' +
+        '  -webkit-mask-size: contain;' +
+        '  mask-size: contain;' +
+        '  -webkit-mask-repeat: no-repeat;' +
+        '  mask-repeat: no-repeat;' +
+        '  -webkit-mask-position: center;' +
+        '  mask-position: center;' +
+        '  transform: translate(-50%, -50%);' +
+        '  opacity: 0;' +
+        '  transition: opacity 0.2s ease;' +
+        '}';
     document.head.appendChild(style);
 
-    var canvas = document.createElement('canvas');
-    canvas.className = 'pencil-cursor-canvas';
-    document.body.appendChild(canvas);
-    var ctx = canvas.getContext('2d');
+    var cursorEl = document.createElement('div');
+    cursorEl.className = 'logo-cursor';
+    document.body.appendChild(cursorEl);
 
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    var mouseX = -200, mouseY = -200;
-    var displayX = -200, displayY = -200; // position "amortie" pour un mouvement plus doux
+    var mouseX = -100, mouseY = -100;
+    var displayX = -100, displayY = -100; // position amortie pour un mouvement fluide
     var hovering = false;
 
     document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        cursorEl.style.opacity = '1';
+    });
+
+    document.addEventListener('mouseleave', function () {
+        cursorEl.style.opacity = '0';
     });
 
     document.addEventListener('mouseover', function (e) {
@@ -40,27 +57,15 @@
     });
 
     function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Amortissement : le logo "rattrape" la souris avec un léger délai fluide
+        displayX += (mouseX - displayX) * 0.25;
+        displayY += (mouseY - displayY) * 0.25;
 
-        // Amortissement léger : la lueur suit avec un tout petit délai, plus doux qu'un point figé
-        displayX += (mouseX - displayX) * 0.18;
-        displayY += (mouseY - displayY) * 0.18;
+        cursorEl.style.left = displayX + 'px';
+        cursorEl.style.top = displayY + 'px';
 
-        var radius = hovering ? 70 : 45;
-        var grad = ctx.createRadialGradient(displayX, displayY, 0, displayX, displayY, radius);
-        grad.addColorStop(0, 'rgba(193, 105, 60, ' + (hovering ? 0.5 : 0.32) + ')'); // #c1693c
-        grad.addColorStop(1, 'rgba(193, 105, 60, 0)');
-
-        ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.arc(displayX, displayY, radius, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Petit point net au centre pour garder un repère précis du pointeur
-        ctx.beginPath();
-        ctx.arc(mouseX, mouseY, 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = '#2b2420';
-        ctx.fill();
+        var scale = hovering ? 1.25 : 1;
+        cursorEl.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
 
         requestAnimationFrame(draw);
     }
