@@ -1,21 +1,19 @@
 /* ==========================================================
-   CURSEUR "TRACE DE CRAYON"
+   CURSEUR "POUSSIÈRE DE GRAPHITE"
    À inclure sur toutes les pages via :
    <script src="cursor.js"></script>
    (juste avant la fermeture de </body>)
    ========================================================== */
 (function () {
-    // On désactive sur mobile/tablette (pas de vraie souris)
+    // Désactivé sur mobile/tablette (pas de vraie souris)
     if (!window.matchMedia('(pointer: fine)').matches) return;
 
-    // Masque le curseur natif du navigateur partout sur le site
     var style = document.createElement('style');
     style.textContent =
         '* { cursor: none !important; }' +
         '.pencil-cursor-canvas { position: fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:99999; }';
     document.head.appendChild(style);
 
-    // Canvas plein écran qui accueille le point + la traîne
     var canvas = document.createElement('canvas');
     canvas.className = 'pencil-cursor-canvas';
     document.body.appendChild(canvas);
@@ -28,15 +26,25 @@
     resize();
     window.addEventListener('resize', resize);
 
-    var points = [];       // historique récent des positions de la souris
-    var MAX_AGE = 380;     // durée de vie d'un point de la traîne (ms)
     var mouseX = -100, mouseY = -100;
-    var hovering = false;  // true quand on survole un lien/bouton/carte
+    var hovering = false;
+    var particles = []; // {x, y, vx, vy, life, r}
 
     document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        points.push({ x: e.clientX, y: e.clientY, time: performance.now() });
+
+        // Génère quelques grains de poussière à chaque mouvement
+        for (var i = 0; i < 2; i++) {
+            particles.push({
+                x: mouseX,
+                y: mouseY,
+                vx: (Math.random() - 0.5) * 0.6,
+                vy: Math.random() * 0.3,
+                life: 1,
+                r: 0.8 + Math.random() * 1.6
+            });
+        }
     });
 
     document.addEventListener('mouseover', function (e) {
@@ -45,22 +53,24 @@
 
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        var now = performance.now();
 
-        // Ne garde que les points récents (effet de traîne qui s'efface)
-        points = points.filter(function (p) { return now - p.time < MAX_AGE; });
+        // Fait vivre puis mourir les grains de poussière (gravité légère)
+        particles.forEach(function (p) {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.015;
+            p.life -= 0.012;
+        });
+        particles = particles.filter(function (p) { return p.life > 0; });
 
-        points.forEach(function (p) {
-            var age = now - p.time;
-            var alpha = 1 - age / MAX_AGE;
-            var radius = 2.4 * alpha;
+        particles.forEach(function (p) {
             ctx.beginPath();
-            ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(43, 36, 32, ' + (alpha * 0.45) + ')'; // #2b2420, ta couleur foncée
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(193, 105, 60, ' + (p.life * 0.75) + ')'; // #c1693c
             ctx.fill();
         });
 
-        // Le point principal, en couleur accent, qui grossit légèrement au survol
+        // Point principal, en orange, qui grossit légèrement au survol
         ctx.beginPath();
         ctx.arc(mouseX, mouseY, hovering ? 7 : 4.5, 0, Math.PI * 2);
         ctx.fillStyle = '#c1693c';
