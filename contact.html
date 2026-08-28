@@ -53,11 +53,14 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      view-transition-name: site-nav;
     }
 
     .logo-img {
       height: clamp(50px, 15vw, 90px);
       max-width: 100%;
+      aspect-ratio: 629 / 397;
+      width: auto;
     }
 
     /* Desktop : liens visibles, hamburger caché */
@@ -499,7 +502,7 @@
 <body>
 
   <nav>
-    <img src="Images/Logo.webp" alt="Sarah's Art" class="logo-img">
+    <img src="Images/Logo.webp" alt="Sarah's Art" class="logo-img" width="629" height="397">
     <div class="nav-right">
 <div class="nav-links" id="navLinks">
     <a href="index.html" data-i18n="nav.home">Home</a>
@@ -637,7 +640,7 @@
       });
     })();
   </script>
-  <script src="cursor.js"></script>
+
 </body>
 
 </html>

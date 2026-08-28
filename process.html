@@ -50,11 +50,14 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      view-transition-name: site-nav;
     }
 
     .logo-img {
       height: clamp(50px, 15vw, 90px);
       max-width: 100%;
+      aspect-ratio: 629 / 397;
+      width: auto;
     }
 
     /* Desktop : liens visibles, hamburger caché */
@@ -265,6 +268,10 @@
     .fan-item.horizontal .fan-card-top img {
       object-fit: cover;
       object-position: center;
+    }
+
+    .fan-item.portrait-imaginaire {
+      grid-column: 2;
     }
 
     /* ===== LABEL TITRE — plus grand, sur 2 lignes si besoin ===== */
@@ -507,6 +514,7 @@
     /* ================= MOBILE ================= */
     @media (max-width: 900px) {
       .fan-grid { grid-template-columns: repeat(2, 1fr); gap: 80px 30px; }
+      .fan-item.portrait-imaginaire { grid-column: 1 / -1; }
     }
 
     @media (max-width: 768px) {
@@ -622,7 +630,7 @@
 <body>
 
   <nav>
-    <img src="Images/Logo.webp" alt="Sarah's Art" class="logo-img">
+    <img src="Images/Logo.webp" alt="Sarah's Art" class="logo-img" width="629" height="397">
     <div class="nav-right">
       <div class="nav-links" id="navLinks">
         <a href="index.html" data-i18n="nav.home">Home</a>
@@ -732,6 +740,17 @@
       </div>
       <p class="fan-label" data-i18n="process.items.5">Sous les feuillages</p>
       <p class="fan-steps-count" data-steps-count>3 étapes</p>
+    </div>
+
+    <!-- 7 — Dessin 2 (2 étapes) -->
+    <div class="fan-item steps-2 portrait-imaginaire" data-i="6"
+      data-steps='["Images/Dessin2.webp","Images/Dessin2.0.webp"]'>
+      <div class="fan-stack">
+        <div class="fan-card"><img src="Images/Dessin2.0.webp" alt="Portrait imaginaire étape 1"></div>
+        <div class="fan-card-top"><img src="Images/Dessin2.webp" alt="Portrait imaginaire final"></div>
+      </div>
+      <p class="fan-label" data-i18n="process.items.6">Portrait imaginaire</p>
+      <p class="fan-steps-count" data-steps-count>2 étapes</p>
     </div>
 
   </div>
@@ -880,6 +899,6 @@
       });
     })();
   </script>
-  <script src="cursor.js"></script>
+
 </body>
 </html>
