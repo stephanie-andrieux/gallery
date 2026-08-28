@@ -152,8 +152,8 @@
       },
       about: {
         title: 'À propos',
-        p1: "Le dessin est une passion qui m'accompagne depuis de nombreuses années. À travers le graphite et le fusain, j'aime capturer les émotions, les textures et les petits détails qui rendent chaque sujet unique. Chaque dessin est pour moi l'occasion de perfectionner ma technique tout en exprimant mon attachement au dessin traditionnel.",
-        p2: "Ce site rassemble une sélection de mes réalisations et retrace une partie de mon parcours artistique. J'espère que vous prendrez autant de plaisir à découvrir mes dessins que j'en ai à les créer.",
+        p1: "Le dessin est une passion qui m'accompagne depuis des années. À travers le graphite et le fusain, j'aime capturer les émotions, les textures et les petits détails qui rendent chaque sujet unique. Chaque dessin est pour moi l'occasion de perfectionner ma technique tout en exprimant mon attachement au dessin traditionnel.",
+        p2: "Ce site rassemble une sélection de mes réalisations et retrace une partie de mon parcours. J'espère que vous prendrez autant de plaisir à découvrir mes dessins que j'en ai à les créer.",
         photoAlt: 'Mes outils de dessin',
         quote: "« Le noir est la couleur la plus essentielle. [...] C'est l'agent de l'esprit. »",
         quoteAuthor: '— Odilon Redon',
@@ -173,7 +173,7 @@
       },
       contact: {
         title: 'Discutons',
-        desc: 'Que vous soyez intéressé·e par une œuvre, ayez une commande en tête ou souhaitiez simplement dire bonjour. J\'aimerais beaucoup avoir de vos nouvelles.',
+        desc: 'Que vous soyez intéressé·e par une œuvre, que vous ayez une commande en tête ou que vous souhaitiez simplement vous renseigner, n\'hésitez pas à m\'écrire.',
         replyTime: 'Je réponds généralement sous deux jours.',
         section: 'Contact',
         emailLabel: 'Courriel',
