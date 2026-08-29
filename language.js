@@ -10,9 +10,10 @@
         art: { title: "Gallery — Stephanie's Art Portfolio", description: "Explore Stephanie's graphite art gallery, showcasing realistic portrait studies, animal art, and unique graphite drawings." },
         about: { title: "About — Stephanie's Art Portfolio", description: "Read about Stephanie's artistic journey, her techniques combining graphite and charcoal, and her traditional drawing studio." },
         contact: { title: "Contact — Stephanie's Art Portfolio", description: "Get in touch with Stephanie for portrait study drawings, custom graphite illustrations, and pencil art commissions." },
-        process: { title: "Process — Stephanie's Art Portfolio", description: "Discover the different stages behind Stephanie's graphite and charcoal drawings." }
+        process: { title: "Process — Stephanie's Art Portfolio", description: "Discover the different stages behind Stephanie's graphite and charcoal drawings." },
+        actions: { title: "Our actions — Stephanie's Art Portfolio", description: "Discover how 100% of the profits from Stephanie's drawings support volunteer initiatives for children in Algeria." }
       },
-      nav: { home: 'Home', gallery: 'Gallery', process: "Process", about: 'About', contact: 'Contact' },
+      nav: { home: 'Home', gallery: 'Gallery', actions: 'Our actions', process: "Process", about: 'About', contact: 'Contact' },
       lang: { label: 'Choose language' },
       footer: {
         brand: "Stephanie's Art",
@@ -37,7 +38,13 @@
         card3Desc: 'An exploration of texture, contrast, and light through meticulous graphite and charcoal drawings.',
         aboutTitle: 'About My Work',
         aboutText: 'All artworks presented here are hand-drawn using graphite and charcoal pencils on paper. Special attention is given to texture, contrast, and expression to create drawings rich in character, emotion, and detail.',
-        quote: '"Every pencil stroke tells a story."'
+        quote: '"Every pencil stroke tells a story."',
+        beyondTitle: 'Beyond the drawing',
+        beyondLead: 'What if some drawings could tell a story that goes even further?',
+        beyondP1: "Perhaps a story that doesn't end with the final pencil stroke.",
+        beyondP2: 'A story that continues in Algeria, with children we meet in hospitals and care centres, through volunteer days designed to bring them a little joy, comfort, and attention.',
+        beyondP3: 'Three of us bring this project to life on a personal, volunteer basis. Profits from the sale of drawings help fund these initiatives and the various needs they require.',
+        beyondP4: 'Because a drawing can be a piece of art and become the starting point for something tangible.'
       },
       about: {
         title: 'About',
@@ -78,6 +85,10 @@
         next: 'Next',
         goToDrawing: 'Go to drawing',
         privateCollection: 'Private collection',
+        recCaption: 'A few drawings in my home',
+        recTitle: 'A framing recommendation',
+        recP1: 'I recommend presenting the drawings with a mat (passe-partout). It gives the drawing the space it needs to breathe, and creates a gentle distance around the artwork, like a quiet pause allowing the viewer to truly connect with it.',
+        recP2: 'Here are three drawings displayed in my home to give you an idea of the finished look. Then, you are free to choose the frame that best suits your interior.',
         items: [
           { nom: 'Captured innocence', description: "This portrait highlights the freshness and spontaneity of childhood. The child's direct gaze, accompanied by a subtle smile and framed by a cascade of curly hair, gives the composition a natural and engaging presence.\n\nAttention was given to the eyes to capture their intensity and liveliness. The rendering of the curls presented an enjoyable technical challenge, with each strand carefully developed through subtle contrasts of light and shadow to create depth and movement. The background was intentionally softened to draw attention to the face and enhance the overall impact of the portrait.\n\nThe result of many hours of work and patience, this original artwork seeks above all to preserve the authenticity and sincerity of a fleeting moment.", details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 11 Hours of Work • Original Artwork', price: 'Sold' },
           { nom: 'A face born from imagination', description: 'This portrait has a very special story for me. Unlike my usual process, it was born entirely from my imagination, without any reference photo or model. My desire was to bring to life a gentle face that existed only in my mind.\n\nI took great pleasure in delicately shaping her features, seeking to capture a serene expression and a comforting, slight smile. Working on her straight hair allowed me to frame her face with light, and I opted for a softly blurred background so that the viewer\'s attention is drawn naturally and without distraction to the clarity of her eyes.\n\nThis is a deeply personal and spontaneous piece that I drew from the heart. I hope this truly unique creation resonates with you and brings a touch of serenity to your home.', details: 'A3 size (29.7 x 42 cm) • 240 gsm Paper • 9 Hours of Work • Original artwork from imagination.', price: 'Private collection' },
@@ -111,6 +122,30 @@
         finalLabel: "Final",
         stepsLabel: "steps",
         items: ["The ice cream break", "An unexpected refuge", "Brotherly bond", "Equine wisdom", "The Princess", "Under the foliage", "Imaginary portrait"]
+      },
+      actions: {
+        eyebrow: 'Beyond the drawing',
+        title: 'Our volunteer actions',
+        lead: 'Every drawing carries a little more than graphite and paper. It helps bring practical support, attention and moments of joy to children in Algeria.',
+        impact: 'of the profits from drawing sales go towards funding volunteer initiatives, mainly in hospitals and centres in Algeria.',
+        sectionTitle: 'Where the proceeds go',
+        p1: 'Sales help fund different actions and needs depending on each project: equipment and supplies, games, clown activities, meals adapted for children, and other initiatives designed to bring them a little joy and comfort.',
+        p2: 'These actions are carried out on a voluntary and personal basis. When sales do not cover the necessary expenses, we complete the funding ourselves. We also sometimes organise volunteer days without having made sales beforehand.',
+        p3: "Our greatest reward remains simple: seeing a smile appear on a child's face, even for just one day.",
+        p4: 'Today, our team includes three people committed to this project. Together, we organise and take part in the different actions on the ground.',
+        caption1: 'The work begins here',
+        caption2: 'A reason to care',
+        caption3: 'A little joy, shared',
+        album1: 'Mohammadia Prevention and Psychotherapy Center',
+        album2: 'EHS El Hadi Flici (Formerly El Kettar) - Algiers',
+        album2Subtitle: 'Paediatric infectious diseases - Pasteur-Widal ward',
+        album3: 'Hot meal distribution campaign during the cold-weather period',
+        album3Subtitle: 'In partnership with the Algerian Red Crescent',
+        albumWaiting: 'Album awaiting its photos.',
+        albumStatus: 'Photos to come',
+        albumOpen: 'View album',
+        team: 'A small team, a personal commitment, and actions built with care, one project at a time.',
+        teamCount: '3 people on the ground'
     },
     },
     fr: {
@@ -119,11 +154,12 @@
         art: { title: "Galerie — Portfolio d'art de Stéphanie", description: "Explorez la galerie de Stéphanie : études de portraits, art animalier et dessins uniques au graphite." },
         about: { title: "À propos — Portfolio d'art de Stéphanie", description: "Découvrez le parcours artistique de Stéphanie, ses techniques mêlant graphite et fusain, et son atelier de dessin traditionnel." },
         contact: { title: "Contact — Portfolio d'art de Stéphanie", description: "Contactez Stéphanie pour des portraits, illustrations au graphite sur mesure et commandes de dessins au crayon et au fusain." },
+        actions: { title: "Nos actions — Portfolio d'art de Stéphanie", description: "Découvrez comment 100 % des bénéfices issus de la vente des dessins financent des actions de bénévolat pour les enfants en Algérie." },
         process: {
           title: "Coulisses — Portfolio d'art de Stéphanie", description: "Découvrez les différentes étapes de création des dessins de Stéphanie."
     }
     },
-      nav: { home: 'Accueil', gallery: 'Galerie', process: "Coulisses", about: 'À propos', contact: 'Contact' },
+      nav: { home: 'Accueil', gallery: 'Galerie', actions: 'Nos actions', process: "Coulisses", about: 'À propos', contact: 'Contact' },
       lang: { label: 'Choisir la langue' },
       footer: {
         brand: "L'art de Stéphanie",
@@ -148,7 +184,13 @@
         card3Desc: 'Une exploration de la texture, du contraste et de la lumière par un travail minutieux au crayon.',
         aboutTitle: 'Mon travail',
         aboutText: 'Toutes les œuvres présentées ici sont dessinées à la main au crayon graphite et au crayon fusain sur papier. Une attention particulière est portée à la texture, au contraste et à l\'expression afin de créer des dessins riches en caractère, en émotion et en détails.',
-        quote: '« Chaque trait de crayon raconte une histoire. »'
+        quote: '« Chaque trait de crayon raconte une histoire. »',
+        beyondTitle: 'Au-delà du dessin',
+        beyondLead: 'Et si certains dessins pouvaient raconter une histoire qui va encore plus loin ?',
+        beyondP1: 'Peut-être celle d’une histoire qui ne s’arrête pas au dernier trait de crayon.',
+        beyondP2: 'Une histoire qui se poursuit en Algérie, auprès d’enfants que nous rencontrons dans des hôpitaux et des centres, à travers des journées de bénévolat pensées pour leur apporter un peu de joie, de réconfort et d’attention.',
+        beyondP3: 'Nous sommes trois à faire vivre ce projet à titre personnel et bénévole. Les bénéfices issus de la vente des dessins contribuent à financer ces actions et les différents besoins qu’elles nécessitent.',
+        beyondP4: 'Parce qu’un dessin peut être une œuvre et devenir le point de départ de quelque chose de concret.'
       },
       about: {
         title: 'À propos',
@@ -189,6 +231,10 @@
         next: 'Suivant',
         goToDrawing: 'Aller au dessin',
         privateCollection: 'Collection privée',
+        recCaption: 'Quelques dessins chez moi',
+        recTitle: 'Une recommandation d’encadrement',
+        recP1: 'Je recommande de présenter les dessins avec un passe-partout. Il laisse au dessin l’espace dont il a besoin pour respirer, et crée une petite distance autour de l’œuvre, comme un silence qui permet au regard de mieux la rencontrer.',
+        recP2: 'Voici trois dessins installés chez moi, pour vous donner une idée du rendu. Ensuite, libre à vous de choisir le cadre qui s’accordera le mieux à votre intérieur.',
         items: [
           { nom: 'Innocence capturée', description: 'Ce portrait met en valeur la fraîcheur et la spontanéité de l\'enfance. Le regard direct de l\'enfant, accompagné d\'un sourire subtil et encadré par une cascade de boucles, donne à la composition une présence naturelle et engageante.\n\nUne attention particulière a été portée aux yeux pour capturer leur intensité et leur vivacité. Le rendu des boucles a représenté un défi technique agréable, chaque mèche étant soigneusement développée par de subtils contrastes de lumière et d\'ombre pour créer profondeur et mouvement. L\'arrière-plan a été volontairement adouci pour attirer l\'attention sur le visage et renforcer l\'impact global du portrait.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre originale cherche avant tout à préserver l\'authenticité et la sincérité d\'un instant fugace.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 11 heures de travail • Œuvre originale', price: 'Vendu' },
           { nom: 'Un visage né de l\'imagination', description: 'Ce portrait a une histoire très particulière pour moi. Contrairement à mon processus habituel, il est né entièrement de mon imagination, sans photo ni modèle de référence. Mon désir était de donner vie à un visage doux qui n\'existait que dans mon esprit.\n\nJ\'ai pris grand plaisir à modeler délicatement ses traits, en cherchant à capturer une expression sereine et un sourire léger et réconfortant. Travailler ses cheveux lisses m\'a permis d\'encadrer son visage de lumière, et j\'ai opté pour un arrière-plan légèrement flou afin que l\'attention du spectateur soit naturellement attirée, sans distraction, vers la clarté de ses yeux.\n\nC\'est une pièce profondément personnelle et spontanée, dessinée du cœur. J\'espère que cette création vraiment unique vous parlera et apportera une touche de sérénité chez vous.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 9 heures de travail • Œuvre originale d\'imagination', price: 'Collection privée' },
@@ -212,6 +258,35 @@
           { nom: 'Petit rêveur', description: 'Ce portrait capture un petit garçon absorbé dans ses pensées, le doigt porté à la bouche dans un geste spontané et attendrissant. Son regard tourné vers l\'horizon, à la fois curieux et rêveur, donne au portrait une douceur et une certaine intériorité.\n\nUne attention particulière a été portée aux cheveux, travaillés en fines mèches pour rendre leur texture et leur mouvement, ainsi qu\'aux traits délicats de son visage, tout en rondeur et en fraîcheur enfantine. Le contraste entre les zones sombres du vêtement et la clarté de la peau met en valeur le profil et renforce la présence du portrait.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre originale cherche à saisir la simplicité émouvante d\'un instant d\'enfance.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 7 heures de travail • Œuvre originale', price: '140 €' },
           { nom: 'Regard suspendu', description: 'Ce portrait capture toute l\'innocence d\'un jeune enfant allongé sur ses bras, le regard grand ouvert et posé droit sur le spectateur. Impossible de ne pas remarquer en premier cette coiffure en épis, dressée dans tous les sens comme si le vent ou une bonne sieste venait tout juste de passer par là !\n\nUne attention particulière a été portée à ces mèches rebelles pour leur donner du volume et du caractère, presque électriques. Ses grands yeux apportent ensuite toute la douceur et la candeur propres à la petite enfance, en contraste avec cette coiffure pleine d\'énergie. Les petites mains jointes et le tissu à motifs fleuris du vêtement complètent ce moment de vie tout simple.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre originale cherche à capturer, avec un brin d\'humour, la fraîcheur d\'un instant d\'enfance.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 12 heures de travail • Œuvre originale', price: '230 €' }
         ]
+      },
+      actions: {
+        eyebrow: 'Au-delà du dessin',
+        title: 'Nos actions de bénévolat',
+        lead: 'Chaque dessin porte un peu plus que du graphite et du papier. Il contribue à apporter un soutien concret, de l\'attention et des moments de joie aux enfants en Algérie.',
+        impact: 'des bénéfices issus de la vente des dessins servent à financer des actions de bénévolat, principalement dans des hôpitaux et des centres en Algérie.',
+        sectionTitle: 'À quoi servent les bénéfices',
+        p1: 'Les ventes permettent de financer différentes actions et besoins selon les projets : achat de matériel et de fournitures, jeux, animations avec des clowns, repas adaptés aux enfants, ainsi que d\'autres initiatives destinées à leur apporter un peu de joie et de réconfort.',
+        p2: 'Nous tenons à préciser que ces actions sont réalisées à titre bénévole et personnel. Lorsque les ventes ne couvrent pas les dépenses nécessaires, nous complétons nous-mêmes le financement. Il nous arrive également d\'organiser des journées de bénévolat sans avoir réalisé de ventes au préalable.',
+        p3: 'Notre plus grande récompense reste simple : voir apparaître un sourire sur le visage d\'un enfant, même le temps d\'une journée.',
+        p4: 'Aujourd\'hui, notre équipe compte trois personnes investies dans ce projet. Ensemble, nous organisons et participons aux différentes actions sur le terrain.',
+        caption1: 'Tout commence ici',
+        caption2: 'Une raison de s\'engager',
+        caption3: 'Un peu de joie, partagée',
+        eventTitle: 'Quelques actions en images',
+        album1: 'Centre de prévention et de psychothérapie de Mohammadia',
+        album2: 'EHS El Hadi Flici (Ex-El Kettar) - Alger',
+        album2Subtitle: 'Maladies infectieuses pédiatriques - Pavillon Pasteur-Widal',
+        album3: 'Campagne de distribution de repas chauds pendant la période de grand froid',
+        album3Subtitle: 'En partenariat avec le Croissant-Rouge algérien',
+        album3: 'Événement à nommer',
+        album4: 'Événement à nommer',
+        album5: 'Événement à nommer',
+        album6: 'Événement à nommer',
+        albumWaiting: 'Album en attente de ses photos.',
+        albumStatus: 'Photos à venir',
+        albumOpen: 'Voir l\'album',
+        team: 'Une petite équipe, un engagement personnel et des actions construites avec soin, projet après projet.',
+        teamCount: '3 personnes sur le terrain'
       },
       process: {
         title: "Processus",
@@ -237,6 +312,7 @@ function detectPage() {
   if (path === 'about.html') return 'about';
   if (path === 'contact.html') return 'contact';
   if (path === 'process.html') return 'process';
+  if (path === 'actions.html') return 'actions';
   return 'index';
 }
 

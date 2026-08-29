@@ -443,7 +443,7 @@
 
         .about-preview {
             max-width: 900px;
-            margin: 100px auto;
+            margin: 60px auto 20px;
             padding: 0 40px;
             animation: fadeUp 1.4s ease;
         }
@@ -451,27 +451,85 @@
         .about-preview p {
             text-align: justify;
             text-justify: inter-word;
-            line-height: 2;
+            line-height: 1.8;
+            color: #6f675f;
+            font-size: 1.05rem;
         }
 
         .about-preview h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.8rem;
             color: #c1693c;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .quote {
             text-align: center;
-            padding: 80px 30px;
-            font-size: 1.7rem;
+            padding: 35px 30px;
+            font-size: 1.6rem;
             font-style: italic;
-            color: #666;
+            color: #5a5248;
             animation: fadeUp 1.6s ease;
             transition: .4s;
         }
 
         .quote:hover {
-            transform: scale(1.03);
-            letter-spacing: 1px;
+            transform: scale(1.02);
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+           BEYOND THE DRAWING
+        ========================= */
+
+        .beyond-drawing {
+            max-width: 900px;
+            margin: 10px auto 50px;
+            padding: 0 40px;
+            animation: fadeUp 1.6s ease;
+        }
+
+        .beyond-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.8rem;
+            color: #c1693c;
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .beyond-lead {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2b2420;
+            margin-bottom: 14px;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .beyond-drawing p {
+            color: #6f675f;
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-size: 1.02rem;
+        }
+
+        .beyond-drawing p.beyond-conclusion {
+            font-family: 'Arial', sans-serif;
+            color: #2b2420;
+            font-size: 1.3rem;
+            font-weight: bold;
+            font-style: italic;
+            border-left: 3px solid #c1693c;
+            padding: 4px 0 4px 22px;
+            margin-top: 20px;
+            margin-bottom: 0;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         .big-tagline {
@@ -742,6 +800,58 @@
                 font-size: clamp(0.5rem, 3.2vw, 0.95rem);
             }
 
+            .about-preview {
+                margin: 40px auto 15px;
+                padding: 0 20px;
+            }
+
+            .about-preview h2 {
+                font-size: 1.4rem;
+            }
+
+            .about-preview p {
+                font-size: 0.95rem;
+                line-height: 1.65;
+            }
+
+            .quote {
+                padding: 25px 20px;
+                font-size: 1.25rem;
+            }
+
+            .beyond-drawing {
+                margin: 5px auto 40px;
+                padding: 0 20px;
+            }
+
+            .beyond-title {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+
+            .beyond-lead {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .beyond-drawing p {
+                font-size: 0.95rem;
+                line-height: 1.65;
+                margin-bottom: 10px;
+            }
+
+            .beyond-drawing p.beyond-conclusion {
+                font-family: 'Arial', sans-serif;
+                font-size: 1.15rem;
+                font-weight: bold;
+                font-style: italic;
+                padding: 2px 0 2px 16px;
+                margin-top: 14px;
+                line-height: 1.55;
+                text-align: justify;
+                text-justify: inter-word;
+            }
+
             .big-tagline {
                 padding: 20px;
                 text-align: left;
@@ -815,6 +925,7 @@
             <div class="nav-links" id="navLinks">
                 <a href="index.html" data-i18n="nav.home">Home</a>
                 <a href="art.html" data-i18n="nav.gallery">Gallery</a>
+                <a href="actions.html" data-i18n="nav.actions">Our actions</a>
                 <a href="process.html" data-i18n="nav.process">Process</a>
                 <a href="about.html" data-i18n="nav.about">About</a>
                 <a href="contact.html" data-i18n="nav.contact">Contact</a>
@@ -902,6 +1013,15 @@
         "Every pencil stroke tells a story."
     </section>
 
+    <section class="beyond-drawing">
+        <h2 class="beyond-title" data-i18n="index.beyondTitle">Beyond the drawing</h2>
+        <p class="beyond-lead" data-i18n="index.beyondLead">What if some drawings could tell a story that goes even further?</p>
+        <p data-i18n="index.beyondP1">Perhaps a story that doesn't end with the final pencil stroke.</p>
+        <p data-i18n="index.beyondP2">A story that continues in Algeria, with children we meet in hospitals and care centres, through volunteer days designed to bring them a little joy, comfort, and attention.</p>
+        <p data-i18n="index.beyondP3">Three of us bring this project to life on a personal, volunteer basis. Profits from the sale of drawings help fund these initiatives and the various needs they require.</p>
+        <p class="beyond-conclusion" data-i18n="index.beyondP4">Because a drawing can be a piece of art and become the starting point for something tangible.</p>
+    </section>
+
     <div class="big-tagline">
         <h2>Art<br>Portfolio</h2>
     </div>
@@ -919,6 +1039,7 @@
                 <ul>
                     <li><a href="index.html" data-i18n="nav.home">Home</a></li>
                     <li><a href="art.html" data-i18n="nav.gallery">Gallery</a></li>
+                    <li><a href="actions.html" data-i18n="nav.actions">Our actions</a></li>
                     <li><a href="process.html" data-i18n="nav.process">Process</a></li>
                     <li><a href="about.html" data-i18n="nav.about">About</a></li>
                     <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
