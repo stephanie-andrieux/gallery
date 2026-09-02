@@ -131,7 +131,7 @@
     ============================== */
     .impact-band {
       background: #2b2420;
-      padding: 28px 40px;
+      padding: 18px 40px;
     }
     .impact-inner {
       max-width: 1100px;
@@ -143,20 +143,20 @@
     .impact-number {
       font-family: 'Archivo Black', sans-serif;
       color: #c1693c;
-      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
       line-height: 1;
       white-space: nowrap;
       flex-shrink: 0;
     }
     .impact-divider {
       width: 1px;
-      height: 44px;
+      height: 36px;
       background: rgba(250, 246, 239, 0.25);
       flex-shrink: 0;
     }
     .impact-copy {
       color: rgba(250, 246, 239, 0.88);
-      font-size: 1rem;
+      font-size: 0.92rem;
       line-height: 1.65;
     }
 
@@ -262,7 +262,7 @@
     /* Albums */
     .event-albums {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 28px;
     }
     .event-album {
@@ -431,10 +431,10 @@
       .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
       .actions-hero { padding: 38px 20px 30px; }
-      .impact-band { padding: 22px 20px; }
+      .impact-band { padding: 16px 20px; }
       .impact-inner { gap: 16px; }
-      .impact-number { font-size: 2.4rem; }
-      .impact-divider { height: 32px; }
+      .impact-number { font-size: 1.8rem; }
+      .impact-divider { height: 28px; }
 
       .actions-main { padding: 0 20px 60px; }
       .content-block { padding-top: 44px; margin-top: 44px; }
@@ -494,11 +494,11 @@
 
     <!-- HERO -->
     <section class="actions-hero">
-      <p class="eyebrow">Au-del&agrave; du dessin&hellip;</p>
-      <h1>Nos actions de b&eacute;n&eacute;volat</h1>
+      <h1 data-i18n="actions.title">Nos actions de b&eacute;n&eacute;volat</h1>
       <div class="hero-body">
-        <p>Chaque dessin peut aller un peu plus loin que le papier sur lequel il est cr&eacute;&eacute;.</p>
-        <p>&Agrave; travers ce projet personnel et b&eacute;n&eacute;vole, nous sommes trois &agrave; utiliser notre passion et notre &eacute;nergie pour mener des actions en Alg&eacute;rie aupr&egrave;s d&rsquo;enfants dans des h&ocirc;pitaux et des centres.</p>
+        <h2 data-i18n="actions.subtitle">Des dessins qui deviennent des moments partag&eacute;s</h2>
+        <p data-i18n="actions.lead">Chaque dessin peut aller un peu plus loin que le papier sur lequel il est cr&eacute;&eacute;.</p>
+        <p data-i18n="actions.intro">&Agrave; travers ce projet personnel et b&eacute;n&eacute;vole, nous sommes trois &agrave; faire vivre une m&ecirc;me id&eacute;e&nbsp;: faire le lien entre nos dessins et des moments de partage aupr&egrave;s d&rsquo;enfants que nous rencontrons en Alg&eacute;rie, dans des h&ocirc;pitaux et des centres.</p>
       </div>
     </section>
 
@@ -507,7 +507,7 @@
       <div class="impact-inner">
         <p class="impact-number">100&nbsp;%</p>
         <div class="impact-divider"></div>
-        <p class="impact-copy">de chaque vente de dessin est consacr&eacute; &agrave; nos actions de b&eacute;n&eacute;volat.</p>
+        <p class="impact-copy" data-i18n="actions.impact">de chaque vente de dessins est consacr&eacute; &agrave; nos actions de b&eacute;n&eacute;volat.</p>
       </div>
     </div>
 
@@ -516,51 +516,36 @@
 
       <!-- Pourquoi l'Algerie ? -->
       <div class="content-block">
-        <h2>Pourquoi l&rsquo;Alg&eacute;rie&nbsp;?</h2>
-        <p>L&rsquo;Alg&eacute;rie est le pays o&ugrave; je suis n&eacute;e. C&rsquo;est un pays auquel je suis attach&eacute;e et qui fait partie de mon histoire.</p>
-        <p>Il m&rsquo;a offert beaucoup, et j&rsquo;ai ressenti l&rsquo;envie de donner &agrave; mon tour, &agrave; ma mani&egrave;re et &agrave; mon &eacute;chelle.</p>
-        <p>C&rsquo;est de cette envie qu&rsquo;est n&eacute; ce projet&nbsp;: faire le lien entre mes dessins et des actions concr&egrave;tes sur le terrain, pour apporter un peu de soutien, de r&eacute;confort et de joie aux enfants.</p>
+        <h2 data-i18n="actions.whyTitle">Pourquoi l&rsquo;Alg&eacute;rie&nbsp;?</h2>
+        <p data-i18n="actions.whyP1">L&rsquo;Alg&eacute;rie est le pays o&ugrave; je suis n&eacute;e. C&rsquo;est un pays qui fait partie de mon histoire.</p>
+        <p data-i18n="actions.whyP2">Il m&rsquo;a offert beaucoup, et j&rsquo;ai ressenti l&rsquo;envie de donner &agrave; mon tour, &agrave; ma mani&egrave;re et &agrave; mon &eacute;chelle.</p>
       </div>
 
       <!-- Comment fonctionne le projet ? -->
       <div class="content-block">
-        <h2>Comment fonctionne le projet&nbsp;?</h2>
-        <p>Les dessins pr&eacute;sent&eacute;s sur ce site sont propos&eacute;s &agrave; la vente.</p>
-        <p>Les b&eacute;n&eacute;fices issus de leur vente contribuent au financement de nos actions de b&eacute;n&eacute;volat en Alg&eacute;rie.</p>
-        <p>Nous organisons et participons nous-m&ecirc;mes &agrave; ces actions, &agrave; titre enti&egrave;rement personnel et b&eacute;n&eacute;vole. Lorsque les ventes ne suffisent pas &agrave; couvrir les besoins d&rsquo;une action, nous compl&eacute;tons nous-m&ecirc;mes le financement. Certaines journ&eacute;es sont &eacute;galement organis&eacute;es sans qu&rsquo;une vente ait &eacute;t&eacute; r&eacute;alis&eacute;e au pr&eacute;alable.</p>
+        <h2 data-i18n="actions.howTitle">Comment fonctionne le projet&nbsp;?</h2>
+        <p data-i18n="actions.howP1">Les dessins pr&eacute;sent&eacute;s sur ce site sont propos&eacute;s &agrave; la vente.</p>
+        <p data-i18n="actions.howP2">Les b&eacute;n&eacute;fices issus des ventes contribuent au financement de nos journ&eacute;es de b&eacute;n&eacute;volat. Nous organisons et participons nous-m&ecirc;mes &agrave; ces journ&eacute;es, &agrave; titre personnel et b&eacute;n&eacute;vole.</p>
       </div>
 
-      <!-- A quoi servent les benefices ? -->
+      <!-- Une journee aupres des enfants -->
       <div class="content-block">
-        <h2>&Agrave; quoi servent les b&eacute;n&eacute;fices&nbsp;?</h2>
-        <p>Les b&eacute;n&eacute;fices des ventes permettent notamment de pr&eacute;parer et de financer les diff&eacute;rentes &eacute;tapes de nos journ&eacute;es&nbsp;: animations, go&ucirc;ters ou collations, cadeaux destin&eacute;s aux enfants, ainsi que le mat&eacute;riel et les fournitures n&eacute;cessaires aux actions.</p>
-        <p>Chaque projet est pr&eacute;par&eacute; en amont avec la structure qui nous accueille, afin d&rsquo;adapter au mieux ce que nous proposons aux enfants pr&eacute;sents.</p>
-      </div>
-
-      <!-- Des journees pensees pour chaque enfant -->
-      <div class="content-block">
-        <h2>Des journ&eacute;es pens&eacute;es pour chaque enfant</h2>
-        <p>Une journ&eacute;e commence g&eacute;n&eacute;ralement en d&eacute;but d&rsquo;apr&egrave;s-midi et se poursuit jusqu&rsquo;en fin de journ&eacute;e.</p>
-        <p>Nous sommes accompagn&eacute;s de deux clowns qui animent l&rsquo;apr&egrave;s-midi avec diff&eacute;rents jeux et spectacles&nbsp;: magie, tours de cartes, musique, ballons et autres animations adapt&eacute;es aux enfants.</p>
-        <p>Apr&egrave;s les animations, nous partageons un go&ucirc;ter avec les enfants, tout en continuant &agrave; profiter de ces moments de convivialit&eacute;.</p>
-        <p>Puis vient le moment des cadeaux.</p>
-        <p>Rien n&rsquo;est choisi au hasard. En amont de chaque action, nous demandons &agrave; la structure la liste des enfants pr&eacute;sents, leur &acirc;ge et, lorsque cela est n&eacute;cessaire, les &eacute;ventuelles allergies ou contraintes particuli&egrave;res.</p>
-        <p>Nous pr&eacute;parons ainsi des cadeaux adapt&eacute;s &agrave; chaque enfant, en tenant compte de son &acirc;ge et de ses besoins.</p>
-        <p>Pour le go&ucirc;ter &eacute;galement, nous veillons &agrave; prendre en compte les &eacute;ventuelles allergies ou intol&eacute;rances qui nous sont signal&eacute;es.</p>
-        <p>Enfin, lorsque la journ&eacute;e collective se termine, les enfants regagnent leur chambre. Nous passons alors de chambre en chambre pour remettre &agrave; chacun le cadeau qui lui a &eacute;t&eacute; personnellement choisi, en tenant compte de son &acirc;ge et de ses particularit&eacute;s. Ce moment nous permet de prendre le temps d&rsquo;&eacute;changer individuellement avec les enfants et leurs familles, de partager quelques mots et de prolonger autrement cette journ&eacute;e.</p>
+        <h2 data-i18n="actions.dayTitle">Une journ&eacute;e aupr&egrave;s des enfants</h2>
+        <p data-i18n="actions.dayP1">Chaque journ&eacute;e est pr&eacute;par&eacute;e en amont avec la structure qui nous accueille, afin de nous adapter au mieux aux enfants pr&eacute;sents.</p>
+        <p data-i18n="actions.dayP2">L&rsquo;apr&egrave;s-midi est g&eacute;n&eacute;ralement rythm&eacute; par des jeux, du dessin, de la magie, de la musique, des sculptures sur ballons et des spectacles de marionnettes, propos&eacute;es par deux clowns qui nous accompagnent.</p>
+        <p data-i18n="actions.dayP3">Vient ensuite le temps du go&ucirc;ter, adapt&eacute; aux &eacute;ventuelles allergies signal&eacute;es, puis celui de la remise des cadeaux.</p>
+        <p data-i18n="actions.dayP4">Lorsque les animations collectives se terminent, nous prenons le temps de passer dans les chambres pour remettre &agrave; chaque enfant un cadeau personnalis&eacute;, choisi avec attention en tenant compte de son &acirc;ge et de ses besoins. Ces moments plus personnels nous permettent de prendre le temps d&rsquo;&eacute;changer avec les enfants et leurs familles, de partager quelques mots et de prolonger autrement cette journ&eacute;e.</p>
       </div>
 
       <!-- Nos actions sur le terrain + Albums -->
       <section class="event-gallery" aria-labelledby="event-gallery-title">
 
         <div class="event-gallery-header">
-          <h2 id="event-gallery-title">Nos actions sur le terrain</h2>
+          <h2 id="event-gallery-title" data-i18n="actions.momentsTitle">Quelques moments partag&eacute;s</h2>
         </div>
 
         <div class="event-gallery-intro">
-          <p>Au fil du temps, nous partageons ici certaines des actions que nous avons eu la chance de r&eacute;aliser, &agrave; travers quelques images.</p>
-          <p>Ces moments sont pr&eacute;cieux pour nous, et nous souhaitons vous en faire d&eacute;couvrir une partie, simplement, tels que nous les avons v&eacute;cus.</p>
-          <p class="event-gallery-quote">Parce qu&rsquo;au-del&agrave; de ce que nous pouvons apporter, ce sont aussi les sourires, les regards et les moments partag&eacute;s qui restent avec nous.</p>
+          <p data-i18n="actions.momentsText">Quelques souvenirs de nos journ&eacute;es aupr&egrave;s des enfants.</p>
         </div>
 
         <p class="albums-label" data-i18n="actions.eventTitle">Quelques actions en images</p>
@@ -590,35 +575,22 @@
             <div class="event-album-body">
               <span class="event-album-number">03</span>
               <div>
-                <h3 data-i18n="actions.album3">Campagne de distribution de repas chauds pendant la p&eacute;riode de grand froid</h3>
+                <h3 data-i18n="actions.album3">Distribution de repas chauds</h3>
                 <p data-i18n="actions.album3Subtitle">En partenariat avec le Croissant-Rouge alg&eacute;rien</p>
               </div>
               <span class="event-album-status" data-i18n="actions.albumOpen">Voir l&rsquo;album</span>
             </div>
           </article>
-          <article class="event-album">
-            <span class="event-album-number">04</span>
-            <div>
-              <h3 data-i18n="actions.album4">&Agrave; venir</h3>
-              <p data-i18n="actions.albumWaiting">Album en attente de photos.</p>
+          <article class="event-album has-photos long-title" id="maillot-album" tabindex="0" role="button" aria-controls="maillot-modal">
+            <img class="event-album-cover" src="Images/Maillot.webp" alt="" loading="lazy">
+            <div class="event-album-body">
+              <span class="event-album-number">04</span>
+              <div>
+                <h3 data-i18n="actions.album4">CHU Mohamed-Lamine-Debaghine (Ex-hôpital Maillot) - Alger</h3>
+                <p data-i18n="actions.album4Subtitle">Service de pédiatrie.</p>
+              </div>
+              <span class="event-album-status" data-i18n="actions.albumOpen">Voir l&rsquo;album</span>
             </div>
-            <span class="event-album-status" data-i18n="actions.albumStatus">Photos &agrave; venir</span>
-          </article>
-          <article class="event-album">
-            <span class="event-album-number">05</span>
-            <div>
-              <h3 data-i18n="actions.album5">&Agrave; venir</h3>
-              <p data-i18n="actions.albumWaiting">Album en attente de photos.</p>
-            </div>
-            <span class="event-album-status" data-i18n="actions.albumStatus">Photos &agrave; venir</span>
-          </article>
-          <article class="event-album">
-            <span class="event-album-number">06</span>
-            <div>
-              <h3 data-i18n="actions.album6">&Agrave; venir</h3>
-              <p data-i18n="actions.albumWaiting">Album en attente de photos.</p>
-            </div>
-            <span class="event-album-status" data-i18n="actions.albumStatus">Photos &agrave; venir</span>
           </article>
         </div>
 
@@ -634,7 +606,7 @@
       <img class="album-modal-image" id="album-modal-image" src="Images/Mohammadia1.webp" alt="Mohammadia event, photo 1">
       <button class="album-modal-control prev" id="album-prev" type="button" aria-label="Previous photo">&#8249;</button>
       <button class="album-modal-control next" id="album-next" type="button" aria-label="Next photo">&#8250;</button>
-      <div class="album-modal-meta"><span id="album-modal-title">Mohammadia</span><span id="album-modal-counter">01 / 13</span></div>
+      <div class="album-modal-meta"><span id="album-modal-title">Mohammadia</span><span id="album-modal-counter">01 / 16</span></div>
     </div>
   </div>
   <div class="album-modal" id="ehs-modal" role="dialog" aria-modal="true" aria-labelledby="ehs-modal-title">
@@ -643,7 +615,7 @@
       <img class="album-modal-image" id="ehs-modal-image" src="Images/EHS.webp" alt="EHS El Hadi Flici, photo 1">
       <button class="album-modal-control prev" id="ehs-prev" type="button" aria-label="Previous photo">&#8249;</button>
       <button class="album-modal-control next" id="ehs-next" type="button" aria-label="Next photo">&#8250;</button>
-      <div class="album-modal-meta"><span id="ehs-modal-title">EHS El Hadi Flici</span><span id="ehs-modal-counter">01 / 14</span></div>
+      <div class="album-modal-meta"><span id="ehs-modal-title">EHS El Hadi Flici</span><span id="ehs-modal-counter">01 / 15</span></div>
     </div>
   </div>
   <div class="album-modal" id="cra-modal" role="dialog" aria-modal="true" aria-labelledby="cra-modal-title">
@@ -653,6 +625,15 @@
       <button class="album-modal-control prev" id="cra-prev" type="button" aria-label="Previous photo">&#8249;</button>
       <button class="album-modal-control next" id="cra-next" type="button" aria-label="Next photo">&#8250;</button>
       <div class="album-modal-meta"><span id="cra-modal-title">CRA</span><span id="cra-modal-counter">01 / 7</span></div>
+    </div>
+  </div>
+  <div class="album-modal" id="maillot-modal" role="dialog" aria-modal="true" aria-labelledby="maillot-modal-title">
+    <div class="album-modal-content">
+      <button class="album-modal-close" id="maillot-modal-close" type="button" aria-label="Close">&times;</button>
+      <img class="album-modal-image" id="maillot-modal-image" src="Images/Maillot.webp" alt="CHU Mohamed-Lamine-Debaghine, photo 1">
+      <button class="album-modal-control prev" id="maillot-prev" type="button" aria-label="Previous photo">&#8249;</button>
+      <button class="album-modal-control next" id="maillot-next" type="button" aria-label="Next photo">&#8250;</button>
+      <div class="album-modal-meta"><span id="maillot-modal-title">CHU Mohamed-Lamine-Debaghine</span><span id="maillot-modal-counter">01 / 11</span></div>
     </div>
   </div>
 
@@ -734,10 +715,33 @@
     })();
   </script>
 
+  <!-- Album Maillot -->
+  <script>
+    (function () {
+      var sources = ['Images/Maillot.webp'].concat(Array.from({ length: 10 }, function (_, i) { return 'Images/Maillot' + (i + 1) + '.webp'; }));
+      var album = document.getElementById('maillot-album');
+      var modal = document.getElementById('maillot-modal');
+      var image = document.getElementById('maillot-modal-image');
+      var counter = document.getElementById('maillot-modal-counter');
+      var current = 0;
+      if (!album || !modal || !image || !counter) return;
+      function show(i) { current = (i + sources.length) % sources.length; image.src = sources[current]; image.alt = 'CHU Mohamed-Lamine-Debaghine, photo ' + (current + 1); counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + sources.length; }
+      function open() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function close() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+      album.addEventListener('click', open);
+      album.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      document.getElementById('maillot-prev').addEventListener('click', function () { show(current - 1); });
+      document.getElementById('maillot-next').addEventListener('click', function () { show(current + 1); });
+      document.getElementById('maillot-modal-close').addEventListener('click', close);
+      modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+      document.addEventListener('keydown', function (e) { if (!modal.classList.contains('open')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(current - 1); if (e.key === 'ArrowRight') show(current + 1); });
+    })();
+  </script>
+
   <!-- Album EHS -->
   <script>
     (function () {
-      var sources = ['Images/EHS.webp'].concat(Array.from({ length: 13 }, function (_, i) { return 'Images/EHS' + (i + 1) + '.webp'; }));
+      var sources = ['Images/EHS.webp'].concat(Array.from({ length: 14 }, function (_, i) { return 'Images/EHS' + (i + 1) + '.webp'; }));
       var album = document.getElementById('ehs-album');
       var modal = document.getElementById('ehs-modal');
       var image = document.getElementById('ehs-modal-image');
@@ -760,7 +764,24 @@
   <!-- Album Mohammadia -->
   <script>
     (function () {
-      var sources = Array.from({ length: 13 }, function (_, i) { return 'Images/Mohammadia' + (i + 1) + '.webp'; });
+      var sources = [
+        'Images/Mohammadia.webp',
+        'Images/Mohammadia1.webp',
+        'Images/Mohammadia2.webp',
+        'Images/Mohammadia3.webp',
+        'Images/Mohammadia4.webp',
+        'Images/Mohammadia5.webp',
+        'Images/Mohammadia6.webp',
+        'Images/Mohammadia6a.webp',
+        'Images/Mohammadia7.webp',
+        'Images/Mohammadia8.webp',
+        'Images/Mohammadia9.webp',
+        'Images/Mohammadia9a.webp',
+        'Images/Mohammadia10.webp',
+        'Images/Mohammadia11.webp',
+        'Images/Mohammadia12.webp',
+        'Images/Mohammadia13.webp'
+      ];
       var album = document.getElementById('mohammadia-album');
       var modal = document.getElementById('album-modal');
       var image = document.getElementById('album-modal-image');

@@ -8,8 +8,12 @@
     <meta name="description"
         content="Explore Stephanie's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions.">
 
-    <style>html{background:#000;}</style>
-    <script>(function(){var l;try{l=localStorage.getItem('stephanie-art-lang');}catch(e){}if(l!=='en'&&l!=='fr'){l=(navigator.language||'').slice(0,2)==='fr'?'fr':'en';}document.documentElement.lang=l;document.documentElement.classList.add('i18n-loading');})();</script>
+    <style>
+        html {
+            background: #000;
+        }
+    </style>
+    <script>(function () { var l; try { l = localStorage.getItem('stephanie-art-lang'); } catch (e) { } if (l !== 'en' && l !== 'fr') { l = (navigator.language || '').slice(0, 2) === 'fr' ? 'fr' : 'en'; } document.documentElement.lang = l; document.documentElement.classList.add('i18n-loading'); })();</script>
 
     <link rel="icon" type="image/webp" href="Images/Logo.webp">
     <link rel="canonical" href="https://stephanie-andrieux.github.io/gallery/index.html">
@@ -17,7 +21,8 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Stephanie's Art Portfolio">
     <meta property="og:title" content="Stephanie's Art Portfolio">
-    <meta property="og:description" content="Explore Stephanie's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions.">
+    <meta property="og:description"
+        content="Explore Stephanie's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions.">
     <meta property="og:url" content="https://stephanie-andrieux.github.io/gallery/index.html">
     <meta property="og:image" content="https://stephanie-andrieux.github.io/gallery/Images/Dessin1.webp">
     <meta property="og:locale" content="en_US">
@@ -25,13 +30,17 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Stephanie's Art Portfolio">
-    <meta name="twitter:description" content="Explore Stephanie's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions.">
+    <meta name="twitter:description"
+        content="Explore Stephanie's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions.">
     <meta name="twitter:image" content="https://stephanie-andrieux.github.io/gallery/Images/Dessin1.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    </noscript>
     <link rel="stylesheet" href="language.css">
 
     <style>
@@ -51,23 +60,24 @@
             z-index: 9999;
             transition: opacity 0.8s ease, visibility 0.8s ease;
         }
-        
+
         .splash-screen.hidden {
             opacity: 0;
             visibility: hidden;
         }
-        
+
         .splash-screen img {
             max-width: 50%;
             max-height: 50%;
             animation: fadeInScale 1.5s ease;
         }
-        
+
         @keyframes fadeInScale {
             from {
                 opacity: 0;
                 transform: scale(0.8);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1);
@@ -197,11 +207,11 @@
             font-size: 0.8rem;
             margin-bottom: 10px;
 
-            opacity:0;
-            animation:fadeIn .8s ease forwards;
-            animation-delay:3.5s;
+            opacity: 0;
+            animation: fadeIn .8s ease forwards;
+            animation-delay: 3.5s;
         }
-      
+
         .hero h1 {
             font-family: 'Archivo Black', sans-serif;
             font-size: clamp(1.35rem, 5.8vw, 6rem);
@@ -225,8 +235,15 @@
         }
 
         @keyframes blinkCursor {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
         .true-focus-wrapper {
@@ -352,6 +369,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 0.85;
             }
@@ -521,7 +539,7 @@
             font-family: 'Arial', sans-serif;
             color: #2b2420;
             font-size: 1.3rem;
-            font-weight: bold;
+            font-weight: normal;
             font-style: italic;
             border-left: 3px solid #c1693c;
             padding: 4px 0 4px 22px;
@@ -625,18 +643,35 @@
         ========================= */
 
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes floatText {
-            0%   { transform: translateY(0); }
-            50%  { transform: translateY(-12px); }
-            100% { transform: translateY(0); }
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
 
         /* =========================
@@ -746,9 +781,11 @@
             .hamburger.open span:nth-child(1) {
                 transform: translateY(7px) rotate(45deg);
             }
+
             .hamburger.open span:nth-child(2) {
                 opacity: 0;
             }
+
             .hamburger.open span:nth-child(3) {
                 transform: translateY(-7px) rotate(-45deg);
             }
@@ -980,7 +1017,8 @@
                 <img src="Images/Dessin1.webp" alt="Portrait Drawing">
                 <div class="art-card-content">
                     <h3 data-i18n="index.card1Title">Portrait Study</h3>
-                    <p data-i18n="index.card1Desc">A graphite portrait focused on expression, character, and realistic detail.</p>
+                    <p data-i18n="index.card1Desc">A graphite portrait focused on expression, character, and realistic
+                        detail.</p>
                 </div>
             </div>
             <div class="art-card">
@@ -994,7 +1032,8 @@
                 <img src="Images/Dessin3.webp" alt="Realism Study">
                 <div class="art-card-content">
                     <h3 data-i18n="index.card3Title">Realism Study</h3>
-                    <p data-i18n="index.card3Desc">An exploration of texture, contrast, and light through meticulous graphite and charcoal drawings.</p>
+                    <p data-i18n="index.card3Desc">An exploration of texture, contrast, and light through meticulous
+                        graphite and charcoal drawings.</p>
                 </div>
             </div>
         </div>
@@ -1015,11 +1054,15 @@
 
     <section class="beyond-drawing">
         <h2 class="beyond-title" data-i18n="index.beyondTitle">Beyond the drawing</h2>
-        <p class="beyond-lead" data-i18n="index.beyondLead">What if some drawings could tell a story that goes even further?</p>
+        <p class="beyond-lead" data-i18n="index.beyondLead">What if some drawings could tell a story that goes even
+            further?</p>
         <p data-i18n="index.beyondP1">Perhaps a story that doesn't end with the final pencil stroke.</p>
-        <p data-i18n="index.beyondP2">A story that continues in Algeria, with children we meet in hospitals and care centres, through volunteer days designed to bring them a little joy, comfort, and attention.</p>
-        <p data-i18n="index.beyondP3">Three of us bring this project to life on a personal, volunteer basis. Profits from the sale of drawings help fund these initiatives and the various needs they require.</p>
-        <p class="beyond-conclusion" data-i18n="index.beyondP4">Because a drawing can be a piece of art and become the starting point for something tangible.</p>
+        <p data-i18n="index.beyondP2">A story that continues in Algeria, with children we meet in hospitals and care
+            centres, through volunteer days designed to bring them a little joy, comfort, and attention.</p>
+        <p data-i18n="index.beyondP3">Three of us bring this project to life on a personal, volunteer basis. Profits
+            from the sale of drawings help fund these initiatives and the various needs they require.</p>
+        <p class="beyond-conclusion" data-i18n="index.beyondP4">Because a drawing can be a piece of art and become the
+            starting point for something tangible.</p>
     </section>
 
     <div class="big-tagline">
@@ -1031,7 +1074,8 @@
             <div class="footer-col">
                 <h4 data-i18n="footer.brand">Stephanie's Art</h4>
                 <p data-i18n="footer.desc">
-                    Passionate about graphite and charcoal portraiture. I strive to capture depth, texture, and genuine emotions through realistic drawings and custom creations.
+                    Passionate about graphite and charcoal portraiture. I strive to capture depth, texture, and genuine
+                    emotions through realistic drawings and custom creations.
                 </p>
             </div>
             <div class="footer-col">
@@ -1084,7 +1128,7 @@
                 });
                 try {
                     sessionStorage.setItem('splashShown', 'true');
-                } catch (e) {}
+                } catch (e) { }
             }
         })();
     </script>
@@ -1092,7 +1136,7 @@
     <script>
         (function () {
             var hamburger = document.getElementById('hamburger');
-            var navLinks  = document.getElementById('navLinks');
+            var navLinks = document.getElementById('navLinks');
             if (!hamburger || !navLinks) return;
             hamburger.addEventListener('click', function () {
                 var isOpen = navLinks.classList.toggle('open');
@@ -1140,9 +1184,9 @@
                 var eyesHero = document.querySelector('.eyes-hero');
                 if (eyesHero && window.innerWidth > 768) {
                     document.addEventListener('mousemove', function (e) {
-                        var x = (e.clientX / window.innerWidth  - 0.5) * 18;
+                        var x = (e.clientX / window.innerWidth - 0.5) * 18;
                         var y = (e.clientY / window.innerHeight - 0.5) * 8;
-                        eyesHero.style.transform  = 'translate(' + x + 'px, ' + y + 'px)';
+                        eyesHero.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
                         eyesHero.style.transition = 'transform 0.4s ease-out';
                     });
                     document.addEventListener('mouseleave', function () {
@@ -1152,7 +1196,7 @@
             });
 
             const INIT_DELAY = 1000;
-            const INTERVAL   = 1200;
+            const INTERVAL = 1200;
             let focusInterval = null;
 
             function startTrueFocus() {
@@ -1239,4 +1283,5 @@
     </script>
 
 </body>
+
 </html>
