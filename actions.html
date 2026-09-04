@@ -108,10 +108,16 @@
     h1::after {
       content: "";
       display: block;
-      width: 60px;
+      width: 0;
       height: 4px;
       margin-top: 14px;
       background: #c1693c;
+      animation: drawLine 0.8s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes drawLine {
+      to { width: 60px; }
     }
     .hero-body {
       max-width: 720px;
@@ -191,10 +197,12 @@
     .content-block h2::after {
       content: '';
       display: block;
-      width: 45px;
+      width: 0;
       height: 3px;
       background: #c1693c;
       margin-top: 8px;
+      animation: drawLine 0.8s ease forwards;
+      animation-delay: 0.5s;
     }
     .content-block p {
       max-width: 800px;
@@ -223,10 +231,12 @@
     .event-gallery-header h2::after {
       content: '';
       display: block;
-      width: 45px;
+      width: 0;
       height: 3px;
       background: #c1693c;
       margin-top: 8px;
+      animation: drawLine 0.8s ease forwards;
+      animation-delay: 0.5s;
     }
     .event-gallery-intro {
       max-width: 720px;

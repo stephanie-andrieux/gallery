@@ -34,7 +34,7 @@
     body {
       font-family: Arial, sans-serif;
       background: #faf6ef;
-      color: #2b2b2b;
+      color: #2b2420;
       line-height: 1.7;
       overflow-x: hidden;
       min-height: 100vh;
@@ -132,8 +132,14 @@
       content: "";
       position: absolute;
       left: 0; bottom: -6px;
-      width: 60px; height: 4px;
+      width: 0; height: 4px;
       background: #c1693c;
+      animation: drawLine 0.8s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes drawLine {
+      to { width: 60px; }
     }
     .process-hero p {
       max-width: 700px;
