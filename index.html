@@ -39,6 +39,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     </noscript>
     <link rel="stylesheet" href="language.css">
+    <link rel="stylesheet" href="site-shell.css">
     
     <style>
         /* =========================
@@ -100,7 +101,7 @@
                 #faf6ef;
             color: #2b2420;
             line-height: 1.7;
-            overflow-x: hidden;
+            overflow-x: clip;
         }
 
         /* =========================
@@ -113,14 +114,18 @@
             align-items: center;
             padding: 8px 40px;
             background-color: #2b2420;
+            position: -webkit-sticky;
             position: sticky;
             top: 0;
             z-index: 1000;
+            view-transition-name: site-nav;
         }
 
         .logo-img {
             height: clamp(50px, 15vw, 90px);
             max-width: 100%;
+            aspect-ratio: 629 / 397;
+            width: auto;
         }
 
         .nav-right {
@@ -967,7 +972,7 @@
 
     <!-- NAV — copie exacte about.html -->
     <nav>
-        <img src="Images/Logo.webp" alt="Sarah's Art" class="logo-img">
+        <img src="Images/Logo.webp" alt="Sarah's Art" class="logo-img" width="629" height="397">
         <div class="nav-right">
             <div class="nav-links" id="navLinks">
                 <a href="index.html" data-i18n="nav.home">Home</a>

@@ -11,6 +11,11 @@ html {
   overflow-y: scroll;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 /* Fix saut de texte EN -> FR : on cache uniquement le texte traduit le temps
    qu'il soit dans la bonne langue, pas toute la page (pour ne pas gêner
    les animations d'apparition existantes) */

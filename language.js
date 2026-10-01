@@ -440,11 +440,82 @@ function detectPage() {
     }
   };
 
+  /* ==========================================================================
+     Navbar Shell Interactions:
+     1. Click on logo: smooth scroll to top of page
+     2. Dynamic navbar on scroll:
+        - Scrolls down: compact navbar (less space on screen)
+        - Scrolls up / back to top: progressively returns to initial height
+     ========================================================================== */
+  function initNavbarShell() {
+    const nav = document.querySelector('nav');
+    const logo = document.querySelector('.logo-img');
+
+    // 1. Logo = retour en haut avec scroll fluide
+    if (logo) {
+      logo.setAttribute('role', 'button');
+      logo.setAttribute('tabindex', '0');
+      logo.setAttribute('aria-label', 'Retour en haut de la page');
+      logo.setAttribute('title', 'Retour en haut');
+
+      function scrollToTop(e) {
+        if (e) e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      logo.addEventListener('click', scrollToTop);
+      logo.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          scrollToTop(e);
+        }
+      });
+    }
+
+    // 2. Navbar dynamique au scroll
+    if (nav) {
+      let lastScrollY = window.scrollY || window.pageYOffset || 0;
+      let ticking = false;
+
+      function updateNavbarOnScroll() {
+        const currentScrollY = window.scrollY || window.pageYOffset || 0;
+        const delta = currentScrollY - lastScrollY;
+
+        // Si on est tout en haut (ou très proche) : taille initiale complète
+        if (currentScrollY <= 25) {
+          nav.classList.remove('nav-scrolled');
+        } else if (delta > 6 && currentScrollY > 40) {
+          // Scroll vers le bas : réduire la navbar
+          nav.classList.add('nav-scrolled');
+        } else if (delta < -6) {
+          // Scroll vers le haut / remonte : reprendre sa taille initiale
+          nav.classList.remove('nav-scrolled');
+        }
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateNavbarOnScroll);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // Vérification initiale selon la position actuelle du scroll
+      updateNavbarOnScroll();
+    }
+  }
+
   function initializeI18n() {
     initSwitcher();
     setLanguage(currentLang);
     document.documentElement.classList.remove('i18n-loading');
     document.documentElement.classList.add('i18n-ready');
+    initNavbarShell();
   }
 
   if (document.readyState === 'loading') {
