@@ -602,6 +602,17 @@
               <span class="event-album-status" data-i18n="actions.albumOpen">Voir l&rsquo;album</span>
             </div>
           </article>
+          <article class="event-album has-photos long-title" id="draria-album" tabindex="0" role="button" aria-controls="draria-modal">
+            <img class="event-album-cover" src="Images/TNA1.jpeg" alt="" loading="lazy">
+            <div class="event-album-body">
+              <span class="event-album-number">05</span>
+              <div>
+                <h3 data-i18n="actions.album5">SOS Villages d&rsquo;enfants &agrave; Draria</h3>
+                <p data-i18n="actions.album5Subtitle">D&eacute;jeuner au restaurant &laquo;&nbsp;Le Petit Prince&nbsp;&raquo; et apr&egrave;s-midi au Th&eacute;&acirc;tre national alg&eacute;rien (TNA)</p>
+              </div>
+              <span class="event-album-status" data-i18n="actions.albumOpen">Voir l&rsquo;album</span>
+            </div>
+          </article>
         </div>
 
       </section>
@@ -644,6 +655,15 @@
       <button class="album-modal-control prev" id="maillot-prev" type="button" aria-label="Previous photo">&#8249;</button>
       <button class="album-modal-control next" id="maillot-next" type="button" aria-label="Next photo">&#8250;</button>
       <div class="album-modal-meta"><span id="maillot-modal-title">CHU Mohamed-Lamine-Debaghine</span><span id="maillot-modal-counter">01 / 11</span></div>
+    </div>
+  </div>
+  <div class="album-modal" id="draria-modal" role="dialog" aria-modal="true" aria-labelledby="draria-modal-title">
+    <div class="album-modal-content">
+      <button class="album-modal-close" id="draria-modal-close" type="button" aria-label="Close">&times;</button>
+      <img class="album-modal-image" id="draria-modal-image" src="Images/TNA1.jpeg" alt="SOS Villages d'enfants à Draria, photo 1">
+      <button class="album-modal-control prev" id="draria-prev" type="button" aria-label="Previous photo">&#8249;</button>
+      <button class="album-modal-control next" id="draria-next" type="button" aria-label="Next photo">&#8250;</button>
+      <div class="album-modal-meta"><span id="draria-modal-title">SOS Villages d&rsquo;enfants &mdash; Draria</span><span id="draria-modal-counter">01 / 11</span></div>
     </div>
   </div>
 
@@ -745,6 +765,51 @@
       document.getElementById('maillot-modal-close').addEventListener('click', close);
       modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
       document.addEventListener('keydown', function (e) { if (!modal.classList.contains('open')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(current - 1); if (e.key === 'ArrowRight') show(current + 1); });
+    })();
+  </script>
+
+  <!-- Album Draria -->
+  <script>
+    (function () {
+      var sources = [
+        'Images/TNA1.jpeg',
+        'Images/TNA2.jpeg',
+        'Images/TNA3.jpeg',
+        'Images/TNA4.jpeg',
+        'Images/TNA5.jpeg',
+        'Images/TNA6.jpeg',
+        'Images/TNA7.jpeg',
+        'Images/TNA8.jpeg',
+        'Images/TNA9.jpeg',
+        'Images/TNA10.jpeg',
+        'Images/TNA11.jpeg'
+      ];
+      var album = document.getElementById('draria-album');
+      var modal = document.getElementById('draria-modal');
+      var image = document.getElementById('draria-modal-image');
+      var counter = document.getElementById('draria-modal-counter');
+      var current = 0;
+      if (!album || !modal || !image || !counter) return;
+      function show(i) {
+        current = (i + sources.length) % sources.length;
+        image.src = sources[current];
+        image.alt = "SOS Villages d'enfants à Draria, photo " + (current + 1);
+        counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + sources.length;
+      }
+      function open() { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function close() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+      album.addEventListener('click', open);
+      album.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      document.getElementById('draria-prev').addEventListener('click', function () { show(current - 1); });
+      document.getElementById('draria-next').addEventListener('click', function () { show(current + 1); });
+      document.getElementById('draria-modal-close').addEventListener('click', close);
+      modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (!modal.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
     })();
   </script>
 

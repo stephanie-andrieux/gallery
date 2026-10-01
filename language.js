@@ -153,6 +153,8 @@
         album3Subtitle: 'In partnership with the Algerian Red Crescent',
         album4: 'CHU Mohamed-Lamine-Debaghine (Formerly Maillot Hospital) - Algiers',
         album4Subtitle: 'Paediatrics department.',
+        album5: "SOS Children's Villages - Draria",
+        album5Subtitle: 'Lunch at "Le Petit Prince" restaurant and afternoon at the Algerian National Theatre (TNA)',
         albumOpen: 'View album',
         team: 'A small team, a personal commitment, and actions built with care, one project at a time.',
         teamCount: '3 people on the ground'
@@ -298,6 +300,8 @@
         album3Subtitle: 'En partenariat avec le Croissant-Rouge algérien',
         album4: 'CHU Mohamed-Lamine-Debaghine (Ex-hôpital Maillot) - Alger',
         album4Subtitle: 'Service de pédiatrie.',
+        album5: "SOS Villages d'enfants à Draria",
+        album5Subtitle: 'Déjeuner au restaurant « Le Petit Prince » et après-midi au Théâtre national algérien (TNA)',
         albumOpen: 'Voir l\'album',
         team: 'Une petite équipe, un engagement personnel et des actions construites avec soin, projet après projet.',
         teamCount: '3 personnes sur le terrain'
