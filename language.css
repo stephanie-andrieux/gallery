@@ -6,9 +6,11 @@
   navigation: auto;
 }
 
-html {
-  scrollbar-gutter: stable;
-  overflow-y: scroll;
+@media (min-width: 769px) {
+  html {
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+  }
 }
 
 html,
