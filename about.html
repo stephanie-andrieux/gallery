@@ -577,7 +577,7 @@ p {
       </div>
     </div>
 
-    <blockquote id="quote"></blockquote>
+    <blockquote id="quote" class="reveal"></blockquote>
 
     <h2 data-i18n="about.section1">Graphite and Charcoal</h2>
 
@@ -585,12 +585,12 @@ p {
       practice, I have naturally developed the habit of combining two simple yet highly complementary tools: graphite
       pencil and charcoal pencil. It is a balance I really enjoy exploring on paper.</p>
 
-    <p class="reveal-on-scroll" data-i18n="about.section1p2">Graphite offers me the softness and precision needed to build my subject and work on the
+    <p class="reveal-on-scroll reveal" data-i18n="about.section1p2">Graphite offers me the softness and precision needed to build my subject and work on the
       delicacy of a line. Charcoal, on the other hand, allows me to reach for much deeper, velvety blacks. Playing with
       these two materials helps me give depth to the atmosphere and accentuate the shadows. It is an almost tactile
       process, where I simply try to highlight my subject through the rich, natural contrasts of these two tools, while
       keeping the authentic joy of traditional drawing.</p>
-    <section class="drawing-process reveal-on-scroll">
+    <section class="drawing-process reveal-on-scroll reveal">
       <h2 data-i18n="about.processTitle">From Sketch to Finished Drawing</h2>
 
       <p class="process-intro" data-i18n="about.processIntro">
@@ -632,6 +632,7 @@ p {
   </main>
 
   <script src="language.js"></script>
+  <script src="reveal.js" defer></script>
   <script>
     function animateQuote() {
       const quote = document.getElementById('quote');
@@ -649,14 +650,7 @@ p {
     }
 
     document.addEventListener('languageChanged', animateQuote);
-
-    const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    const observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.3 });
-    revealElements.forEach(function (el) { observer.observe(el); });
+    // L'IntersectionObserver est unifié et pris en charge globalement par reveal.js
   </script>
 
     <script>

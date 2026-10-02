@@ -218,7 +218,8 @@
       border-radius: 4px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
       opacity: 1;
-      transition: opacity 0.4s ease, transform 0.5s ease;
+      cursor: zoom-in;
+      transition: opacity 0.2s ease, transform 0.5s ease;
     }
 
     .carrousel-image-side:hover img {
@@ -266,6 +267,11 @@
       flex-direction: column;
       justify-content: center;
       padding: 12px 10px;
+      transition: opacity 0.2s ease;
+    }
+
+    .carrousel-text-side.fading {
+      opacity: 0.2;
     }
 
     .carrousel-numero {
@@ -356,6 +362,95 @@
       font-feature-settings: 'onum' 1, 'pnum' 1;
     }
 
+    /* Bouton commander un portrait (style similaire à .btn-gallery) */
+    .btn-order-portrait {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 24px;
+      background: #c1693c;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-radius: 4px;
+      align-self: flex-start;
+      box-shadow: 0 4px 14px rgba(193, 105, 60, 0.25);
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-order-portrait:hover {
+      background: #a8572e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(193, 105, 60, 0.35);
+    }
+
+    .btn-order-portrait:active {
+      transform: translateY(0);
+    }
+
+    /* Overlay Lightbox pour le zoom plein écran */
+    .gallery-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(18, 14, 12, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .gallery-lightbox.active {
+      opacity: 1;
+    }
+
+    .lightbox-img {
+      max-width: 95vw;
+      max-height: 95vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+      transition: opacity 0.2s ease;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 22px;
+      right: 26px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      color: #faf6ef;
+      font-size: 2rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10001;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.28);
+      transform: scale(1.08);
+    }
+
     /* =========================
        RECOMMENDATION SECTION
     ========================= */
@@ -364,9 +459,6 @@
       margin-top: 60px;
       padding-top: 50px;
       border-top: 1px solid #d8d0c2;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards;
-      animation-delay: 0.3s;
     }
 
     .recommendation-grid {
@@ -790,16 +882,17 @@
     <div class="carrousel">
       <div class="carrousel-image-side">
         <button class="carrousel-btn prev" onclick="changerImage(-1)" data-i18n-attr="aria-label:gallery.prev" aria-label="Previous">‹</button>
-        <img id="carrousel-img" src="Images/Dessin1.webp" alt="Dessin 1">
+        <img id="carrousel-img" src="Images/Dessin1.webp" alt="Dessin 1" data-i18n-attr="aria-label:gallery.zoom" role="button" tabindex="0">
         <button class="carrousel-btn next" onclick="changerImage(1)" data-i18n-attr="aria-label:gallery.next" aria-label="Next">›</button>
       </div>
 
       <div class="carrousel-text-side">
         <p class="carrousel-numero" id="carrousel-numero">01 / 14</p>
-        <h2 class="carrousel-titre" id="carrousel-titre">Captured innocence</h2>
+        <h2 class="carrousel-titre" id="carrousel-titre" aria-live="polite">Captured innocence</h2>
         <div class="carrousel-description" id="carrousel-description"></div>
         <p class="carrousel-details" id="carrousel-details"></p>
         <p class="carrousel-price" id="carrousel-price"></p>
+        <a id="carrousel-order-btn" class="btn-order-portrait" href="contact.html?sujet=portrait" data-i18n="gallery.order">Commander un portrait</a>
         <div class="carrousel-dots" id="carrousel-dots"></div>
       </div>
     </div>
@@ -844,7 +937,7 @@
       </div>
     </noscript>
 
-    <section class="recommendation-section">
+    <section class="recommendation-section reveal">
       <div class="recommendation-grid">
         <div class="recommendation-photo-side">
           <div class="recommendation-photo-box">
@@ -858,9 +951,16 @@
         </div>
       </div>
     </section>
+
+    <!-- Overlay Lightbox pour le zoom plein écran -->
+    <div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Aperçu agrandi du dessin" data-i18n-attr="aria-label:gallery.zoomModal" style="display: none;">
+      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Fermer le zoom" data-i18n-attr="aria-label:gallery.close">&times;</button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="">
+    </div>
   </main>
 
   <script src="language.js"></script>
+  <script src="reveal.js" defer></script>
 
   <script>
     /* ---- Hamburger mobile ---- */
@@ -894,16 +994,24 @@
   </script>
 
   <script>
+    // Galerie carrousel améliorée : fondu, préchargement, lightbox, swipe tactile et accessibilité
     let dessins = [];
     let indexActuel = 0;
 
-    const imgEl     = document.getElementById('carrousel-img');
-    const titreEl   = document.getElementById('carrousel-titre');
-    const descEl    = document.getElementById('carrousel-description');
-    const detailsEl = document.getElementById('carrousel-details');
-    const priceEl   = document.getElementById('carrousel-price');
-    const numeroEl  = document.getElementById('carrousel-numero');
-    const dotsEl    = document.getElementById('carrousel-dots');
+    const imgEl        = document.getElementById('carrousel-img');
+    const titreEl      = document.getElementById('carrousel-titre');
+    const descEl       = document.getElementById('carrousel-description');
+    const detailsEl    = document.getElementById('carrousel-details');
+    const priceEl      = document.getElementById('carrousel-price');
+    const numeroEl     = document.getElementById('carrousel-numero');
+    const dotsEl       = document.getElementById('carrousel-dots');
+    const orderBtnEl   = document.getElementById('carrousel-order-btn');
+    const textSideEl   = document.querySelector('.carrousel-text-side');
+    const lightboxEl   = document.getElementById('gallery-lightbox');
+    const lightboxImgEl = document.getElementById('lightbox-img');
+    const lightboxCloseEl = document.getElementById('lightbox-close');
+
+    let lastFocusedElement = null;
 
     function loadDessins() {
       const sources = SiteI18n.getGallerySources();
@@ -937,44 +1045,212 @@
       });
     }
 
-    function afficherImage() {
+    // Préchargement de l'image précédente et de la suivante
+    function prechargerImagesVoisines() {
+      if (!dessins.length || dessins.length <= 1) return;
+      const prevIdx = (indexActuel - 1 + dessins.length) % dessins.length;
+      const nextIdx = (indexActuel + 1) % dessins.length;
+
+      const imgSuivante = new Image();
+      imgSuivante.src = dessins[nextIdx].src;
+
+      const imgPrecedente = new Image();
+      imgPrecedente.src = dessins[prevIdx].src;
+    }
+
+    // Mise à jour complète du DOM pour le dessin actuel
+    function afficherImage(animate) {
       if (!dessins.length) return;
 
-      imgEl.src          = dessins[indexActuel].src;
-      imgEl.alt          = dessins[indexActuel].nom;
-      titreEl.textContent   = dessins[indexActuel].nom;
-      detailsEl.textContent = dessins[indexActuel].details;
-      priceEl.textContent   = dessins[indexActuel].price;
+      const current = dessins[indexActuel];
 
-      numeroEl.textContent =
-        String(indexActuel + 1).padStart(2, '0') +
-        ' / ' +
-        dessins.length;
+      function updateDomContent() {
+        imgEl.src             = current.src;
+        imgEl.alt             = current.nom;
+        titreEl.textContent   = current.nom;
+        detailsEl.textContent = current.details;
+        priceEl.textContent   = current.price;
 
-      const paragraphes = dessins[indexActuel].description.split('\n\n');
-      descEl.innerHTML = paragraphes.map(function (p) {
-        return '<p>' + p + '</p>';
-      }).join('');
+        numeroEl.textContent =
+          String(indexActuel + 1).padStart(2, '0') +
+          ' / ' +
+          dessins.length;
 
-      mettreAJourPoints();
+        const paragraphes = current.description.split('\n\n');
+        descEl.innerHTML = paragraphes.map(function (p) {
+          return '<p>' + p + '</p>';
+        }).join('');
+
+        // Mise à jour du lien de commande avec sujet et nom encodé du dessin
+        if (orderBtnEl) {
+          orderBtnEl.href = 'contact.html?sujet=portrait&ref=' + encodeURIComponent(current.nom);
+        }
+
+        // Si la lightbox est ouverte, synchronise également son image
+        if (lightboxImgEl && lightboxEl && lightboxEl.style.display !== 'none') {
+          lightboxImgEl.src = current.src;
+          lightboxImgEl.alt = current.nom;
+        }
+
+        mettreAJourPoints();
+      }
+
+      if (animate) {
+        // Fondu de sortie (~200ms)
+        imgEl.classList.add('fading');
+        if (textSideEl) textSideEl.classList.add('fading');
+        if (lightboxImgEl && lightboxEl && lightboxEl.style.display !== 'none') {
+          lightboxImgEl.style.opacity = '0';
+        }
+
+        const tempImg = new Image();
+        let isDone = false;
+
+        function finishTransition() {
+          if (isDone) return;
+          isDone = true;
+          updateDomContent();
+          requestAnimationFrame(function () {
+            setTimeout(function () {
+              imgEl.classList.remove('fading');
+              if (textSideEl) textSideEl.classList.remove('fading');
+              if (lightboxImgEl) lightboxImgEl.style.opacity = '1';
+              prechargerImagesVoisines();
+            }, 30);
+          });
+        }
+
+        tempImg.onload = finishTransition;
+        tempImg.onerror = finishTransition;
+        tempImg.src = current.src;
+
+        // Assure que le fondu dure au moins 200 ms
+        setTimeout(function () {
+          if (tempImg.complete) finishTransition();
+        }, 200);
+      } else {
+        updateDomContent();
+        prechargerImagesVoisines();
+      }
     }
 
     function changerImage(direction) {
       indexActuel = (indexActuel + direction + dessins.length) % dessins.length;
-      afficherImage();
+      afficherImage(true);
     }
 
     function allerA(i) {
+      if (i === indexActuel) return;
       indexActuel = i;
-      afficherImage();
+      afficherImage(true);
     }
 
+    // Gestion de la Lightbox Zoom plein écran
+    function ouvrirLightbox() {
+      if (!lightboxEl || !dessins.length) return;
+      lastFocusedElement = document.activeElement;
+      lightboxImgEl.src = dessins[indexActuel].src;
+      lightboxImgEl.alt = dessins[indexActuel].nom;
+      lightboxEl.style.display = 'flex';
+      void lightboxEl.offsetWidth; // Force reflow pour transition CSS
+      lightboxEl.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      if (lightboxCloseEl) lightboxCloseEl.focus();
+    }
+
+    function fermerLightbox() {
+      if (!lightboxEl || lightboxEl.style.display === 'none') return;
+      lightboxEl.classList.remove('active');
+      setTimeout(function () {
+        lightboxEl.style.display = 'none';
+        document.body.style.overflow = '';
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+        }
+      }, 250);
+    }
+
+    // Gestion du balayage tactile (swipe)
+    function attacherSwipe(element) {
+      if (!element) return;
+      let startX = 0, startY = 0, endX = 0, endY = 0;
+
+      element.addEventListener('touchstart', function (e) {
+        if (e.touches.length !== 1) return;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        endX = startX;
+        endY = startY;
+      }, { passive: true });
+
+      element.addEventListener('touchmove', function (e) {
+        if (e.touches.length !== 1) return;
+        endX = e.touches[0].clientX;
+        endY = e.touches[0].clientY;
+      }, { passive: true });
+
+      element.addEventListener('touchend', function () {
+        const diffX = endX - startX;
+        const diffY = endY - startY;
+        // Seuil ~50 px et geste principalement horizontal
+        if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+          if (diffX < 0) {
+            changerImage(1); // Swipe gauche -> suivant
+          } else {
+            changerImage(-1); // Swipe droite -> précédent
+          }
+        }
+      }, { passive: true });
+    }
+
+    // Initialisation globale de la galerie
     function initGallery() {
       loadDessins();
       if (indexActuel >= dessins.length) indexActuel = 0;
       creerPoints();
-      afficherImage();
+      afficherImage(false);
     }
+
+    // Clic / touche sur l'image pour ouvrir le zoom
+    if (imgEl) {
+      imgEl.addEventListener('click', ouvrirLightbox);
+      imgEl.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          ouvrirLightbox();
+        }
+      });
+    }
+
+    // Fermeture de la lightbox au clic sur le bouton ou sur le fond
+    if (lightboxCloseEl) {
+      lightboxCloseEl.addEventListener('click', fermerLightbox);
+    }
+    if (lightboxEl) {
+      lightboxEl.addEventListener('click', function (e) {
+        if (e.target === lightboxEl) {
+          fermerLightbox();
+        }
+      });
+    }
+
+    // Navigation au clavier : Flèches gauche/droite et Échap
+    document.addEventListener('keydown', function (e) {
+      const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+      if (activeTag === 'input' || activeTag === 'textarea' || activeTag === 'select') return;
+
+      if (e.key === 'Escape') {
+        fermerLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        changerImage(-1);
+      } else if (e.key === 'ArrowRight') {
+        changerImage(1);
+      }
+    });
+
+    // Attachement du swipe tactile sur le carrousel et la lightbox
+    attacherSwipe(document.querySelector('.carrousel-image-side'));
+    attacherSwipe(lightboxEl);
 
     document.addEventListener('languageChanged', initGallery);
   </script>

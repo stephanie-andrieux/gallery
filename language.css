@@ -62,3 +62,35 @@ html.i18n-ready [data-i18n-html] {
 .lang-sep {
   display: none;
 }
+
+/* ========================================================
+   APPARITION AU SCROLL (reveal.js)
+   Sûreté : le masquage initial (opacity: 0, translateY) ne
+   s'applique QUE si le script reveal.js a marqué html.js-ready.
+   Si JS est désactivé ou si IntersectionObserver est absent,
+   le contenu reste visible sans accroc.
+   ======================================================== */
+html.js-ready .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+html.js-ready .reveal {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+html.js-ready .reveal.is-visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-ready .reveal:not(.is-visible),
+  html.js-ready .reveal,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

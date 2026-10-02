@@ -241,15 +241,11 @@
     }
 
     .contact-intro {
-      animation: fadeUp 0.8s ease forwards;
     }
 
     form {
       display: flex;
       flex-direction: column;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards;
-      animation-delay: 0.25s;
     }
 
     .form-row {
@@ -549,7 +545,7 @@
   <main>
     <div class="contact-grid">
 
-      <div class="contact-intro">
+      <div class="contact-intro reveal">
         <h1 data-i18n="contact.title">Let's talk</h1>
         <p class="desc" data-i18n="contact.desc">Whether you're interested in a piece, have a commission in mind, or just want to say hello. I'd
           love to hear from you.</p>
@@ -562,7 +558,7 @@
         </div>
       </div>
 
-      <form action="https://formspree.io/f/mwvdlpgz" method="POST">
+      <form class="reveal" style="--reveal-delay: 0.2s;" action="https://formspree.io/f/mwvdlpgz" method="POST">
         <div class="form-row">
           <div class="field">
             <label for="prenom" data-i18n="contact.firstName">First name</label>
@@ -626,6 +622,73 @@
   </footer>
 
   <script src="language.js"></script>
+  <script src="reveal.js" defer></script>
+
+  <script>
+    // Pré-remplissage du formulaire lors d'une commande de portrait depuis la galerie (?sujet=portrait&ref=...)
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var sujet = params.get('sujet');
+      if (sujet !== 'portrait') return;
+
+      var ref = params.get('ref') || '';
+      var messageEl = document.getElementById('message');
+      var prenomEl = document.getElementById('prenom');
+      var formEl = document.querySelector('form');
+      if (!messageEl) return;
+
+      var lastGeneratedText = '';
+
+      function getTemplate(lang) {
+        var cleanRef = ref.trim();
+        if (lang === 'fr') {
+          var refStr = cleanRef ? ' « ' + cleanRef + ' »' : '';
+          return 'Bonjour, je souhaite commander un portrait au crayon, dans le style de' + refStr + '.\n\n' +
+                 'Format souhaité : \n' +
+                 'Nombre de personnes : \n' +
+                 "Photo de référence : (je vous l'enverrai par mail)\n" +
+                 'Délai souhaité : ';
+        } else {
+          var refStrEn = cleanRef ? ' "' + cleanRef + '"' : '';
+          return 'Hello, I would like to order a pencil portrait, in the style of' + refStrEn + '.\n\n' +
+                 'Desired size: \n' +
+                 'Number of people: \n' +
+                 'Reference photo: (I will send it by email)\n' +
+                 'Desired timeframe: ';
+        }
+      }
+
+      function updateMessage(force) {
+        var currentLang = (document.documentElement.lang || 'en').slice(0, 2);
+        var newText = getTemplate(currentLang);
+        // Ne remplace le message que s'il est vide ou égal au modèle précédemment généré (non modifié par l'internaute)
+        if (force || !messageEl.value || messageEl.value === lastGeneratedText) {
+          messageEl.value = newText;
+          lastGeneratedText = newText;
+        }
+      }
+
+      // Remplissage initial
+      updateMessage(true);
+
+      // Si l'utilisateur change la langue du site via le sélecteur
+      document.addEventListener('languageChanged', function () {
+        updateMessage(false);
+      });
+
+      // Défilement fluide vers le formulaire et focus sur le prénom
+      window.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          if (formEl) {
+            formEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          if (prenomEl) {
+            prenomEl.focus();
+          }
+        }, 300);
+      });
+    })();
+  </script>
     <script>
     /* ---- Hamburger mobile ---- */
     (function () {
