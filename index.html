@@ -901,6 +901,27 @@
             </button>
         </div>
     </nav>
+    <script>
+        (function () {
+            var l = document.documentElement.lang || 'fr';
+            if (l === 'en') {
+                var t = { 'nav.home': 'Home', 'nav.gallery': 'Gallery', 'nav.actions': 'Our actions', 'nav.process': 'Process', 'nav.about': 'About', 'nav.contact': 'Contact' };
+                document.querySelectorAll('nav [data-i18n]').forEach(function (el) {
+                    var k = el.getAttribute('data-i18n');
+                    if (t[k]) el.textContent = t[k];
+                });
+                document.querySelectorAll('nav [data-i18n-attr]').forEach(function (el) {
+                    var spec = el.getAttribute('data-i18n-attr');
+                    if (spec && spec.indexOf('lang.label') !== -1) el.setAttribute('aria-label', 'Choose language');
+                });
+                document.querySelectorAll('.lang-btn').forEach(function (b) {
+                    var isEn = b.getAttribute('data-lang') === 'en';
+                    b.classList.toggle('active', isEn);
+                    b.setAttribute('aria-pressed', isEn ? 'true' : 'false');
+                });
+            }
+        })();
+    </script>
 
     <section class="hero">
         <div class="hero-content">

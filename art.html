@@ -109,16 +109,25 @@
 
     .carrousel {
       display: flex;
-      align-items: stretch;
+      align-items: flex-start;
       gap: 36px;
       opacity: 0;
       animation: fadeUp 0.8s ease forwards;
       animation-delay: 0.2s;
     }
 
+    .carrousel-image-col {
+      flex: 1.3;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      flex-shrink: 0;
+    }
+
     .carrousel-image-side {
       position: relative;
-      flex: 1.3;
+      width: 100%;
       height: 756px;
       min-height: 756px;
       max-height: 756px;
@@ -132,7 +141,6 @@
       overflow: hidden;
       box-sizing: border-box;
       transition: box-shadow 0.4s ease;
-      align-self: stretch;
       flex-shrink: 0;
     }
 
@@ -202,7 +210,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 16px 10px 22px;
+      padding: 2px 10px 0;
       transition: opacity 0.2s ease;
       box-sizing: border-box;
     }
@@ -212,11 +220,15 @@
     }
 
     .carrousel-numero {
-      font-size: 0.8rem;
-      letter-spacing: 2px;
+      font-size: 0.85rem;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       color: #c1693c;
-      margin-bottom: 6px;
+      text-align: center;
+      margin-top: 14px;
+      margin-bottom: 0;
+      font-weight: 600;
+      font-feature-settings: 'tnum' 1;
     }
 
     .carrousel-titre {
@@ -614,6 +626,13 @@
       .carrousel-btn.prev { left: 8px; }
       .carrousel-btn.next { right: 8px; }
 
+      .carrousel-image-col {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
       .carrousel-text-side {
         padding: 6px 2px;
         height: auto;
@@ -626,11 +645,15 @@
       }
 
       .carrousel-numero {
-        margin-bottom: 4px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 6px;
+        font-size: 0.8rem;
       }
 
       .carrousel-titre {
         font-size: 1.3rem;
+        margin-top: 4px;
         margin-bottom: 8px;
       }
 
@@ -769,19 +792,42 @@
       </button>
     </div>
   </nav>
+  <script>
+    (function () {
+      var l = document.documentElement.lang || 'fr';
+      if (l === 'en') {
+        var t = { 'nav.home': 'Home', 'nav.gallery': 'Gallery', 'nav.actions': 'Our actions', 'nav.process': 'Process', 'nav.about': 'About', 'nav.contact': 'Contact' };
+        document.querySelectorAll('nav [data-i18n]').forEach(function (el) {
+          var k = el.getAttribute('data-i18n');
+          if (t[k]) el.textContent = t[k];
+        });
+        document.querySelectorAll('nav [data-i18n-attr]').forEach(function (el) {
+          var spec = el.getAttribute('data-i18n-attr');
+          if (spec && spec.indexOf('lang.label') !== -1) el.setAttribute('aria-label', 'Choose language');
+        });
+        document.querySelectorAll('.lang-btn').forEach(function (b) {
+          var isEn = b.getAttribute('data-lang') === 'en';
+          b.classList.toggle('active', isEn);
+          b.setAttribute('aria-pressed', isEn ? 'true' : 'false');
+        });
+      }
+    })();
+  </script>
 
   <main>
     <h1 data-i18n="gallery.title">Art gallery</h1>
 
     <div class="carrousel">
-      <div class="carrousel-image-side">
-        <button class="carrousel-btn prev" onclick="changerImage(-1)" data-i18n-attr="aria-label:gallery.prev" aria-label="Previous">‹</button>
-        <img id="carrousel-img" src="Images/Dessin1.webp" alt="Dessin 1" data-i18n-attr="aria-label:gallery.zoom" role="button" tabindex="0">
-        <button class="carrousel-btn next" onclick="changerImage(1)" data-i18n-attr="aria-label:gallery.next" aria-label="Next">›</button>
+      <div class="carrousel-image-col">
+        <div class="carrousel-image-side">
+          <button class="carrousel-btn prev" onclick="changerImage(-1)" data-i18n-attr="aria-label:gallery.prev" aria-label="Previous">‹</button>
+          <img id="carrousel-img" src="Images/Dessin1.webp" alt="Dessin 1" data-i18n-attr="aria-label:gallery.zoom" role="button" tabindex="0">
+          <button class="carrousel-btn next" onclick="changerImage(1)" data-i18n-attr="aria-label:gallery.next" aria-label="Next">›</button>
+        </div>
+        <p class="carrousel-numero" id="carrousel-numero">01 / 21</p>
       </div>
 
       <div class="carrousel-text-side">
-        <p class="carrousel-numero" id="carrousel-numero">01 / 14</p>
         <h2 class="carrousel-titre" id="carrousel-titre" aria-live="polite">Captured innocence</h2>
         <div class="carrousel-description" id="carrousel-description"></div>
         <p class="carrousel-details" id="carrousel-details"></p>
