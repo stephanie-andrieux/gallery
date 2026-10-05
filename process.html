@@ -448,9 +448,7 @@
     }
 
     @media (max-width: 768px) {
-
-
-
+      .process-hero { padding: 32px 20px 20px; }
       .fan-grid { grid-template-columns: repeat(2, 1fr); gap: 70px 20px; }
       .fan-item { width: 220px; }
       .fan-stack { width: 195px; height: 265px; }
@@ -526,7 +524,7 @@
     })();
   </script>
 
-<div class="process-hero reveal">
+<div class="process-hero">
   <h1 data-i18n="nav.process">Process</h1>
   <p data-i18n="process.desc"></p>
 </div>
@@ -749,9 +747,13 @@
 
       navLinks.querySelectorAll('a').forEach(function (a) {
         a.addEventListener('click', function () {
-          navLinks.classList.remove('open');
-          hamburger.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
+          var target = (a.getAttribute('href') || '').split('#')[0].split('?')[0].split('/').pop();
+          var current = (window.location.pathname.split('/').pop() || 'index.html');
+          if (!target || target === current) {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
         });
       });
     })();

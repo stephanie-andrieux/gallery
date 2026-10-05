@@ -248,9 +248,13 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
+      main {
+        padding: 32px 20px 40px;
+      }
       .contact-grid {
         grid-template-columns: 1fr;
+        gap: 36px;
       }
       .form-row {
         flex-direction: column;
@@ -409,7 +413,7 @@
   <main>
     <div class="contact-grid">
 
-      <div class="contact-intro reveal">
+      <div class="contact-intro">
         <h1 data-i18n="contact.title">Let's talk</h1>
         <p class="desc" data-i18n="contact.desc">Whether you're interested in a piece, have a commission in mind, or just want to say hello. I'd
           love to hear from you.</p>
@@ -576,9 +580,13 @@
 
       navLinks.querySelectorAll('a').forEach(function (a) {
         a.addEventListener('click', function () {
-          navLinks.classList.remove('open');
-          hamburger.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
+          var target = (a.getAttribute('href') || '').split('#')[0].split('?')[0].split('/').pop();
+          var current = (window.location.pathname.split('/').pop() || 'index.html');
+          if (!target || target === current) {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
         });
       });
     })();

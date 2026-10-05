@@ -6,11 +6,9 @@
   navigation: auto;
 }
 
-@media (min-width: 769px) {
-  html {
-    scrollbar-gutter: stable;
-    overflow-y: scroll;
-  }
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
 }
 
 html,
@@ -80,6 +78,15 @@ nav [data-i18n-html] {
 html.js-ready .reveal:not(.is-visible) {
   opacity: 0;
   transform: translateY(30px);
+}
+
+/* Sûreté : les en-têtes et héros directement visibles au chargement ne subissent aucun décalage */
+html.js-ready .hero,
+html.js-ready .actions-hero,
+html.js-ready .process-hero,
+html.js-ready .contact-intro,
+html.js-ready .about-text {
+  transform: none !important;
 }
 
 html.js-ready .reveal {

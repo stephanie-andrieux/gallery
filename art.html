@@ -925,9 +925,13 @@
 
       navLinks.querySelectorAll('a').forEach(function (a) {
         a.addEventListener('click', function () {
-          navLinks.classList.remove('open');
-          hamburger.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
+          var target = (a.getAttribute('href') || '').split('#')[0].split('?')[0].split('/').pop();
+          var current = (window.location.pathname.split('/').pop() || 'index.html');
+          if (!target || target === current) {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
         });
       });
     })();
