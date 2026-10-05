@@ -41,80 +41,7 @@
       min-height: 100vh;
     }
 
-    /* ================= NAV ================= */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 40px;
-      background-color: #2b2420;
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      view-transition-name: site-nav;
-    }
-
-    .logo-img {
-      height: clamp(50px, 15vw, 90px);
-      max-width: 100%;
-      aspect-ratio: 629 / 397;
-      width: auto;
-    }
-
-    /* Desktop : liens visibles, hamburger caché */
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-    }
-
-    .lang-switcher {
-      display: flex;
-      align-items: center;
-      align-self: center;
-      gap: 6px;
-      margin-left: 20px;
-      height: 100%;
-    }
-
-    .nav-links a {
-      color: #faf6ef;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 2px;
-      background: #c1693c;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    /* Lang switcher dans le hamburger : caché sur desktop */
-    .lang-switcher-menu {
-      display: none;
-    }
-    /* Hamburger caché sur desktop */
-    .hamburger {
-      display: none;
-    }
+    /* Navigation styles managed centrally by site-shell.css */
 
     /* ================= HERO TEXT ================= */
     .process-hero {
@@ -276,10 +203,6 @@
     .fan-item.horizontal .fan-card-top img {
       object-fit: cover;
       object-position: center;
-    }
-
-    .fan-item.portrait-imaginaire {
-      grid-column: 2;
     }
 
     /* ===== LABEL TITRE — plus grand, sur 2 lignes si besoin ===== */
@@ -522,97 +445,11 @@
     /* ================= MOBILE ================= */
     @media (max-width: 900px) {
       .fan-grid { grid-template-columns: repeat(2, 1fr); gap: 80px 30px; }
-      .fan-item.portrait-imaginaire { grid-column: 1 / -1; }
     }
 
     @media (max-width: 768px) {
 
-      /* Nav mobile : logo à gauche, FR|EN + hamburger à droite */
-      nav {
-        padding: 8px 20px;
-        align-items: center;
-      }
 
-      .nav-right {
-        gap: 12px;
-      }
-    /* Cache le sélecteur du haut sur mobile */
-      .lang-switcher {
-        display: none;
-      }
-
-    /* Affiche celui dans le menu hamburger */
-      .lang-switcher-menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        padding: 14px 0 8px;
-      }
-      /* Liens cachés par défaut — dropdown absolu */
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #2b2420;
-        border-top: 2px solid #c1693c;
-        padding: 8px 0 14px;
-        gap: 0;
-        z-index: 999;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        margin-left: 0;
-        padding: 11px 20px;
-        font-size: 0.8rem;
-        transition: color 0.3s, background 0.3s;
-      }
-
-      .nav-links a:hover {
-        color: #c1693c;
-        background: rgba(193, 105, 60, 0.08);
-      }
-
-      .nav-links a::after {
-        display: none;
-      }
-
-      /* Bouton hamburger visible sur mobile */
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 6px;
-      }
-
-      .hamburger span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background: #faf6ef;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-
-      .hamburger.open span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-      .hamburger.open span:nth-child(2) {
-        opacity: 0;
-      }
-      .hamburger.open span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
 
       .fan-grid { grid-template-columns: repeat(2, 1fr); gap: 70px 20px; }
       .fan-item { width: 220px; }
@@ -637,29 +474,30 @@
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
-    <img src="Images/Logo.webp" alt="Sarah's Art" class="logo-img" width="629" height="397">
+    <img src="Images/Logo.webp" alt="Stephanie's Art" class="logo-img" width="629" height="397">
     <div class="nav-right">
       <div class="nav-links" id="navLinks">
-        <a href="index.html" data-i18n="nav.home">Home</a>
-        <a href="art.html" data-i18n="nav.gallery">Gallery</a>
-        <a href="actions.html" data-i18n="nav.actions">Our actions</a>
-        <a href="process.html" data-i18n="nav.process">Process</a>
-        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="index.html" data-i18n="nav.home">Accueil</a>
+        <a href="art.html" data-i18n="nav.gallery">Galerie</a>
+        <a href="actions.html" data-i18n="nav.actions">Nos actions</a>
+        <a href="process.html" aria-current="page" data-i18n="nav.process">Coulisses</a>
+        <a href="about.html" data-i18n="nav.about">À propos</a>
         <a href="contact.html" data-i18n="nav.contact">Contact</a>
 
         <div class="lang-switcher-menu" role="group" data-i18n-attr="aria-label:lang.label">
-          <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+          <button type="button" class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
           <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </div>
 
       <div class="lang-switcher" role="group" data-i18n-attr="aria-label:lang.label">
-        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+        <button type="button" class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
         <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
-      <button class="hamburger" id="hamburger">
+      <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span>
         <span></span>
         <span></span>
@@ -690,33 +528,20 @@
       <p class="fan-steps-count" data-steps-count>4 étapes</p>
     </div>
 
-    <!-- 2 — Chat (4 étapes) -->
-    <div class="fan-item steps-4" data-i="1"
-      data-steps='["Images/Chat1.webp","Images/Chat2.webp","Images/Chat3.webp","Images/Chat4.webp"]'>
-      <div class="fan-stack">
-        <div class="fan-card"><img src="Images/Chat1.webp" alt="Chat étape 1"></div>
-        <div class="fan-card"><img src="Images/Chat2.webp" alt="Chat étape 2"></div>
-        <div class="fan-card"><img src="Images/Chat3.webp" alt="Chat étape 3"></div>
-        <div class="fan-card-top"><img src="Images/Chat4.webp" alt="Chat final"></div>
-      </div>
-      <p class="fan-label" data-i18n="process.items.1">Un refuge inattendu</p>
-      <p class="fan-steps-count" data-steps-count>4 étapes</p>
-    </div>
-
-    <!-- 3 — Frère (3 étapes) HORIZONTAL -->
-    <div class="fan-item steps-3 horizontal" data-i="2"
+    <!-- 2 — Frère (3 étapes) HORIZONTAL -->
+    <div class="fan-item steps-3 horizontal" data-i="1"
       data-steps='["Images/Frere1.webp","Images/Frere2.webp","Images/Frere3.webp"]'>
       <div class="fan-stack">
         <div class="fan-card"><img src="Images/Frere1.webp" alt="Frère étape 1"></div>
         <div class="fan-card"><img src="Images/Frere2.webp" alt="Frère étape 2"></div>
         <div class="fan-card-top"><img src="Images/Frere3.webp" alt="Frère final"></div>
       </div>
-      <p class="fan-label" data-i18n="process.items.2">Lien fraternel</p>
+      <p class="fan-label" data-i18n="process.items.1">Lien fraternel</p>
       <p class="fan-steps-count" data-steps-count>3 étapes</p>
     </div>
 
-    <!-- 4 — Cheval (4 étapes) -->
-    <div class="fan-item steps-4" data-i="3"
+    <!-- 3 — Cheval (4 étapes) -->
+    <div class="fan-item steps-4" data-i="2"
       data-steps='["Images/Cheval1.webp","Images/Cheval2.webp","Images/Cheval3.webp","Images/Cheval4.webp"]'>
       <div class="fan-stack">
         <div class="fan-card"><img src="Images/Cheval1.webp" alt="Cheval étape 1"></div>
@@ -724,41 +549,41 @@
         <div class="fan-card"><img src="Images/Cheval3.webp" alt="Cheval étape 3"></div>
         <div class="fan-card-top"><img src="Images/Cheval4.webp" alt="Cheval final"></div>
       </div>
-      <p class="fan-label" data-i18n="process.items.3">Sagesse équine</p>
+      <p class="fan-label" data-i18n="process.items.2">Sagesse équine</p>
       <p class="fan-steps-count" data-steps-count>4 étapes</p>
     </div>
 
-    <!-- 5 — Princess (2 étapes) -->
-    <div class="fan-item steps-2" data-i="4"
+    <!-- 4 — Princess (2 étapes) -->
+    <div class="fan-item steps-2" data-i="3"
       data-steps='["Images/Princess1.webp","Images/Princess2.webp"]'>
       <div class="fan-stack">
         <div class="fan-card"><img src="Images/Princess1.webp" alt="Princess étape 1"></div>
         <div class="fan-card-top"><img src="Images/Princess2.webp" alt="Princess final"></div>
       </div>
-      <p class="fan-label" data-i18n="process.items.4">La princesse</p>
+      <p class="fan-label" data-i18n="process.items.3">La princesse</p>
       <p class="fan-steps-count" data-steps-count>2 étapes</p>
     </div>
 
-    <!-- 6 — Ado (3 étapes) -->
-    <div class="fan-item steps-3" data-i="5"
+    <!-- 5 — Ado (3 étapes) -->
+    <div class="fan-item steps-3" data-i="4"
       data-steps='["Images/Ado1.webp","Images/Ado2.webp","Images/Ado3.webp"]'>
       <div class="fan-stack">
         <div class="fan-card"><img src="Images/Ado1.webp" alt="Ado étape 1"></div>
         <div class="fan-card"><img src="Images/Ado2.webp" alt="Ado étape 2"></div>
         <div class="fan-card-top"><img src="Images/Ado3.webp" alt="Ado final"></div>
       </div>
-      <p class="fan-label" data-i18n="process.items.5">Sous les feuillages</p>
+      <p class="fan-label" data-i18n="process.items.4">Sous les feuillages</p>
       <p class="fan-steps-count" data-steps-count>3 étapes</p>
     </div>
 
-    <!-- 7 — Dessin 2 (2 étapes) -->
-    <div class="fan-item steps-2 portrait-imaginaire" data-i="6"
+    <!-- 6 — Dessin 2 (2 étapes) -->
+    <div class="fan-item steps-2" data-i="5"
       data-steps='["Images/Dessin2.webp","Images/Dessin2.0.webp"]'>
       <div class="fan-stack">
         <div class="fan-card"><img src="Images/Dessin2.0.webp" alt="Portrait imaginaire étape 1"></div>
         <div class="fan-card-top"><img src="Images/Dessin2.webp" alt="Portrait imaginaire final"></div>
       </div>
-      <p class="fan-label" data-i18n="process.items.6">Portrait imaginaire</p>
+      <p class="fan-label" data-i18n="process.items.5">Portrait imaginaire</p>
       <p class="fan-steps-count" data-steps-count>2 étapes</p>
     </div>
 

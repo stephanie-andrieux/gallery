@@ -34,8 +34,8 @@
         card1Desc: 'A graphite portrait focused on expression, character, and realistic detail.',
         card2Title: 'Child Portrait',
         card2Desc: 'A drawing that captures innocence, warmth, and natural emotion.',
-        card3Title: 'Realism Study',
-        card3Desc: 'An exploration of texture, contrast, and light through meticulous graphite and charcoal drawings.',
+        card3Title: 'Equine Character',
+        card3Desc: 'A graphite horse portrait, rendered with strong contrasts to capture its presence and assertive character.',
         aboutTitle: 'About My Work',
         aboutText: 'All artworks presented here are hand-drawn using graphite and charcoal pencils on paper. Special attention is given to texture, contrast, and expression to create drawings rich in character, emotion, and detail.',
         quote: '"Every pencil stroke tells a story."',
@@ -43,7 +43,7 @@
         beyondLead: 'What if some drawings could tell a story that goes even further?',
         beyondP1: "Perhaps a story that doesn't end with the final pencil stroke.",
         beyondP2: 'A story that continues in Algeria, with children we meet in hospitals and care centres, through volunteer days designed to bring them a little joy, comfort, and attention.',
-        beyondP3: 'Three of us bring this project to life on a personal, volunteer basis. Profits from the sale of drawings help fund these initiatives and the various needs they require.',
+        beyondP3: 'Two of us bring this project to life on a personal, volunteer basis. Profits from the sale of drawings help fund these initiatives and the various needs they require.',
         beyondP4: 'Because a drawing can be a piece of art and become the starting point for something tangible.'
       },
       about: {
@@ -96,7 +96,6 @@
         items: [
           { nom: 'Captured innocence', description: "This portrait highlights the freshness and spontaneity of childhood. The child's direct gaze, accompanied by a subtle smile and framed by a cascade of curly hair, gives the composition a natural and engaging presence.\n\nAttention was given to the eyes to capture their intensity and liveliness. The rendering of the curls presented an enjoyable technical challenge, with each strand carefully developed through subtle contrasts of light and shadow to create depth and movement. The background was intentionally softened to draw attention to the face and enhance the overall impact of the portrait.\n\nThe result of many hours of work and patience, this original artwork seeks above all to preserve the authenticity and sincerity of a fleeting moment.", details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 11 Hours of Work • Original Artwork', price: 'Sold' },
           { nom: 'A face born from imagination', description: 'This portrait has a very special story for me. Unlike my usual process, it was born entirely from my imagination, without any reference photo or model. My desire was to bring to life a gentle face that existed only in my mind.\n\nI took great pleasure in delicately shaping her features, seeking to capture a serene expression and a comforting, slight smile. Working on her straight hair allowed me to frame her face with light, and I opted for a softly blurred background so that the viewer\'s attention is drawn naturally and without distraction to the clarity of her eyes.\n\nThis is a deeply personal and spontaneous piece that I drew from the heart. I hope this truly unique creation resonates with you and brings a touch of serenity to your home.', details: 'A3 size (29.7 x 42 cm) • 240 gsm Paper • 9 Hours of Work • Original artwork from imagination.', price: 'Private collection' },
-          { nom: 'An unexpected refuge', description: 'This drawing was worked from a model that immediately made me smile. I wanted to capture this fun and endearing scene, playing with the contrast in scale with this tiny kitten hiding in a work boot far too big for it.\n\nI took immense pleasure in working on the contrast of textures. It was a real technical challenge to render the worn, heavy, and creased leather of this old shoe, with its tangled laces, while contrasting it with the softness and lightness of the little feline\'s fur. Its tiny paws delicately gripping the edge and its curious gaze are the details that, for me, bring this whole scene to life.\n\nThis is a playful piece that I drew with a lot of fondness. I hope this mischievous little scene makes you smile and brings a touch of warmth to your home.', details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 16 Hours of Work • Original Artwork', price: '€230' },
           { nom: 'The elegance of the horse', description: 'Drawing this portrait was a true joy, as the horse is by far my favorite animal. It is a subject I always return to with the same passion and intact admiration.\n\nThrough this piece, I sought to capture all the nobility and elegance of its carriage. By playing with very strong contrasts, I wanted to sculpt the power of its musculature and create the impression of light gliding across its coat. The meticulous work on the details of the tack and the tension of the leather serves to highlight, in contrast, the softness and deep intelligence in its eye.\n\nThis is a sincere tribute to the quiet strength that fascinates me so much. I hope this drawing resonates with those who share this love for these magnificent creatures and that it will bring a lot of character to your home.', details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 7 Hours of Work • Original Artwork', price: 'Sold' },
           { nom: 'Face to face', description: 'Drawing this face from so close was a captivating experience. I wanted to focus on the essentials, tightening the frame right up to the features to create a true intimacy with the gaze.\n\nI took special care in detailing the intensity and depth of the eyes, framed by strong eyebrows, as well as the volume and softness of the lips. The small details, like the delicate beauty mark and the piercing, add a touch of authenticity and a lot of character to this face. It is a portrait I wanted to keep minimalist, where the light softly glides over the skin, leaving all the room for pure, direct expression.\n\nThis is a piece created with passion, designed to create a real exchange with the person observing it. I hope this strong presence will captivate you and bring a touch of modern elegance to your home.', details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 6 Hours of Work • Original Artwork', price: '€210' },
           { nom: 'Sweet melancholy', description: 'Drawing this face was a deeply touching experience. From the very first strokes, I was drawn in by the poignant hint of sadness in this gaze. My desire was to accurately capture this vulnerability unique to childhood, this sweet melancholy that instantly leaves us so defenseless.\n\nI spent some time on the expression in the eyes, seeking to convey all that depth and the illusion of a held-back tear. The delicate pout of the lips and the slight movement of the eyebrows tell the story of a silent sorrow. In contrast, I let the rebellious curls frame the face with a bit more freedom, to bring a touch of softness and lightness around such a dense emotion.\n\nIt is an intimate and spontaneous piece, created with a lot of empathy. I hope this sincere emotion will resonate with you and bring a profoundly human dimension to your home.', details: 'A2 size (42 × 59.4 cm) • 240 gsm Paper • 6 Hours of Work • Original Artwork', price: '€130' },
@@ -114,7 +113,8 @@
           { nom: 'From behind', description: 'This portrait turns away from the face to focus on a little girl\'s hairstyle, in a simple and heartwarming composition. The two slightly asymmetrical buns frame a central parting that gently guides the eye, carrying the freshness of childhood. The barely suggested collar of the garment adds a touch of restraint to the whole.\n\nRendering the hair required patience, with carefully drawn strands and a few looser wisps escaping from the hairstyle to give it life and lightness. The soft, blurred points of light in the background gently soften the darker hair and clothing, creating a delicate contrast.\n\nThe result of many hours of work and patience, this original artwork simply seeks to capture the tenderness of an everyday moment, observed with modesty.', details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 10 Hours of Work • Original Artwork', price: '€230' },
           { nom: 'The desert woman', description: 'This portrait focuses entirely on the gaze, the only visible element of a face wrapped in fabric that evokes wide arid landscapes and their stark light. This compositional choice intensifies the power of the eyes, which become the absolute center of attention and carry the entire expression of the portrait on their own.\n\nParticular attention was given to the rendering of the eyes and eyelashes, meticulously detailed, as well as to the folds of the fabric, whose shadows and reliefs required careful work to suggest the movement and texture of the material. The contrast between the clarity of the gaze and the darker fabric reinforces the intensity of the composition, creating an almost hypnotic effect.\n\nThe result of many hours of work and patience, this original artwork seeks to capture what a gaze reveals, even when everything else remains hidden.', details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 10 Hours of Work • Original Artwork', price: '€230' },
           { nom: 'Little dreamer', description: 'This portrait captures a little boy absorbed in his thoughts, with a finger resting against his mouth in a spontaneous and endearing gesture. His gaze turned toward the horizon, both curious and dreamy, gives the portrait a gentle sense of inwardness.\n\nParticular attention was given to the hair, worked in fine strands to render its texture and movement, as well as to the delicate features of his face, full of youthful roundness and freshness. The contrast between the dark areas of the clothing and the clarity of the skin highlights the profile and strengthens the presence of the portrait.\n\nThe result of many hours of work and patience, this original artwork seeks to capture the moving simplicity of a moment from childhood.', details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 7 Hours of Work • Original Artwork', price: '€140' },
-          { nom: 'Suspended gaze', description: 'This portrait captures the innocence of a young child lying on his arms, his eyes wide open and resting directly on the viewer. It is impossible not to notice this spiky hairstyle first, standing in every direction as if the wind or a good nap had just passed through it!\n\nParticular attention was given to these rebellious strands, giving them volume and character, almost electric. His large eyes then bring all the softness and innocence of early childhood, in contrast with this energetic hairstyle. The small clasped hands and the floral-patterned fabric of the clothing complete this simple moment from everyday life.\n\nThe result of many hours of work and patience, this original artwork seeks to capture, with a touch of humor, the freshness of a moment from childhood.', details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 12 Hours of Work • Original Artwork', price: '€230' }
+          { nom: 'Suspended gaze', description: 'This portrait captures the innocence of a young child lying on his arms, his eyes wide open and resting directly on the viewer. It is impossible not to notice this spiky hairstyle first, standing in every direction as if the wind or a good nap had just passed through it!\n\nParticular attention was given to these rebellious strands, giving them volume and character, almost electric. His large eyes then bring all the softness and innocence of early childhood, in contrast with this energetic hairstyle. The small clasped hands and the floral-patterned fabric of the clothing complete this simple moment from everyday life.\n\nThe result of many hours of work and patience, this original artwork seeks to capture, with a touch of humor, the freshness of a moment from childhood.', details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 12 Hours of Work • Original Artwork', price: '€230' },
+          { nom: 'Shared tenderness', description: 'This portrait highlights the gentleness and closeness of the bond between a mother and her child. The mother\'s face, serenely inclined over the baby\'s head, and the child\'s curious gaze, nestled against her, give the composition a tender and natural presence.\n\nParticular attention was given to the gazes, with the desire to convey their sweetness and expressiveness. Rendering the hair was an enjoyable technical challenge: the mother\'s long waves and the baby\'s small curls were developed strand by strand, through subtle contrasts of light and shadow, to suggest volume and movement. The background was intentionally softened to draw attention to the faces.\n\nThe fruit of many hours of work and patience, this artwork imbued with tenderness seeks above all to preserve the authenticity and sincerity of a precious bond.', details: 'A3 size (29.7 × 42 cm) • 240 gsm Paper • 7 Hours of Work • Original Artwork', price: '€180' }
         ]
       },
       process: {
@@ -125,15 +125,14 @@
         stepLabel: "Step",
         finalLabel: "Final",
         stepsLabel: "steps",
-        items: ["The ice cream break", "An unexpected refuge", "Brotherly bond", "Equine wisdom", "The Princess", "Under the foliage", "Imaginary portrait"]
+        items: ["The ice cream break", "Brotherly bond", "Equine wisdom", "The Princess", "Under the foliage", "Imaginary portrait"]
       },
       actions: {
         eyebrow: 'Beyond the drawing',
         title: 'Our volunteer actions',
-        subtitle: 'Drawings that become shared moments',
         lead: 'Every drawing can go a little further than the paper on which it is created.',
-        intro: 'Through this personal volunteer project, three of us bring the same idea to life: connecting our drawings with shared moments alongside children we meet in Algeria, in hospitals and centres.',
-        impact: 'of every drawing sale is dedicated to our volunteer actions.',
+        intro: 'Through this personal volunteer project, we are two amateur artists, brought together by the same desire: to create a link between our drawings and shared moments with children we meet in Algeria, in hospitals and centres.',
+        impact: 'of the sale price of the drawings is dedicated to our volunteer actions.',
         whyTitle: 'Why Algeria?',
         whyP1: 'Algeria is the country where I was born. It is a country that is part of my story.',
         whyP2: 'It has given me a lot, and I felt the desire to give back in my own way and on my own scale.',
@@ -161,7 +160,7 @@
         album5Subtitle: 'Lunch at "Le Petit Prince" restaurant and afternoon at the Algerian National Theatre (TNA)',
         albumOpen: 'View album',
         team: 'A small team, a personal commitment, and actions built with care, one project at a time.',
-        teamCount: '3 people on the ground'
+        teamCount: '2 people on the ground'
     },
     },
     fr: {
@@ -196,8 +195,8 @@
         card1Desc: 'Un portrait au graphite centré sur l\'expression, le caractère et le détail réaliste.',
         card2Title: 'Portrait d\'enfant',
         card2Desc: 'Un dessin qui capture l\'innocence, la chaleur et l\'émotion naturelle.',
-        card3Title: 'Étude de réalisme',
-        card3Desc: 'Une exploration de la texture, du contraste et de la lumière par un travail minutieux au crayon.',
+        card3Title: 'Caractère équin',
+        card3Desc: 'Un portrait de cheval au graphite, travaillé en forts contrastes pour rendre sa présence et son caractère affirmé.',
         aboutTitle: 'Mon travail',
         aboutText: 'Toutes les œuvres présentées ici sont dessinées à la main au crayon graphite et au crayon fusain sur papier. Une attention particulière est portée à la texture, au contraste et à l\'expression afin de créer des dessins riches en caractère, en émotion et en détails.',
         quote: '« Chaque trait de crayon raconte une histoire. »',
@@ -205,7 +204,7 @@
         beyondLead: 'Et si certains dessins pouvaient raconter une histoire qui va encore plus loin ?',
         beyondP1: 'Peut-être celle d’une histoire qui ne s’arrête pas au dernier trait de crayon.',
         beyondP2: 'Une histoire qui se poursuit en Algérie, auprès d\'enfants rencontrés dans des hôpitaux et des centres, à travers des journées de bénévolat, dans l\'espoir d\'apporter un peu de joie et de réconfort.',
-        beyondP3: 'Nous sommes trois à faire vivre ce projet à titre personnel et bénévole. Les bénéfices issus de la vente des dessins contribuent à financer ces actions et les différents besoins qu’elles nécessitent.',
+        beyondP3: 'Nous sommes deux à faire vivre ce projet à titre personnel et bénévole. Les bénéfices issus de la vente des dessins contribuent à financer ces actions et les différents besoins qu’elles nécessitent.',
         beyondP4: 'Parce qu’un dessin peut être une œuvre et devenir le point de départ de quelque chose de concret.'
       },
       about: {
@@ -257,7 +256,6 @@
         items: [
           { nom: 'Innocence capturée', description: 'Ce portrait met en valeur la fraîcheur et la spontanéité de l\'enfance. Le regard direct de l\'enfant, accompagné d\'un sourire subtil et encadré par une cascade de boucles, donne à la composition une présence naturelle et engageante.\n\nUne attention particulière a été portée aux yeux pour capturer leur intensité et leur vivacité. Le rendu des boucles a représenté un défi technique agréable, chaque mèche étant soigneusement développée par de subtils contrastes de lumière et d\'ombre pour créer profondeur et mouvement. L\'arrière-plan a été volontairement adouci pour attirer l\'attention sur le visage et renforcer l\'impact global du portrait.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre originale cherche avant tout à préserver l\'authenticité et la sincérité d\'un instant fugace.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 11 heures de travail • Œuvre originale', price: 'Vendu' },
           { nom: 'Un visage né de l\'imagination', description: 'Ce portrait a une histoire très particulière pour moi. Contrairement à mon processus habituel, il est né entièrement de mon imagination, sans photo ni modèle de référence. Mon désir était de donner vie à un visage doux qui n\'existait que dans mon esprit.\n\nJ\'ai pris grand plaisir à modeler délicatement ses traits, en cherchant à capturer une expression sereine et un sourire léger et réconfortant. Travailler ses cheveux lisses m\'a permis d\'encadrer son visage de lumière, et j\'ai opté pour un arrière-plan légèrement flou afin que l\'attention du spectateur soit naturellement attirée, sans distraction, vers la clarté de ses yeux.\n\nC\'est une pièce profondément personnelle et spontanée, dessinée du cœur. J\'espère que cette création vraiment unique vous parlera et apportera une touche de sérénité chez vous.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 9 heures de travail • Œuvre originale d\'imagination', price: 'Collection privée' },
-          { nom: 'Un refuge inattendu', description: 'Ce dessin a été réalisé à partir d\'un modèle qui m\'a immédiatement fait sourire. J\'ai voulu capturer cette scène amusante et attachante, en jouant sur le contraste d\'échelle avec ce minuscule chaton caché dans une botte de travail bien trop grande pour lui.\n\nJ\'ai pris un immense plaisir à travailler le contraste des textures. Ce fut un vrai défi technique de rendre le cuir usé, lourd et plissé de cette vieille chaussure, avec ses lacets emmêlés, tout en le contrastant avec la douceur et la légèreté du pelage du petit félin. Ses minuscules pattes agrippant le bord et son regard curieux sont les détails qui, pour moi, donnent vie à toute cette scène.\n\nC\'est une pièce ludique que j\'ai dessinée avec beaucoup d\'affection. J\'espère que cette petite scène espiègle vous fera sourire et apportera une touche de chaleur chez vous.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 16 heures de travail • Œuvre originale', price: '230 €' },
           { nom: 'L\'élégance du cheval', description: 'Dessiner ce portrait a été une vraie joie, car le cheval est de loin mon animal préféré. C\'est un sujet auquel je reviens toujours avec la même passion et la même admiration intacte.\n\nÀ travers cette pièce, j\'ai cherché à capturer toute la noblesse et l\'élégance de sa prestance. En jouant sur des contrastes très marqués, j\'ai voulu sculpter la puissance de sa musculature et créer l\'impression d\'une lumière glissant sur son pelage. Le travail minutieux sur les détails de la sellerie et la tension du cuir sert à mettre en valeur, par contraste, la douceur et l\'intelligence profonde de son œil.\n\nC\'est un hommage sincère à la force tranquille qui me fascine tant. J\'espère que ce dessin résonnera chez ceux qui partagent cet amour pour ces magnifiques créatures et qu\'il apportera beaucoup de caractère chez vous.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 7 heures de travail • Œuvre originale', price: 'Vendu' },
           { nom: 'Face à face', description: 'Dessiner ce visage de si près a été une expérience captivante. J\'ai voulu me concentrer sur l\'essentiel, en resserrant le cadre jusqu\'aux traits pour créer une véritable intimité avec le regard.\n\nJ\'ai pris un soin particulier à détailler l\'intensité et la profondeur des yeux, encadrés par des sourcils marqués, ainsi que le volume et la douceur des lèvres. Les petits détails, comme le grain de beauté délicat et le piercing, ajoutent une touche d\'authenticité et beaucoup de caractère à ce visage. C\'est un portrait que j\'ai voulu minimaliste, où la lumière glisse doucement sur la peau, laissant toute la place à une expression pure et directe.\n\nC\'est une pièce créée avec passion, conçue pour créer un véritable échange avec la personne qui l\'observe. J\'espère que cette présence forte vous captivera et apportera une touche d\'élégance moderne chez vous.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 6 heures de travail • Œuvre originale', price: '210 €' },
           { nom: 'Douce mélancolie', description: 'Dessiner ce visage a été une expérience profondément touchante. Dès les premiers traits, j\'ai été attirée par la pointe poignante de tristesse dans ce regard. Mon désir était de capturer fidèlement cette vulnérabilité propre à l\'enfance, cette douce mélancolie qui nous laisse instantanément sans défense.\n\nJ\'ai passé du temps sur l\'expression des yeux, cherchant à transmettre toute cette profondeur et l\'illusion d\'une larme retenue. La moue délicate des lèvres et le léger mouvement des sourcils racontent l\'histoire d\'une peine silencieuse. En contraste, j\'ai laissé les boucles rebelles encadrer le visage avec un peu plus de liberté, pour apporter une touche de douceur et de légèreté autour d\'une émotion si dense.\n\nC\'est une pièce intime et spontanée, créée avec beaucoup d\'empathie. J\'espère que cette émotion sincère vous parlera et apportera une dimension profondément humaine chez vous.', details: 'Format A2 (42 × 59,4 cm) • Papier 240 g/m² • 6 heures de travail • Œuvre originale', price: '130 €' },
@@ -275,16 +273,16 @@
           { nom: 'De dos', description: 'Ce portrait s\'écarte du visage pour se poser sur la coiffure d\'une petite fille, dans une composition simple et attendrissante. Les deux chignons, légèrement asymétriques, encadrent une raie centrale qui guide doucement le regard, empreinte de la fraîcheur propre à l\'enfance. Le col du vêtement, à peine suggéré, ajoute une touche de retenue à l\'ensemble.\n\nLe rendu des cheveux a demandé de la patience, entre mèches soigneusement dessinées et quelques fils plus libres qui s\'en échappent, donnant vie et légèreté à la coiffure. Les points de lumière en arrière-plan, doux et flous, viennent adoucir la matière plus sombre des cheveux et du vêtement, créant un contraste tout en délicatesse.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre originale cherche simplement à capturer la tendresse d\'un instant du quotidien, saisi avec pudeur.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 10 heures de travail • Œuvre originale', price: '230 €' },
           { nom: 'La dame du désert', description: 'Ce portrait se concentre entièrement sur le regard, seul élément visible d\'un visage enveloppé d\'une étoffe qui évoque les grands espaces arides et leur lumière crue. Ce choix de composition intensifie la puissance des yeux, qui deviennent le centre absolu de l\'attention et portent à eux seuls toute l\'expression du portrait.\n\nUne attention particulière a été portée au rendu des yeux et des cils, minutieusement détaillés, ainsi qu\'aux plis de l\'étoffe dont les ombres et les reliefs ont demandé un travail soigné pour suggérer le mouvement et la texture du tissu. Le contraste entre la clarté du regard et la matière plus sombre du voilage renforce l\'intensité de la composition, presque hypnotique.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre originale cherche à capturer ce que révèle un regard, même quand tout le reste se dérobe.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 10 heures de travail • Œuvre originale', price: '230 €' },
           { nom: 'Petit rêveur', description: 'Ce portrait capture un petit garçon absorbé dans ses pensées, le doigt porté à la bouche dans un geste spontané et attendrissant. Son regard tourné vers l\'horizon, à la fois curieux et rêveur, donne au portrait une douceur et une certaine intériorité.\n\nUne attention particulière a été portée aux cheveux, travaillés en fines mèches pour rendre leur texture et leur mouvement, ainsi qu\'aux traits délicats de son visage, tout en rondeur et en fraîcheur enfantine. Le contraste entre les zones sombres du vêtement et la clarté de la peau met en valeur le profil et renforce la présence du portrait.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre originale cherche à saisir la simplicité émouvante d\'un instant d\'enfance.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 7 heures de travail • Œuvre originale', price: '140 €' },
-          { nom: 'Regard suspendu', description: 'Ce portrait capture toute l\'innocence d\'un jeune enfant allongé sur ses bras, le regard grand ouvert et posé droit sur le spectateur. Impossible de ne pas remarquer en premier cette coiffure en épis, dressée dans tous les sens comme si le vent ou une bonne sieste venait tout juste de passer par là !\n\nUne attention particulière a été portée à ces mèches rebelles pour leur donner du volume et du caractère, presque électriques. Ses grands yeux apportent ensuite toute la douceur et la candeur propres à la petite enfance, en contraste avec cette coiffure pleine d\'énergie. Les petites mains jointes et le tissu à motifs fleuris du vêtement complètent ce moment de vie tout simple.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre originale cherche à capturer, avec un brin d\'humour, la fraîcheur d\'un instant d\'enfance.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 12 heures de travail • Œuvre originale', price: '230 €' }
+          { nom: 'Regard suspendu', description: 'Ce portrait capture toute l\'innocence d\'un jeune enfant allongé sur ses bras, le regard grand ouvert et posé droit sur le spectateur. Impossible de ne pas remarquer en premier cette coiffure en épis, dressée dans tous les sens comme si le vent ou une bonne sieste venait tout juste de passer par là !\n\nUne attention particulière a été portée à ces mèches rebelles pour leur donner du volume et du caractère, presque électriques. Ses grands yeux apportent ensuite toute la douceur et la candeur propres à la petite enfance, en contraste avec cette coiffure pleine d\'énergie. Les petites mains jointes et le tissu à motifs fleuris du vêtement complètent ce moment de vie tout simple.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre originale cherche à capturer, avec un brin d\'humour, la fraîcheur d\'un instant d\'enfance.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 12 heures de travail • Œuvre originale', price: '230 €' },
+          { nom: 'Tendresse partagée', description: 'Ce portrait met en valeur la douceur et la proximité du lien entre une mère et son enfant. Le visage de la mère, penché avec calme sur la tête du bébé, et le regard curieux de l\'enfant, blotti contre elle, donnent à la composition une présence tendre et naturelle.\n\nUne attention particulière a été portée aux regards, avec l\'envie d\'en rendre la douceur et l\'expressivité. Le rendu des cheveux a représenté un défi technique agréable : les longues ondulations de la mère et les petites boucles du bébé ont été développées mèche par mèche, par de subtils contrastes de lumière et d\'ombre, pour suggérer volume et mouvement. L\'arrière-plan a été volontairement adouci pour attirer l\'attention sur les visages.\n\nFruit de nombreuses heures de travail et de patience, cette œuvre empreinte de tendresse cherche avant tout à préserver l\'authenticité et la sincérité d\'un lien précieux.', details: 'Format A3 (29,7 × 42 cm) • Papier 240 g/m² • 7 heures de travail • Œuvre originale', price: '180 €' }
         ]
       },
       actions: {
         eyebrow: 'Au-delà du dessin',
         title: 'Nos actions de bénévolat',
-        subtitle: 'Des dessins qui deviennent des moments partagés',
         lead: 'Chaque dessin peut aller un peu plus loin que le papier sur lequel il est créé.',
-        intro: 'À travers ce projet personnel et bénévole, nous sommes trois à faire vivre une même idée : faire le lien entre des dessins et des moments de partage auprès d\'enfants que nous rencontrons en Algérie, dans des hôpitaux et des centres.',
-        impact: 'de chaque vente de dessins est consacré à nos actions de bénévolat.',
+        intro: 'À travers ce projet personnel et bénévole, nous sommes deux dessinateurs amateurs, réunis autour d’une même envie : créer un lien entre nos dessins et des moments de partage auprès d’enfants que nous rencontrons en Algérie, dans des hôpitaux et des centres.',
+        impact: 'du prix de vente des dessins est consacré à nos actions de bénévolat.',
         whyTitle: 'Pourquoi l\'Algérie ?',
         whyP1: 'L\'Algérie est le pays où je suis née. C\'est un pays qui fait partie de mon histoire.',
         whyP2: 'Il m\'a beaucoup offert et j\'ai ressenti le besoin, à mon tour, de m\'investir, à ma manière, à mon échelle.',
@@ -312,7 +310,7 @@
         album5Subtitle: 'Déjeuner au restaurant « Le Petit Prince » et après-midi au Théâtre national algérien (TNA)',
         albumOpen: 'Voir l\'album',
         team: 'Une petite équipe, un engagement personnel et des actions construites avec soin, projet après projet.',
-        teamCount: '3 personnes sur le terrain'
+        teamCount: '2 personnes sur le terrain'
       },
       process: {
         title: "Processus",
@@ -322,7 +320,7 @@
         stepLabel: "Étape",
         finalLabel: "Final",
         stepsLabel: "étapes",
-        items: ["La pause glace", "Un refuge inattendu", "Lien fraternel", "Sagesse équine", "La princesse", "Sous les feuillages", "Portrait imaginaire"]
+        items: ["La pause glace", "Lien fraternel", "Sagesse équine", "La princesse", "Sous les feuillages", "Portrait imaginaire"]
       },
     }
 
@@ -440,10 +438,12 @@ function detectPage() {
     },
     getGallerySources: function () {
       return [
-        'Images/Dessin1.webp', 'Images/Dessin2.webp', 'Images/Dessin3.webp', 'Images/Dessin4.webp',
+        'Images/Dessin1.webp', 'Images/Dessin2.webp', 'Images/Dessin4.webp',
         'Images/Dessin5.webp', 'Images/Dessin6.webp', 'Images/Dessin7.webp', 'Images/Dessin8.webp',
         'Images/Dessin9.webp', 'Images/Dessin10.webp', 'Images/Dessin11.webp', 'Images/Dessin12.webp',
-        'Images/Dessin13.webp', 'Images/Dessin14.webp', 'Images/Dessin15.webp', 'Images/Dessin16.webp', 'Images/Dessin17.webp', 'Images/Dessin18.webp', 'Images/Dessin19.webp', 'Images/Dessin20.webp', 'Images/Dessin21.webp'
+        'Images/Dessin13.webp', 'Images/Dessin14.webp', 'Images/Dessin15.webp', 'Images/Dessin16.webp',
+        'Images/Dessin17.webp', 'Images/Dessin18.webp', 'Images/Dessin19.webp', 'Images/Dessin20.webp',
+        'Images/Dessin21.webp', 'Images/Dessin22.webp'
       ];
     }
   };
@@ -515,6 +515,29 @@ function detectPage() {
 
       // Vérification initiale selon la position actuelle du scroll
       updateNavbarOnScroll();
+
+      // Active les transitions de hauteur uniquement APRÈS l'affichage initial
+      requestAnimationFrame(function () {
+        nav.classList.add('is-scroll-ready');
+      });
+
+      // Synchronise l'indicateur de page active selon le nom du fichier actuel
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      nav.querySelectorAll('.nav-links a').forEach(function (link) {
+        const linkPath = (link.getAttribute('href') || '').split('/').pop();
+        if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+
+        // Réinitialise l'état scrollé et coupe les transitions au clic pour que le snapshot
+        // de départ corresponde au pixel près à la page de destination (évite tout saut)
+        link.addEventListener('click', function () {
+          nav.classList.remove('is-scroll-ready');
+          nav.classList.remove('nav-scrolled');
+        });
+      });
     }
   }
 

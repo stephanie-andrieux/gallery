@@ -33,6 +33,13 @@ html.i18n-ready [data-i18n-html] {
   visibility: visible;
 }
 
+/* La barre de navigation reste toujours visible et stable, sans aucun clignotement */
+nav [data-i18n],
+nav [data-i18n-attr],
+nav [data-i18n-html] {
+  visibility: visible !important;
+}
+
 /* Language switcher — visible on all pages */
 .lang-btn {
   background: transparent;
