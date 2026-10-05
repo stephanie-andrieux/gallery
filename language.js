@@ -484,25 +484,19 @@ function detectPage() {
 
     // 2. Navbar dynamique au scroll
     if (nav) {
-      let lastScrollY = window.scrollY || window.pageYOffset || 0;
       let ticking = false;
 
       function updateNavbarOnScroll() {
         const currentScrollY = window.scrollY || window.pageYOffset || 0;
-        const delta = currentScrollY - lastScrollY;
+        const isScrolled = nav.classList.contains('nav-scrolled');
 
-        // Si on est tout en haut (ou très proche) : taille initiale complète
-        if (currentScrollY <= 25) {
-          nav.classList.remove('nav-scrolled');
-        } else if (delta > 6 && currentScrollY > 40) {
-          // Scroll vers le bas : réduire la navbar
-          nav.classList.add('nav-scrolled');
-        } else if (delta < -6) {
-          // Scroll vers le haut / remonte : reprendre sa taille initiale
-          nav.classList.remove('nav-scrolled');
+        // Seuil avec hystérésis : transition unique et stable, sans aucun saut multiple au scroll
+        if (currentScrollY > 120) {
+          if (!isScrolled) nav.classList.add('nav-scrolled');
+        } else if (currentScrollY <= 30) {
+          if (isScrolled) nav.classList.remove('nav-scrolled');
         }
 
-        lastScrollY = currentScrollY;
         ticking = false;
       }
 
