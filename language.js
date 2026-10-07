@@ -6,7 +6,7 @@
   const translations = {
     en: {
       meta: {
-        index: { title: "Stephanie's Art Portfolio", description: "Explore Stephanie's graphite art portfolio, featuring realistic drawings, child portraits, and custom pencil art commissions." },
+        index: { title: "Stephanie's Art Portfolio", description: "Explore Stephanie's graphite art portfolio, featuring drawings, child portraits, and custom pencil art commissions." },
         art: { title: "Gallery — Stephanie's Art Portfolio", description: "Explore Stephanie's graphite art gallery, showcasing realistic portrait studies, animal art, and unique graphite drawings." },
         about: { title: "About — Stephanie's Art Portfolio", description: "Read about Stephanie's artistic journey, her techniques combining graphite and charcoal, and her traditional drawing studio." },
         contact: { title: "Contact — Stephanie's Art Portfolio", description: "Get in touch with Stephanie for portrait study drawings, custom graphite illustrations, and pencil art commissions." },
@@ -17,7 +17,7 @@
       lang: { label: 'Choose language' },
       footer: {
         brand: "Stephanie's Art",
-        desc: 'Passionate about graphite and charcoal portraiture. I strive to capture depth, texture, and genuine emotions through realistic drawings and custom creations.',
+        desc: 'Passionate about graphite and charcoal portraiture. I strive to capture depth, texture, and genuine emotions through drawings and custom creations.',
         explore: 'Explore',
         contact: 'Contact',
         copyright: "© 2026 Stephanie's Art Portfolio. All rights reserved.",
@@ -178,7 +178,7 @@
       lang: { label: 'Choisir la langue' },
       footer: {
         brand: "L'art de Stéphanie",
-        desc: 'Passionnée par le portrait au graphite et au fusain. Je cherche à capturer la profondeur, la texture et les émotions authentiques à travers des dessins réalistes et des créations sur mesure.',
+        desc: 'Passionnée par le portrait au graphite et au fusain. Je cherche à capturer la profondeur, la texture et les émotions authentiques à travers des dessins et des créations sur mesure.',
         explore: 'Explorer',
         contact: 'Contact',
         copyright: "© 2026 Portfolio d'art de Stéphanie. Tous droits réservés.",
